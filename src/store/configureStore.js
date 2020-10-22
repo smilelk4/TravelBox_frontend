@@ -1,8 +1,8 @@
 import { createStore } from 'redux';
-import combinedReducer from '../reducers/combinedReducer';
+import rootReducer from '../reducers/rootReducer';
 
 const configureStore = () => {
-  return createStore(combinedReducer);
+  return createStore(rootReducer);
 };
 
 export default configureStore;
