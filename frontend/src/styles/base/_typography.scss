@@ -1,13 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;1,300;1,400&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap');
-
-$font-roboto: 'Roboto';
-$font-roboto-slab: 'Roboto Slab';
-$font-monteserrat: 'Montserrat';
-$font-open-sans: 'Open Sans';
-
 html {
   font-family: 'Roboto', 'Open Sans', 'Montserrat', sans-serif;
+}
+
+.navbar {
+  &__title {
+    font-family: $font-roboto-slab;
+  }
 }

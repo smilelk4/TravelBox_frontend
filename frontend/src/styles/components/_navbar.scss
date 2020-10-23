@@ -1,5 +1,20 @@
-#navbar {
-  width: 100vw;
-  height: 7rem;
-  background-color: $color-green-mid;
+.navbar {
+  background: $gradient-green1;
+  padding: 0 3vw;
+
+  grid-column: 1 / -1;
+  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__title {
+    font-size: 3rem;
+  }
+
+  &__hamburger {
+    width: 4.5rem;
+    height: 4.5rem;
+    background-color: white;
+  }
 }

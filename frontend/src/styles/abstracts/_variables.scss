@@ -1,10 +1,26 @@
-$color-font-main: #210124;
-$color-green-dark: #1A535C;
-$color-green-mid: #B3DEC1;
-$color-green-light: #DBF9F0;
-$color-bg-light: #F7F9F7;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;1,300;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap');
+
+$color-font-main: rgba(33, 1, 36, 1);
+$color-font-grey1: rgb(88, 88, 88);
+
+$color-green-dark: rgba(26, 83, 92, 1);
+$color-green-mid: rgba(179, 222, 193, 1);
+$color-green-midlight: rgba(211, 243, 222, 1);
+$color-green-light: rgba(219, 249, 240, 1);
+
+$color-bg-light: rgba(247, 249, 247, 1);
 
 // #FFB17A
 // #A63446
 // #EF767A
 // #A39594
+
+$font-roboto: 'Roboto';
+$font-roboto-slab: 'Roboto Slab';
+$font-monteserrat: 'Montserrat';
+$font-open-sans: 'Open Sans';
+
+$gradient-green1: linear-gradient(125deg, $color-green-mid 65%, $color-green-midlight);

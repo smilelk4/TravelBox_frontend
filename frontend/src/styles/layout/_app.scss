@@ -1,0 +1,11 @@
+.app {
+  width: 100vw;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  grid-template-rows: 8rem 70vh;
+
+  & > * {
+    border: 1px solid black;
+  }
+}
