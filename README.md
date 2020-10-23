@@ -1,4 +1,4 @@
-# Solo Project (Name here)
+# Travel Box
 
 -- Description here
 -- How to launch

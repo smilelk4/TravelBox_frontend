@@ -4,7 +4,7 @@
 
 * User registration with validations
 * Required fields: username, first name, last name, email
-* Optional field: profile image URL
+* Optional fields: profile image URL, places visited
 
 ## Log In / Log Out
 
@@ -12,20 +12,26 @@
 * Log in state persists as long as the user has a valid token
 * Token gets deleted once the user logs out
 
-## Bucket Box
+## Profile Page (MyBox)
 
-* Displays all bucket lists of particular user
-* Ability to create a list
+* Profile image
+* Button to edit user information
+* Displays MyCollections
+* Ability to create a collection
+* Displays starred Wishes
+* Displays places visited (if any)
 
-## Bucket List
+## MyCollection
 
-* Displays all bucket items of particular list
-* Sorts bucket items top-down by interest level
+* Displays all wish items of a particular collection
+* Sorts items top-down by interest level
 * Ability to create an item
 * Ability to delete itself
 
-## Bucket Item
+## MyWish
 
-* Has fields for: location name, images, todo, interest level, urls, notes, goal date, goal budget, date of creation, list name
+* Has fields for: location name, images, todo, interest level, urls, notes, goal date, goal budget, date of creation, collection name
+* Ability to be starred
+* Ability to be marked accomplished
 * Ability to delete itself
 * Ability to edit fields
