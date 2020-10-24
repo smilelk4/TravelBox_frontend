@@ -30,7 +30,7 @@
 
 ## MyWish
 
-* Has fields for: location name, images, todo, interest level, urls, notes, goal date, goal budget, date of creation, collection name
+* Has fields for: destination name, images, to-dos, interest level, urls, notes, target date, target savings, date of creation, collection name
 * Ability to be starred
 * Ability to be marked accomplished
 * Ability to delete itself

@@ -1,5 +1,6 @@
 .navbar {
   background: $gradient-green1;
+  height: 7rem;
   padding: 0 3vw;
 
   grid-column: 1 / -1;
@@ -10,6 +11,7 @@
 
   &__title {
     font-size: 3rem;
+    @include font-gradient-grey();
   }
 
   &__hamburger {
