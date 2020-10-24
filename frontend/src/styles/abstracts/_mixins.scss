@@ -27,6 +27,11 @@
     -moz-text-fill-color: transparent;
 }
 
+@mixin border-bottom-grey() {
+  border-bottom: 1px solid $color-border1;
+  padding: .8rem 0;
+}
+
 // @mixin font-gradient-rainbow() {
 //     background-color: #f3ec78;
 //     background-image: linear-gradient(

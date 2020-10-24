@@ -14,7 +14,10 @@ $color-green-midlight: rgba(211, 243, 222, 1);
 $color-green-light: rgba(219, 249, 240, 1);
 
 $color-bg-light1: rgba(247, 249, 247, 1);
+$color-bg-light1-transparent: rgba(247, 249, 247, .8);
 $color-bg-light2: rgb(240, 238, 238);
+
+$color-border1: rgba(177, 177, 177, .5);
 
 $color-yellow: #fff27a;
 $color-orange: #FFB17A;
@@ -29,3 +32,5 @@ $font-monteserrat: 'Montserrat';
 $font-open-sans: 'Open Sans';
 
 $gradient-green1: linear-gradient(125deg, $color-green-mid 20%, $color-blue 90%, $color-green-midlight);
+
+$shadow-box1: 0 .5rem 1.8rem $color-font-grey1;

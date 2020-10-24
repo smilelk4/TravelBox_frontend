@@ -6,10 +6,15 @@ const Main = () => {
     <main className='main'>
       <PageTitle title='MyBox' />
       <div className='main__content'>
-        <div></div>
-        <div></div>
-        <div></div>
-      <p>hihhi</p>
+        <div>
+          <h3>hihihi</h3>
+        </div>
+        <div>
+          <h3>hihihi</h3>
+        </div>
+        <div>
+          <h3>hihihi</h3>
+        </div>
       </div>
     </main>
   );
