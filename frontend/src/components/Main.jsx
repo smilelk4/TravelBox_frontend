@@ -1,20 +1,15 @@
 import React from 'react';
 import PageTitle from './PageTitle';
+import Card from './Card';
 
 const Main = () => {
   return ( 
     <main className='main'>
       <PageTitle title='MyBox' />
       <div className='main__content'>
-        <div>
-          <h3>hihihi</h3>
-        </div>
-        <div>
-          <h3>hihihi</h3>
-        </div>
-        <div>
-          <h3>hihihi</h3>
-        </div>
+        <Card />
+        <Card />
+        <Card />
       </div>
     </main>
   );
