@@ -16,9 +16,11 @@ $color-green-light: rgba(219, 249, 240, 1);
 $color-bg-light1: rgba(247, 249, 247, 1);
 $color-bg-light2: rgb(240, 238, 238);
 
-// #FFB17A
+$color-yellow: #fff27a;
+$color-orange: #FFB17A;
 // #A63446
-// #EF767A
+$color-pink:#EF767A;
+$color-blue:rgb(176, 218, 219);
 // #A39594
 
 $font-roboto: 'Roboto';
@@ -26,4 +28,4 @@ $font-roboto-slab: 'Roboto Slab';
 $font-monteserrat: 'Montserrat';
 $font-open-sans: 'Open Sans';
 
-$gradient-green1: linear-gradient(125deg, $color-green-mid 65%, $color-green-midlight);
+$gradient-green1: linear-gradient(125deg, $color-green-mid 20%, $color-blue 90%, $color-green-midlight);
