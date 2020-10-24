@@ -3,8 +3,15 @@
 
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-  grid-template-rows: 8rem 75vh 15rem;
-  grid-row-gap: 5rem;
+  grid-template-rows: 8rem 20rem 75vh 15rem;
+
+  // grid-row-gap: 5rem;
+  & > * {
+  }
+
+  // & > * {
+
+  // }
 
   & * {
     // border: 1px solid black;
