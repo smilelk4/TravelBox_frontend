@@ -3,7 +3,7 @@ import AOS from 'aos';
 
 import Navbar from './components/Navbar';
 import Header from './components/Header';
-import Section from './components/Section';
+import Main from './components/Main';
 import Footer from './components/Footer';
 
 function App() {
@@ -19,7 +19,7 @@ function App() {
     <div className="app">
       <Navbar />
       <Header />
-      <Section />
+      <Main />
       <Footer />
     </div>
   );
