@@ -6,7 +6,7 @@
     border-radius: 3px;
     transition: transform .2s ease-in, box-shadow .5s ease-in;
     box-shadow: none;
-    transform: translateY(0);
+    transform: translate(0);
 
     & > h3 {
       font-size: 3rem;
@@ -15,7 +15,7 @@
     }
 
     &:hover {
-    transform: translateY(-.8rem);
+    transform: translate(-.8em, -.8rem);
     box-shadow: $shadow-box1;
   }
 }

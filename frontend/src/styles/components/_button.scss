@@ -1,0 +1,12 @@
+.button {
+  color: $color-font-grey2;
+  padding: .8rem 1.5rem;
+  margin: .5rem;
+  border-radius: 5px;
+  background-color: $color-bg-light1;
+  transition: background-color .1s ease-out;
+
+  &:hover {
+    background-color: $color-bg-light2;
+  }
+}

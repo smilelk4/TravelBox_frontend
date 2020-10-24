@@ -7,6 +7,12 @@
   justify-content: space-between;
   align-items: center;
 
+  &__right {
+    display: flex;
+    align-items: center;
+    color: $color-bg-light2;
+  }
+
   &__title {
     font-size: 3rem;
     @include font-gradient-diagonal($color-bg-light1, $color-bg-light2);
@@ -19,11 +25,12 @@
   }
 
   &.initial {
-    background: $gradient-green1;
+    background-color: $color-bg-dark1;
   }
 
   &.scrolled {
-    background-color: $color-font-grey2;
+    background-color: $color-bg-dark1-transparent;
+    box-shadow: $shadow-nav;
     position: sticky;
     top: 0;
   }

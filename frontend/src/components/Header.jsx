@@ -1,5 +1,4 @@
 import React from 'react';
-import PageTitle from './PageTitle';
 
 const Header = () => {
   return ( 

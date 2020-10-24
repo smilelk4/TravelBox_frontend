@@ -13,18 +13,18 @@
 }
 
 @mixin font-gradient-section-title() {
-    background-color: $color-green-dark;
-    background-image: linear-gradient(
-      45deg,
-      $color-pink,
-      $color-pink 18%,
-      $color-green-dark 15%,
-      $color-font-grey2
-    );
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent; 
-    -moz-background-clip: text;
-    -moz-text-fill-color: transparent;
+  background-color: $color-green-dark;
+  background-image: linear-gradient(
+    45deg,
+    $color-pink,
+    $color-pink 18%,
+    $color-green-dark 15%,
+    $color-font-grey2
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; 
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
 }
 
 @mixin border-bottom-grey() {

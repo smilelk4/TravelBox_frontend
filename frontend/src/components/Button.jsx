@@ -1,12 +1,12 @@
 import React from 'react';
 
-const Button = () => {
+const Button = ({ name }) => {
 
   const handleClick = () => {
   };
 
   return ( 
-    <button onClick={handleClick}>Button</button>
+    <button className="button" onClick={handleClick}>{ name.toUpperCase() }</button>
   );
 }
  

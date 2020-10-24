@@ -5,8 +5,7 @@ import Card from './Card';
 const DiagonalContainer = () => {
   return ( 
     <div className="diagonal-container">
-      <PageTitle title='MyBox' />
-      <div className='main__content'>
+      <div className='diagonal-container__content'>
         <Card />
         <Card />
         <Card />
