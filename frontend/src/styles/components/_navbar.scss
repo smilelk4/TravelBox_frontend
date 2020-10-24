@@ -1,6 +1,5 @@
 .navbar {
   background: $gradient-green1;
-  height: 7rem;
   padding: 0 3vw;
 
   grid-column: 1 / -1;
@@ -11,12 +10,12 @@
 
   &__title {
     font-size: 3rem;
-    @include font-gradient-grey();
+    @include font-gradient-diagonal($color-bg-light1, $color-bg-light2);
   }
 
   &__hamburger {
     width: 4.5rem;
     height: 4.5rem;
-    background-color: white;
+    background-color: $color-bg-light1;
   }
 }
