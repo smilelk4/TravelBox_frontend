@@ -26,7 +26,7 @@
       z-index: 1;
       top: 50%;
       left: 50%;
-      transform: translate(-50%, -50%) scale(0);
+      transform: translate(-50%, -50%);
       transition: .2s ease-in-out;
       background-color: $color-bg-light1;
       border-radius: 1rem;

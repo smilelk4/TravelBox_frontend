@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import Button from './Button';
+import NavbarModal from './Modal';
 
 const Navbar = () => {
+  const [ modalStatus, setModalStatus ] = useState('hidden');
+
   const handleScroll = e => {
     const navbar = document.querySelector('.navbar');
     if (window.pageYOffset > 55) {
@@ -13,6 +16,10 @@ const Navbar = () => {
       navbar.classList.add('initial');
     }
   }
+
+  const handleClick = e => {
+    modalStatus === 'hidden' ? setModalStatus('active') : setModalStatus('hidden');
+  };
 
   window.addEventListener('scroll', e => {
     handleScroll(e);
@@ -25,11 +32,14 @@ const Navbar = () => {
           <h1 className='navbar__title'>Travel Box</h1>
         </NavLink>
       </navbar>
-      <div className="navbar__signup-login-modal--hidden"></div>
-      <div className="navbar__overlay--hidden"></div>
+      <NavbarModal modalStatus={modalStatus} />
       <div className='navbar__right'>
-        <Button dest="signup" />
-        <Button dest="login" />
+        <div onClick={handleClick}>
+          <Button dest="signup" />
+        </div>
+        <div onClick={handleClick}>
+          <Button dest="login" />
+        </div>
         <div className='navbar__hamburger'>X</div>
       </div>
     </nav>
