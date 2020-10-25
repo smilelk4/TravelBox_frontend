@@ -20,3 +20,16 @@ const usernameValidation = [
       });
     })
 ];
+
+const nameValidation = [
+  check('firstName')
+    .exists({ checkFalsy: true })
+    .withMessage('Please enter a valid first name.')
+    .isLength({ max: 30 })
+    .withMessage('First name must be not be longer than 30 characters.'),
+  check('lastName')
+    .exists({ checkFalsy: true })
+    .withMessage('Please enter a valid last name.')
+    .isLength({ max: 30 })
+    .withMessage('Last name must be not be longer than 30 characters.'),
+];

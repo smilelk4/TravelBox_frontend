@@ -9,7 +9,7 @@ router.get('/', (req, res, next) => {
   res.send('users');
 });
 
-router.post('/', asyncHandler(async (req, res, next) => {
+router.post('/', asyncHandler(async (req, res) => {
   const { username, firstName, lastName, email, password, profileImage } = req.body;
   const hashedPassword = await hashPassword(password.trim());
 
