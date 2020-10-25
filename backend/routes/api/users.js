@@ -1,7 +1,8 @@
 const { Router } = require('express');
 
-const { asyncHandler, hashPassword } = require('../../utils');
 const { User } = require('../../db/models');
+const { asyncHandler, hashPassword, handleValidationErrors } = require('../../utils');
+const validations = require('../../validators');
 
 const router = Router();
 
@@ -9,7 +10,10 @@ router.get('/', (req, res, next) => {
   res.send('users');
 });
 
-router.post('/', asyncHandler(async (req, res) => {
+router.post('/', 
+  validations,
+  handleValidationErrors,
+  asyncHandler(async (req, res, next) => {
   const { username, firstName, lastName, email, password, profileImage } = req.body;
   const hashedPassword = await hashPassword(password.trim());
 
