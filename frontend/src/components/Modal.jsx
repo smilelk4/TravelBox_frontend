@@ -1,12 +1,13 @@
 import React from 'react';
 
-const NavbarModal = ({ modalStatus }) => {
+const Modal = ({ blockElem, modalStatus }) => {
   return ( 
     <>
-      <div className={`navbar__signup-login-modal--${modalStatus}`}></div>
-      <div className={`navbar__overlay--${modalStatus}`}></div>
+      <div className={`${blockElem}--${modalStatus}`}>
+        
+      </div>
     </>
   );
 }
  
-export default NavbarModal;
+export default Modal;
