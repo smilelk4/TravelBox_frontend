@@ -1,6 +1,5 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-// import Button from '@material-ui/core/Button';
 import Button from './Button';
 
 const Navbar = () => {
@@ -22,15 +21,13 @@ const Navbar = () => {
   return ( 
     <nav className='navbar initial'>
       <navbar className='navbar__left'>
-        <h1 className='navbar__title'>Travel Box</h1>
+        <NavLink to='/'>
+          <h1 className='navbar__title'>Travel Box</h1>
+        </NavLink>
       </navbar>
       <div className='navbar__right'>
-        <Button name="Sign Up">
-          <NavLink to='/signup'>Sign Up</NavLink>
-        </Button>
-        <Button name="Log In">
-          <NavLink to='/login'>Log In</NavLink>
-        </Button>
+        <Button dest="signup" />
+        <Button dest="login" />
         <div className='navbar__hamburger'>X</div>
       </div>
     </nav>

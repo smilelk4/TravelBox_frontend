@@ -1,12 +1,19 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
-const Button = ({ name }) => {
+const Button = ({ dest }) => {
 
   const handleClick = () => {
   };
 
+  let buttonDisplay;
+  if (dest === "signup") buttonDisplay = "Sign Up";
+  if (dest === "login") buttonDisplay = "Log In";
+
   return ( 
-    <button className="button" onClick={handleClick}>{ name.toUpperCase() }</button>
+    <div className="button" onClick={handleClick}>
+      <NavLink to={`/${dest}`}>{ buttonDisplay.toUpperCase() }</NavLink>
+    </div>
   );
 }
  

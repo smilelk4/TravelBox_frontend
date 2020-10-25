@@ -12,3 +12,10 @@ html {
   color: $color-font-main;
   background-color: $color-bg-light1;
 }
+
+a,
+a:active,
+a:visited {
+  color: grey;
+  text-decoration: none;
+}
