@@ -1,6 +1,7 @@
 .diagonal-container {
   width: 65vw;
   height: 60rem;
+  z-index: -1;
 
   &__content {
     background-color: $color-bg-dark1;

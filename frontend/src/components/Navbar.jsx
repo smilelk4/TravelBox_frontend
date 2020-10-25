@@ -25,6 +25,8 @@ const Navbar = () => {
           <h1 className='navbar__title'>Travel Box</h1>
         </NavLink>
       </navbar>
+      <div className="navbar__signup-login-modal--hidden"></div>
+      <div className="navbar__overlay--hidden"></div>
       <div className='navbar__right'>
         <Button dest="signup" />
         <Button dest="login" />
