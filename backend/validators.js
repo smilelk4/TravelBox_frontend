@@ -39,6 +39,20 @@ const nameValidation = [
 ];
 
 const emailAndPasswordValidation = [
+  check('email')
+    .exists({ checkFalsy: true })
+    .isEmail()
+    .withMessage('Please enter a valid email.')
+    .isLength({ max: 55 })
+    .withMessage('Email must not be longer than 55 characters.')
+    .custom(value => {
+      return User.findOne({ where: { email: value } }).then(user => {
+        if(user) {
+          throw new Error('The provided email address is already used by another account.');
+        }
+        return true;
+      });
+    }),
   check('password')
     .exists({ checkFalsy: true })
     .withMessage('Please enter a valid password.')
@@ -62,3 +76,9 @@ const emailAndPasswordValidation = [
       return true;
     })
 ];
+
+module.exports = {
+  usernameValidation,
+  nameValidation,
+  emailAndPasswordValidation
+};
