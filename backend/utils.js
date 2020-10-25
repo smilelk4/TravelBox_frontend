@@ -12,4 +12,5 @@ const hashPassword = async password => {
 
 module.exports = {
   asyncHandler,
+  hashPassword,
 }
