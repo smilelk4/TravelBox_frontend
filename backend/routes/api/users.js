@@ -1,6 +1,7 @@
 const { Router } = require('express');
-const { asyncHandler } = require('../../utils');
+const { asyncHandler, hashPassword } = require('../../utils');
 const { User } = require('../../db/models');
+const { hash } = require('bcrypt');
 
 const router = Router();
 
@@ -10,15 +11,24 @@ router.get('/', (req, res, next) => {
 
 router.post('/', asyncHandler(async (req, res, next) => {
   const { username, firstName, lastName, email, password, profileImage } = req.body;
+  const hashedPassword = await hashPassword(password.trim());
 
-  console.log(username)
-
-  // const user = await User.create({
-
-  // });
+  const user = await User.create({
+    username: username.trim(),
+    firstName: firstName.trim(),
+    lastName: lastName.trim(),
+    email: email.trim(),
+    hashedPassword,
+    profileImage: profileImage.trim()
+  });
  
   res.status(201).json({
     user: {
+      id: user.id,
+      firstName: user.firstName,
+      lastName: user.lastName,
+      imageUrl: user.imageUrl,
+      username: user.username
     }
   });
 }));
