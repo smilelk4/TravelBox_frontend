@@ -39,6 +39,7 @@
     ]
   },
   "devDependencies": {
+    "redux-logger": "^3.0.6",
     "sass": "^1.27.0"
   }
 }

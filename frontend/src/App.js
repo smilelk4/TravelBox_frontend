@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { Switch } from 'react-router-dom';
 import { ProtectedRoute, PrivateRoute } from '../src/utils/route-util';
@@ -11,6 +11,12 @@ import Footer from './components/Footer';
 
 function App() {
   const isLoggedIn = useSelector(state => state.isLoggedIn);
+  const currentState = useSelector(state => state);
+
+  useEffect(() => {
+    console.log('useeffect from app');
+    // console.log(currentState)
+  });
 
   return (
     <div className="app">

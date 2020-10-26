@@ -1,6 +1,7 @@
 // import { baseUrl } from '../../config';
 import { CREATE_USER } from '../reducers/userReducer';
-import { SIGNUP_FAIL } from '../reducers/errorReducer';
+import { LOG_IN } from '../reducers/loginReducer';
+import { SIGNUP_FAIL, CLEAR_ERRORS } from '../reducers/errorReducer';
 
 export const createUser = data => {
   return async (dispatch, getState) => {
@@ -16,11 +17,16 @@ export const createUser = data => {
     if(res.ok) {
       const userData = await res.json();
       const { user } = userData;
-      localStorage.setItem('user-info', user);
-      return dispatch({
-        type: CREATE_USER,
-        ...user
-      });
+      localStorage.setItem('user-info', JSON.stringify({
+        token: null,
+        user: {
+          id: user.id
+        }
+      }));
+
+      dispatch({ type: LOG_IN });
+      dispatch({ type: CLEAR_ERRORS });
+      return dispatch({ type: CREATE_USER, ...user});
     }
 
     const errorData = await res.json();

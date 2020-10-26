@@ -1,4 +1,4 @@
-const LOG_IN = 'LOG_IN';
+export const LOG_IN = 'LOG_IN';
 
 const loginReducer = (state = false, action) => {
   switch (action.type) {
