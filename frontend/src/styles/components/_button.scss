@@ -6,12 +6,20 @@
   padding: .8rem 1.5rem;
   margin: .5rem;
   border-radius: 5px;
-  background-color: $color-bg-light1;
   transition: background-color .2s ease-out;
   outline: none;
   border: none;
   text-align: center;
+  cursor: pointer;
   
+  &.white {
+    background-color: $color-bg-light1;
+  }
+
+  &.blue {
+    background-color: $color-blue;
+  }
+
   &:hover {
     background-color: $color-bg-light2;
   }

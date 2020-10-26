@@ -1,17 +1,11 @@
 .modal {
   padding: 3rem;
   font-size: 1.5rem;
-
-  h3 {
-    font-size: 3rem;
-    color: $color-green-dark;
-    @include border-bottom-grey();
-  }
   
   &__toggle {
     cursor: pointer;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
 
     span {
       padding: 0 1rem;
@@ -32,6 +26,7 @@
     
     &--hidden { // NN FIX
       width: 27vw;
+      min-width: 45rem;
       height: 64rem;
       position: fixed;
       opacity: 1;

@@ -19,6 +19,13 @@
     transform: translateX(0%);
   }
 
+  &__header {
+    font-size: 3rem;
+    color: $color-green-dark;
+    // background-color: blue;
+    @include border-bottom-grey();
+  }
+
   div {
     width: 20rem;
     position: relative;

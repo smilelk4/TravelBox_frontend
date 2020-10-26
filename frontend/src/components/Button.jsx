@@ -1,15 +1,13 @@
 import React from 'react';
 
-const Button = ({ dest, bgcolor='white' }) => {
+const Button = ({ type, bgcolor='white' }) => {
   let buttonDisplay;
-  if (dest === "signup") buttonDisplay = "Sign Up";
-  if (dest === "login") buttonDisplay = "Log In";
+  if (type === "signup") buttonDisplay = "Sign Up";
+  if (type === "login") buttonDisplay = "Log In";
   
-  if (bgcolor === 'white') bgcolor = '$color-bg-light1';
-
   return ( 
     <input className={`button ${bgcolor}`} 
-    id={dest} 
+    id={type} 
     value={ buttonDisplay.toUpperCase() } />
   );
 }

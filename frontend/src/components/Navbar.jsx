@@ -34,10 +34,10 @@ const Navbar = () => {
       <div className={`navbar__overlay--${modalStatus}`} onClick={handleClick}></div>
       <div className='navbar__right'>
         <div onClick={handleClick}>
-          <Button dest="signup" />
+          <Button type="signup" />
         </div>
         <div onClick={handleClick}>
-          <Button dest="login" />
+          <Button type="login" />
         </div>
         <div className='navbar__hamburger'>X</div>
       </div>

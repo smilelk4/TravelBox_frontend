@@ -14,8 +14,7 @@ const Modal = ({ blockElem, modalStatus, toDisplay, toggleDisplay }) => {
   return ( 
     <div className={`modal ${blockElem}--${modalStatus}`}>
       <p onClick={handleClick} className="modal__toggle"><span>Sign Up</span><span>Log In</span></p>
-      <h3 className="modal__header">{title}</h3>
-      <Form />
+      <Form title={title} />
     </div> 
   );
 }
