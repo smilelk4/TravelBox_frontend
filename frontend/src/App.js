@@ -6,6 +6,7 @@ import { ProtectedRoute, PrivateRoute } from '../src/utils/route-util';
 import Navbar from './components/Navbar';
 import Header from './components/Header';
 import Main from './components/Main';
+import MyBox from './components/MyBox';
 import Footer from './components/Footer';
 
 function App() {
@@ -19,7 +20,11 @@ function App() {
       <Footer />
 
       <Switch>
-
+        <PrivateRoute 
+          path = '/my-box'
+          isLoggedIn = {isLoggedIn}
+          component={MyBox}
+        />
       </Switch>
     </div>
   );
