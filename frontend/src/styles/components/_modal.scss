@@ -20,12 +20,12 @@
 .navbar {
   &__signup-login-modal {
 
-    &--active { // NN FIX
+    &--hidden { // NN FIX
       opacity: 0;
       transform: translate(-50%, -50%) scale(0);
     }
     
-    &--hidden { // NN FIX
+    &--active { // NN FIX
       width: 27vw;
       min-width: 45rem;
       height: 69rem;
