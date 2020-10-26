@@ -18,12 +18,12 @@ const Form = ({ title }) => {
   const errorLog = useSelector(state => state.errors);
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    if(isLoggedIn) {
-      return console.log('logged in')
-    }
-    console.log(errorLog);
-  })
+  // useEffect(() => {
+  //   if(isLoggedIn) {
+  //     return console.log('logged in')
+  //   }
+  //   console.log(errorLog);
+  // })
 
   const handleSubmit = e => {
     e.preventDefault();
