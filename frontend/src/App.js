@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import AOS from 'aos';
 
 import Navbar from './components/Navbar';
 import Header from './components/Header';

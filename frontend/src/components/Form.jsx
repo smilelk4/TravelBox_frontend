@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Redirect } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { createUser } from '../actions/userAction';
 import InputField from './InputField';
@@ -12,7 +13,7 @@ const Form = ({ title }) => {
   const [ password, setPassword ] = useState('');
   const [ confirmPassword, setConfirmPassword ] = useState('');
 
-  const state = useSelector(state => state);
+  // const state = useSelector(state => state);
   const dispatch = useDispatch();
 
   const handleSubmit = e => {
@@ -22,18 +23,19 @@ const Form = ({ title }) => {
       firstName,
       lastName,
       email,
-      password
+      password,
+      confirmPassword,
+      'profileImage': 'profimggg'
     };
 
-    dispatch(createUser);
-    console.log(state)
+    dispatch(createUser(formData));
   }
 
   if (title === 'Log In') {
     return (
       <>
         <h3 className="form__header">{title}</h3>
-        <form className="form" onSubmit={handleSubmit}>
+        <form className="form">
           <InputField 
             type='email' 
             label='Email' 
@@ -52,7 +54,7 @@ const Form = ({ title }) => {
     return (
       <>
         <h3 className="form__header">{title}</h3>
-        <form className="form">
+        <form className="form" onSubmit={handleSubmit}>
           <InputField 
             type='username' 
             label='Username' 
