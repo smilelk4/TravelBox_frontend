@@ -1,9 +1,9 @@
-const LOG_IN = 'LOG-IN';
+const LOG_IN = 'LOG_IN';
 
 const loginReducer = (state = false, action) => {
   switch (action.type) {
     case LOG_IN:
-      return true
+      return true;
     default:
       return state;
   }

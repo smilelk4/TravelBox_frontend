@@ -31,7 +31,6 @@ app.use((err, req, res, next) => {
 });
 
 app.use((err, req, res, next) => {
-  console.error(err);
   res.status(err.status || 500);
   const acceptHeader = req.get('Accept');
   const isProduction = environment === 'production';
@@ -43,11 +42,14 @@ app.use((err, req, res, next) => {
     errors: err.errors
   };
 
-  if (acceptHeader === 'application/json') {
-    res.json(errorData);
-  } else {
-    res.send('Server Error');
-  }
+  console.log(errorData);
+  res.json(errorData);
+  
+  // if (acceptHeader === 'application/json') {
+  //   res.json(errorData);
+  // } else {
+  //   res.send('Server Error');
+  // }
 });
 
 module.exports = app;

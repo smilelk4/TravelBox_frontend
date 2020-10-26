@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Redirect } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
+import Alert from '@material-ui/lab/Alert';
 import { createUser } from '../actions/userAction';
 import InputField from './InputField';
 import Button from './Button';
@@ -13,8 +14,16 @@ const Form = ({ title }) => {
   const [ password, setPassword ] = useState('');
   const [ confirmPassword, setConfirmPassword ] = useState('');
 
-  // const state = useSelector(state => state);
+  const isLoggedIn = useSelector(state => state.isLoggedIn);
+  const errorLog = useSelector(state => state.errors);
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    if(isLoggedIn) {
+      return console.log('logged in')
+    }
+    console.log(errorLog);
+  })
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -35,6 +44,9 @@ const Form = ({ title }) => {
     return (
       <>
         <h3 className="form__header">{title}</h3>
+        <div className="form__error-container">
+          {errorLog.map(err => <p>{err}</p>)}
+        </div>
         <form className="form">
           <InputField 
             type='email' 
@@ -54,6 +66,11 @@ const Form = ({ title }) => {
     return (
       <>
         <h3 className="form__header">{title}</h3>
+        <div className="form__error-container">
+          {errorLog.map(err => (
+            <Alert severity="error">{err}</Alert> 
+          ))}
+        </div>
         <form className="form" onSubmit={handleSubmit}>
           <InputField 
             type='username' 
