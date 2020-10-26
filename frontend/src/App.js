@@ -20,10 +20,19 @@ function App() {
 
   return (
     <div className="app">
-      <Navbar />
-      <Header />
-      <Main />
-      <Footer />
+      {isLoggedIn ? (
+        <>
+          <Navbar />
+          <MyBox />
+        </>
+      ) : (
+        <>
+          <Navbar />
+          <Header />
+          <Main />
+          <Footer />
+        </>
+      )}
 
       <Switch>
         <PrivateRoute 

@@ -4,7 +4,7 @@ import { LOG_IN } from '../reducers/loginReducer';
 import { SIGNUP_FAIL, CLEAR_ERRORS } from '../reducers/errorReducer';
 
 export const createUser = data => {
-  return async (dispatch, getState) => {
+  return async dispatch => {
     const res = await fetch('http://localhost:8000/api/users', {
       method: 'POST',
       headers: {

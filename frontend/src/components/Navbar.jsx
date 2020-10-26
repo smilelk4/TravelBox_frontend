@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import Button from './Button';
 import Modal from './Modal';
@@ -7,6 +8,11 @@ const Navbar = () => {
   const [ modalStatus, setModalStatus ] = useState('hidden');
   const [ navbarStatus, setNavbarStatus ] = useState('initial');
   const [ modalToDisplay, setModalToDisplay ] = useState(null);
+  const isLoggedIn = useSelector(state => state.isLoggedIn);
+
+  useEffect(() => {
+    if (isLoggedIn) setModalStatus('hidden');
+  });
 
   const handleClick = e => {
     modalStatus === 'hidden' ? setModalStatus('active') : setModalStatus('hidden');

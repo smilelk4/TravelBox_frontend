@@ -18,12 +18,11 @@ const Form = ({ title }) => {
   const errorLog = useSelector(state => state.errors);
   const dispatch = useDispatch();
 
-  // useEffect(() => {
-  //   if(isLoggedIn) {
-  //     return console.log('logged in')
-  //   }
-  //   console.log(errorLog);
-  // })
+  useEffect(() => {
+    if(isLoggedIn) {
+      return 
+    }
+  });
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -56,7 +55,7 @@ const Form = ({ title }) => {
             type='password' 
             label='Password' 
             updateState={setPassword} />
-          <Button type='login' bgcolor='blue' linkTo='/' />
+          <Button type='login' bgcolor='blue' linkTo='/my-box' />
         </form>
       </>
     );
@@ -96,7 +95,7 @@ const Form = ({ title }) => {
             type='password' 
             label='Confirm Password' 
             updateState={setConfirmPassword} />
-          <Button type='login' bgcolor='blue' linkTo='/' />
+          <Button type='login' bgcolor='blue' linkTo='/my-box' />
         </form>
       </>
     );
