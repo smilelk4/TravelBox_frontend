@@ -30,7 +30,7 @@ const Form = ({ title }) => {
             type='password' 
             label='Password' 
             updateState={setPassword} />
-          <Button type='login' bgcolor='blue' />
+          <Button type='login' bgcolor='blue' linkTo='/' />
         </form>
       </>
     );
@@ -65,7 +65,7 @@ const Form = ({ title }) => {
             type='password' 
             label='Confirm Password' 
             updateState={setConfirmPassword} />
-          <Button type='login' bgcolor='blue' />
+          <Button type='login' bgcolor='blue' linkTo='/' />
         </form>
       </>
     );

@@ -1,9 +1,21 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
-const Button = ({ type, bgcolor='white' }) => {
+const Button = ({ type, bgcolor='white', linkTo='AAA' }) => {
   let buttonDisplay;
   if (type === "signup") buttonDisplay = "Sign Up";
   if (type === "login") buttonDisplay = "Log In";
+
+  
+  if (linkTo) {
+    return (
+      <NavLink to={linkTo}>
+        <input className={`button ${bgcolor}`} 
+        id={type} 
+        value={ buttonDisplay.toUpperCase() } />
+      </NavLink>
+    )
+  }
   
   return ( 
     <input className={`button ${bgcolor}`} 
