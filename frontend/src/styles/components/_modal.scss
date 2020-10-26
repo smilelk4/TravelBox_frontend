@@ -22,3 +22,47 @@
     }
   }
 }
+
+.navbar {
+  &__signup-login-modal {
+    &--active { // NN FIX
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0);
+    }
+    
+    &--hidden { // NN FIX
+      width: 27vw;
+      height: 64rem;
+      position: fixed;
+      opacity: 1;
+      z-index: 1;
+      top: 50%;
+      left: 50%;
+      background-color: $color-bg-light1;
+      border-radius: 1rem;
+      box-shadow: $shadow-box2;
+      transform: translate(-50%, -50%) scale(1);
+      transition: .2s ease-in-out;
+    }
+  }
+
+  &__overlay {
+    &--hidden {
+      opacity: 0;
+      transform: scale(0);
+    }
+
+    &--active {
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      position: fixed;
+      opacity: 1;
+      background-color: rgba(0, 0, 0, .5);
+      pointer-events: all;
+      transform: scale(1);
+      transition: .2s ease-in-out;
+    }
+  }
+}

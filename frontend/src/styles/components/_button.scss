@@ -1,5 +1,7 @@
 .button {
   color: $color-font-grey2;
+  min-width: 8rem;
+  max-width: 10rem;
   font-size: 1.3rem;
   padding: .8rem 1.5rem;
   margin: .5rem;
@@ -7,7 +9,9 @@
   background-color: $color-bg-light1;
   transition: background-color .2s ease-out;
   outline: none;
-
+  border: none;
+  text-align: center;
+  
   &:hover {
     background-color: $color-bg-light2;
   }
