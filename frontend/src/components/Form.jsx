@@ -1,4 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { createUser } from '../actions/userAction';
 import InputField from './InputField';
 import Button from './Button';
 
@@ -10,18 +12,28 @@ const Form = ({ title }) => {
   const [ password, setPassword ] = useState('');
   const [ confirmPassword, setConfirmPassword ] = useState('');
 
-  // const inputField = type => {
-  //   <InputField 
-  //     type={type} 
-  //     label={type[0].toUpperCase() + type.slice(1)}
-  //     updateState={setEmail} />
-  // };
+  const state = useSelector(state => state);
+  const dispatch = useDispatch();
+
+  const handleSubmit = e => {
+    e.preventDefault();
+    const formData = {
+      username,
+      firstName,
+      lastName,
+      email,
+      password
+    };
+
+    dispatch(createUser);
+    console.log(state)
+  }
 
   if (title === 'Log In') {
     return (
       <>
         <h3 className="form__header">{title}</h3>
-        <form className="form">
+        <form className="form" onSubmit={handleSubmit}>
           <InputField 
             type='email' 
             label='Email' 

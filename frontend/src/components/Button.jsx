@@ -9,18 +9,19 @@ const Button = ({ type, bgcolor='white', linkTo='AAA' }) => {
   
   if (linkTo) {
     return (
-      <NavLink to={linkTo}>
-        <input className={`button ${bgcolor}`} 
+      <input className={`button ${bgcolor}`} 
         id={type} 
-        value={ buttonDisplay.toUpperCase() } />
-      </NavLink>
-    )
+        value={ buttonDisplay.toUpperCase() }
+        type="submit"
+      />
+    );
   }
   
   return ( 
     <input className={`button ${bgcolor}`} 
-    id={type} 
-    value={ buttonDisplay.toUpperCase() } />
+      id={type} 
+      value={ buttonDisplay.toUpperCase() }
+    />
   );
 }
  
