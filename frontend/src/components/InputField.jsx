@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 
-const InputField = ({ type, label, id, updateState }) => {
+const InputField = ({ type, label, updateState }) => {
   const inputField = useRef();
   const inputLabel = useRef();
 
