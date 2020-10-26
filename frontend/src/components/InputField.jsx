@@ -1,8 +1,10 @@
-import React, { useRef } from 'react';
+import React, { useState, useRef } from 'react';
 
 const InputField = ({ type, label, id, updateState }) => {
-  const inputField = useRef(null);
-  const inputLabel = useRef(null);
+  const inputField = useRef();
+  const inputLabel = useRef();
+
+  const [ inputIsSelected, setInputIsSelected ] = useState(false);
 
   const handleInputChange = cb => {
     return e => cb(e.target.value);
@@ -10,11 +12,13 @@ const InputField = ({ type, label, id, updateState }) => {
 
   const onInputFocus = e => {
     inputLabel.current.classList.add('selected');
+    inputLabel.current.parentNode.classList.add('select');
   }
 
   const onInputBlur = e => {
     if(!inputField.current.value) {
       inputLabel.current.classList.remove('selected');
+      inputLabel.current.parentNode.classList.remove('select');
     }
   }
 
@@ -28,7 +32,7 @@ const InputField = ({ type, label, id, updateState }) => {
         onBlur={onInputBlur}
         onChange={handleInputChange(updateState)} />
       <br />
-      <label id={'form__label'}>
+      <label>
         <span ref={inputLabel}>{label}</span>
       </label>
     </div>
