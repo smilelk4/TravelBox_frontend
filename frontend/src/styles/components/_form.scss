@@ -4,23 +4,54 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  // background-color: salmon;
 
   & > * {
     margin: .8rem;
   }
 
   div {
-    // background-color: blue;
     width: 20rem;
     position: relative;
 
+    input {
+      width: 100%;
+      height: 5rem;
+      border: none;
+      padding-top: 2rem;
+      outline: none;
+
+      &:focus + br + label > span,
+      &:valid + br + label > span {
+        transform: translateY(-150%);
+        font-size: 1rem;
+        color: $color-blue;
+      }
+
+      &:focus + br + label::after,
+      &:valid + br + label::after {
+        transform: translateX(0%);
+      }
+    }
+
     label {
       position: absolute;
+      left: 0;
       bottom: 0;
       width: 100%;
       height: 100%;
       pointer-events: none;
+      border-bottom: 1px solid $color-bg-light3;
+      
+      &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        transform: translateX(-100%);
+        border-bottom: 3px solid $color-blue;
+      }
 
       span {
         display: block;
@@ -28,38 +59,7 @@
         bottom: .5rem;
         left: 0;
         transition: all .3s ease;
-
-        &::after {
-          content: '';
-          position: absolute;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          border-bottom: 3px solid $color-blue;
-          transform: translateX(-100%);
-        }
       }
-    }
-  }
-
-  input {
-    width: 100%;
-    height: 5rem;
-    border: none;
-    border-bottom: 1px solid $color-bg-light3;
-    padding-top: 2rem;
-    outline: none;
-
-    &:focus + br + label > span,
-    &:valid + br + label > span {
-      transform: translateY(-150%);
-      font-size: 1rem;
-      color: $color-blue;
-    }
-
-    &:focus + br + label > span::after,
-    &:valid + br + label > span::after {
-      transform: translateX(0%);
     }
   }
 }
