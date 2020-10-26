@@ -1,5 +1,6 @@
 const express = require('express');
 const morgan = require('morgan');
+const cors = require('cors');
 const { ValidationError } = require('sequelize');
 
 const { environment } = require('./config');
@@ -7,6 +8,7 @@ const router = require('./routes');
 
 const app = express();
 
+app.use(cors({ origin: true }));
 app.use(morgan('dev'));
 app.use(express.urlencoded());
 app.use(express.json());
