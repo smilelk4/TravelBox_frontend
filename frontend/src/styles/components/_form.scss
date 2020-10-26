@@ -4,25 +4,25 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
 
   & > * {
     margin: .8rem;
   }
 
-  .selected {
+  .tag-selected {
     transform: translateY(-180%);
     font-size: 1rem;
     color: $color-blue;
   }
 
-  .select::after {
+  .container-selected::after {
     transform: translateX(0%);
   }
 
   div {
     width: 20rem;
     position: relative;
+    overflow: hidden;
 
     input {
       width: 100%;
@@ -31,18 +31,6 @@
       padding-top: 2rem;
       outline: none;
       background-color: transparent;
-
-      // &:focus + br + label > span,
-      // &:valid + br + label > span {
-      //   transform: translateY(-150%);
-      //   font-size: 1rem;
-      //   color: $color-blue;
-      // }
-
-      // &:focus + br + label::after,
-      // &:valid + br + label::after {
-      //   transform: translateX(0%);
-      // }
     }
 
     label {
