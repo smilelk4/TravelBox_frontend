@@ -1,5 +1,4 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
 
 const Button = ({ dest }) => {
   let buttonDisplay;
@@ -7,9 +6,8 @@ const Button = ({ dest }) => {
   if (dest === "login") buttonDisplay = "Log In";
 
   return ( 
-    <div className="button">
+    <div className="button" id={dest}>
       { buttonDisplay.toUpperCase() }
-      {/* <NavLink to={`/${dest}`}>{ buttonDisplay.toUpperCase() }</NavLink> */}
     </div>
   );
 }

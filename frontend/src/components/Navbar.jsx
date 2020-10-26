@@ -6,9 +6,12 @@ import Modal from './Modal';
 const Navbar = () => {
   const [ modalStatus, setModalStatus ] = useState('hidden');
   const [ navbarStatus, setNavbarStatus ] = useState('initial');
+  const [ modalToDisplay, setModalToDisplay ] = useState(null);
 
   const handleClick = e => {
     modalStatus === 'hidden' ? setModalStatus('active') : setModalStatus('hidden');
+    if (e.target.id === 'signup') setModalToDisplay('signup');
+    else if (e.target.id === 'login') setModalToDisplay('login');
   };
 
   window.addEventListener('scroll', e => {
@@ -17,12 +20,17 @@ const Navbar = () => {
 
   return ( 
     <nav className={`navbar navbar--${navbarStatus}`}>
-      <navbar className='navbar__left'>
+      <nav className='navbar__left'>
         <NavLink to='/'>
           <h1 className='navbar__title'>Travel Box</h1>
         </NavLink>
-      </navbar>
-      <Modal blockElem='navbar__signup-login-modal' modalStatus={modalStatus} />
+      </nav>
+      <Modal 
+        blockElem='navbar__signup-login-modal' 
+        modalStatus={modalStatus}
+        toDisplay={modalToDisplay}
+        toggleDisplay={setModalToDisplay}
+        />
       <div className={`navbar__overlay--${modalStatus}`} onClick={handleClick}></div>
       <div className='navbar__right'>
         <div onClick={handleClick}>

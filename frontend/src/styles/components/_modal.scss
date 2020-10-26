@@ -1,0 +1,23 @@
+.modal {
+  padding: 3rem;
+
+  h3 {
+    font-size: 3rem;
+    color: $color-green-dark;
+    @include border-bottom-grey();
+  }
+  
+  &__toggle {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+
+    span {
+      padding: 0 1rem;
+
+      &:first-child {
+        @include border-right-grey();
+      }
+    }
+  }
+}

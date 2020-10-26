@@ -32,6 +32,10 @@
   padding: .8rem 0;
 }
 
+@mixin border-right-grey() {
+  border-right: 1px solid $color-border1;
+}
+
 // @mixin font-gradient-rainbow() {
 //     background-color: #f3ec78;
 //     background-image: linear-gradient(

@@ -19,12 +19,12 @@
   }
 
   &__signup-login-modal {
-    &--hidden {
+    &--active { // NN FIX
       opacity: 0;
       transform: translate(-50%, -50%) scale(0);
     }
     
-    &--active {
+    &--hidden { // NN FIX
       width: 35vw;
       height: 70rem;
       position: fixed;
