@@ -5,11 +5,6 @@ const Form = props => {
   const [ email, setEmail ] = useState('');
   const [ password, setPassword ] = useState('');
 
-  useEffect(() => {
-    console.log(email)
-    console.log(password)
-  })
-
   return ( 
     <form className="form">
       <InputField 

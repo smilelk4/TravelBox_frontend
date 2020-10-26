@@ -9,6 +9,19 @@
     margin: .8rem;
   }
 
+  .selected {
+    transform: translateY(-150%);
+    font-size: 1rem;
+    color: $color-blue;
+
+    &::after {
+      // transform: translateX(0%);
+      width: 200px;
+      height: 200px;
+      background-color: red;
+    }
+  }
+
   div {
     width: 20rem;
     position: relative;
@@ -20,17 +33,17 @@
       padding-top: 2rem;
       outline: none;
 
-      &:focus + br + label > span,
-      &:valid + br + label > span {
-        transform: translateY(-150%);
-        font-size: 1rem;
-        color: $color-blue;
-      }
+      // &:focus + br + label > span,
+      // &:valid + br + label > span {
+      //   transform: translateY(-150%);
+      //   font-size: 1rem;
+      //   color: $color-blue;
+      // }
 
-      &:focus + br + label::after,
-      &:valid + br + label::after {
-        transform: translateX(0%);
-      }
+      // &:focus + br + label::after,
+      // &:valid + br + label::after {
+      //   transform: translateX(0%);
+      // }
     }
 
     label {
