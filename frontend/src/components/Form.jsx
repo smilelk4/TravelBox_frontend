@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import { Redirect } from 'react-router-dom';
+import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Alert from '@material-ui/lab/Alert';
 import { createUser, validateUser } from '../actions/userAction';
@@ -14,15 +13,8 @@ const Form = ({ title }) => {
   const [ password, setPassword ] = useState('');
   const [ confirmPassword, setConfirmPassword ] = useState('');
 
-  const isLoggedIn = useSelector(state => state.isLoggedIn);
   const errorLog = useSelector(state => state.errors);
   const dispatch = useDispatch();
-
-  useEffect(() => {
-    if(isLoggedIn) {
-      // return 
-    }
-  });
 
   const handleSignup = e => {
     e.preventDefault();
@@ -61,11 +53,13 @@ const Form = ({ title }) => {
         <form className="form" onSubmit={handleLogin}>
           <InputField 
             type='email' 
-            label='Email' 
+            label='Email'
+            currentState={email}
             updateState={setEmail} />
           <InputField 
             type='password' 
-            label='Password' 
+            label='Password'
+            currentState={password}
             updateState={setPassword} />
           <Button type='login' bgcolor='blue' linkTo='/my-box' />
         </form>

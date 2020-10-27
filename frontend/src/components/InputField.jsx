@@ -1,23 +1,22 @@
-import React, { useRef } from 'react';
+import React, { useRef, useContext, useEffect } from 'react';
 
-const InputField = ({ type, label, updateState }) => {
+const InputField = ({ type, label, currentState = '', updateState }) => {
   const inputField = useRef();
   const inputLabel = useRef();
 
-  const handleInputChange = cb => {
-    return e => cb(e.target.value);
-  }
-
-  const onInputFocus = () => {
+  const addSelectedClass = () => {
     inputLabel.current.classList.add('tag-selected');
     inputLabel.current.parentNode.classList.add('container-selected');
   }
 
-  const onInputBlur = () => {
+  const removeSelectedClass = () => {
     if(!inputField.current.value) {
       inputLabel.current.classList.remove('tag-selected');
       inputLabel.current.parentNode.classList.remove('container-selected');
     }
+  }
+  const handleInputChange = cb => {
+    return e => cb(e.target.value);
   }
 
   return ( 
@@ -25,8 +24,8 @@ const InputField = ({ type, label, updateState }) => {
       <input 
         type={type} 
         ref={inputField}
-        onFocus={onInputFocus}
-        onBlur={onInputBlur}
+        onFocus={addSelectedClass}
+        onBlur={removeSelectedClass}
         onChange={handleInputChange(updateState)} />
       <br />
       <label>

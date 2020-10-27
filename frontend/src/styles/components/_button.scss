@@ -20,6 +20,10 @@
     background-color: $color-blue;
   }
 
+  &.green {
+    background-color: $color-green-mid;
+  }
+
   &:hover {
     background-color: $color-bg-light2;
   }

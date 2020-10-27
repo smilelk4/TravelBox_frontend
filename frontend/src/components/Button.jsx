@@ -6,6 +6,7 @@ const Button = ({ type, bgcolor='white', linkTo='AAA' }) => {
   if (type === "signup") buttonDisplay = "Sign Up";
   if (type === "login") buttonDisplay = "Log In";
   if (type === "logout") buttonDisplay = "Log Out";
+  if (type === "demo") buttonDisplay = "Demo";
 
   if (linkTo) {
     return (

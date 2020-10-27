@@ -1,6 +1,5 @@
 import React from 'react';
 import Form from './Form';
-import TextField from '@material-ui/core/TextField';
 
 const Modal = ({ blockElem, modalStatus, toDisplay, toggleDisplay }) => {
   const title = toDisplay === 'signup' ? 'Sign Up' : 'Log In';
