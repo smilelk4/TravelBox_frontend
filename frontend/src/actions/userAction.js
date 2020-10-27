@@ -1,7 +1,7 @@
 // import { baseUrl } from '../../config';
-import { CREATE_USER } from '../reducers/userReducer';
+import { CREATE_USER, RESTORE_USER } from '../reducers/userReducer';
 import { LOG_IN } from '../reducers/loginReducer';
-import { SIGNUP_FAIL, CLEAR_ERRORS } from '../reducers/errorReducer';
+import { SIGNUP_FAIL, LOGIN_FAIL, CLEAR_ERRORS } from '../reducers/errorReducer';
 
 export const createUser = data => {
   return async dispatch => {
@@ -33,8 +33,34 @@ export const createUser = data => {
     dispatch({
       type: SIGNUP_FAIL,
       errors: errorData.errors
-    })
+    });
 
     console.log('Create user unsuccessful.');
   }
+};
+
+export const restoreUser = token => {
+  return async dispatch => {
+    const res = await fetch('http://localhost:8000/api/users/token', {
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    });
+
+    if (res.ok) {
+      const userData = res.json();
+      
+      dispatch({ type: LOG_IN });
+      dispatch({ type: CLEAR_ERRORS });
+      return dispatch({ type: RESTORE_USER, ...userData });
+    }
+
+    const errorData = await res.json();
+    dispatch({
+      type: LOGIN_FAIL,
+      errors: errorData.errors
+    });
+
+    console.log('User verification unsuccessful.');
+  };
 };

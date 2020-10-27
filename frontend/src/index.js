@@ -8,7 +8,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import configureStore from './store/configureStore';
 
 const userInfo = localStorage.getItem('user-info');
-const store = configureStore({ userInfo });
+const store = configureStore({ userInfo: JSON.parse(userInfo) });
 
 ReactDOM.render(
   <React.StrictMode>

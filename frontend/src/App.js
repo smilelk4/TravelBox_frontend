@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Switch } from 'react-router-dom';
 import { ProtectedRoute, PrivateRoute } from '../src/utils/route-util';
+import { restoreUser } from './actions/userAction';
 
 import Navbar from './components/Navbar';
 import Header from './components/Header';
@@ -10,12 +11,14 @@ import MyBox from './components/MyBox';
 import Footer from './components/Footer';
 
 function App() {
+  const dispatch = useDispatch();
+  const userToken = useSelector(state => state.userInfo.token);
   const isLoggedIn = useSelector(state => state.isLoggedIn);
 
   useEffect(() => {
     console.log('useeffect from app');
     if (!isLoggedIn) {
-
+      dispatch(restoreUser(userToken)); 
     }
   });
 
