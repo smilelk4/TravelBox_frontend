@@ -7,7 +7,8 @@ import { Provider } from 'react-redux';
 import { BrowserRouter as Router } from 'react-router-dom';
 import configureStore from './store/configureStore';
 
-const store = configureStore();
+const userInfo = localStorage.getItem('user-info');
+const store = configureStore({ userInfo });
 
 ReactDOM.render(
   <React.StrictMode>

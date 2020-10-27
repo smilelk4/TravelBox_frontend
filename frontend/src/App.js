@@ -11,11 +11,12 @@ import Footer from './components/Footer';
 
 function App() {
   const isLoggedIn = useSelector(state => state.isLoggedIn);
-  const currentState = useSelector(state => state);
 
   useEffect(() => {
     console.log('useeffect from app');
-    // console.log(currentState)
+    if (!isLoggedIn) {
+
+    }
   });
 
   return (
