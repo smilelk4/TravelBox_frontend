@@ -39,7 +39,38 @@ export const createUser = data => {
   }
 };
 
-export const restoreUser = token => {
+export const validateUser = data => {
+  return async dispatch => {
+    const res = await fetch('http://localhost:8000/api/users/auth', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify(data)
+    });
+  
+    if(res.ok) {
+      const userData = await res.json();
+      const { token, user } = userData;
+      localStorage.setItem('user-info', JSON.stringify({
+        token,
+        user: {
+          id: user.id
+        }
+      }));
+
+      // console.log('USERRRR', userData)
+  
+      dispatch({ type: LOG_IN });
+      dispatch({ type: CLEAR_ERRORS });
+      return dispatch({ type: RESTORE_USER, ...userData});
+    }
+    dispatch({ type: LOGIN_FAIL });
+  }
+};
+
+export const restoreUserStore = token => {
   return async dispatch => {
     const res = await fetch('http://localhost:8000/api/users/token', {
       headers: {
@@ -54,13 +85,8 @@ export const restoreUser = token => {
       dispatch({ type: CLEAR_ERRORS });
       return dispatch({ type: RESTORE_USER, ...userData });
     }
-
-    const errorData = await res.json();
-    dispatch({
-      type: LOGIN_FAIL,
-      errors: errorData.errors
-    });
-
-    console.log('User verification unsuccessful.');
   };
 };
+
+// dispatch({ type: LOGIN_FAIL });
+// console.log('User verification unsuccessful.');

@@ -6,6 +6,8 @@ const errorReducer = (state = [], action) => {
   switch (action.type) {
     case SIGNUP_FAIL:
       return action.errors;
+    case LOGIN_FAIL:
+      return ['Invalid login.'];
     case CLEAR_ERRORS:
       return [];
     default:

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Redirect } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import Alert from '@material-ui/lab/Alert';
-import { createUser } from '../actions/userAction';
+import { createUser, validateUser } from '../actions/userAction';
 import InputField from './InputField';
 import Button from './Button';
 
@@ -20,11 +20,11 @@ const Form = ({ title }) => {
 
   useEffect(() => {
     if(isLoggedIn) {
-      return 
+      // return 
     }
   });
 
-  const handleSubmit = e => {
+  const handleSignup = e => {
     e.preventDefault();
     const formData = {
       username,
@@ -39,14 +39,26 @@ const Form = ({ title }) => {
     dispatch(createUser(formData));
   }
 
+  const handleLogin = e => {
+    e.preventDefault();
+    const formData = {
+      email,
+      password
+    };
+
+    dispatch(validateUser(formData));
+  }
+
   if (title === 'Log In') {
     return (
       <>
         <h3 className="form__header">{title}</h3>
         <div className="form__error-container">
-          {errorLog.map(err => <p>{err}</p>)}
+          {errorLog.map(err => (
+            <Alert severity="error">{err}</Alert> 
+          ))}
         </div>
-        <form className="form">
+        <form className="form" onSubmit={handleLogin}>
           <InputField 
             type='email' 
             label='Email' 
@@ -70,7 +82,7 @@ const Form = ({ title }) => {
             <Alert severity="error">{err}</Alert> 
           ))}
         </div>
-        <form className="form" onSubmit={handleSubmit}>
+        <form className="form" onSubmit={handleSignup}>
           <InputField 
             type='username' 
             label='Username' 
@@ -95,7 +107,7 @@ const Form = ({ title }) => {
             type='password' 
             label='Confirm Password' 
             updateState={setConfirmPassword} />
-          <Button type='login' bgcolor='blue' linkTo='/my-box' />
+          <Button type='signup' bgcolor='blue' linkTo='/my-box' />
         </form>
       </>
     );
