@@ -59,8 +59,6 @@ export const validateUser = data => {
           id: user.id
         }
       }));
-
-      // console.log('USERRRR', userData)
   
       dispatch({ type: LOG_IN });
       dispatch({ type: CLEAR_ERRORS });
@@ -87,6 +85,3 @@ export const restoreUserStore = token => {
     }
   };
 };
-
-// dispatch({ type: LOGIN_FAIL });
-// console.log('User verification unsuccessful.');

@@ -1,24 +1,33 @@
 import React, { useState, useEffect } from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import Button from './Button';
 import Modal from './Modal';
+import { LOG_OUT } from '../reducers/loginReducer';
+import { DELETE_USER_INFO } from '../reducers/userReducer';
 
 const Navbar = () => {
   const [ modalStatus, setModalStatus ] = useState('hidden');
   const [ navbarStatus, setNavbarStatus ] = useState('initial');
   const [ modalToDisplay, setModalToDisplay ] = useState(null);
   const isLoggedIn = useSelector(state => state.isLoggedIn);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     if (isLoggedIn) setModalStatus('hidden');
   });
 
-  const handleClick = e => {
+  const handleSignupOrLogin = e => {
     modalStatus === 'hidden' ? setModalStatus('active') : setModalStatus('hidden');
     if (e.target.id === 'signup') setModalToDisplay('signup');
     else if (e.target.id === 'login') setModalToDisplay('login');
   };
+
+  const handleLogout = () => {
+    dispatch({ type: LOG_OUT });
+    dispatch({ type: DELETE_USER_INFO });
+    localStorage.removeItem('user-info');
+  }
 
   window.addEventListener('scroll', e => {
     window.pageYOffset > 55 ? setNavbarStatus('scrolled') : setNavbarStatus('initial');
@@ -37,14 +46,25 @@ const Navbar = () => {
         toDisplay={modalToDisplay}
         toggleDisplay={setModalToDisplay}
         />
-      <div className={`navbar__overlay--${modalStatus}`} onClick={handleClick}></div>
+      <div className={`navbar__overlay--${modalStatus}`} onClick={handleSignupOrLogin}></div>
       <div className='navbar__right'>
-        <div onClick={handleClick}>
-          <Button type="signup" />
-        </div>
-        <div onClick={handleClick}>
-          <Button type="login" />
-        </div>
+        {isLoggedIn ? (
+          <>
+            'MyBox'
+            <div onClick={handleLogout}>
+              <Button type="logout" />
+            </div>
+          </>
+        ) : (
+          <>
+            <div onClick={handleSignupOrLogin}>
+              <Button type="signup" />
+            </div>
+            <div onClick={handleSignupOrLogin}>
+              <Button type="login" />
+            </div>
+          </>
+        )}
         <div className='navbar__hamburger'>X</div>
       </div>
     </nav>

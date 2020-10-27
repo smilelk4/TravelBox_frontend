@@ -1,4 +1,5 @@
-export const GENERATE_USER_INFO = 'CREATE-USER';
+export const GENERATE_USER_INFO = 'GENERATE_USER_INFO';
+export const DELETE_USER_INFO = 'DELETE_USER_INFO';
 
 const userReducer = (state = {}, action) => {
   switch(action.type) {
@@ -13,6 +14,8 @@ const userReducer = (state = {}, action) => {
           username: action.user.username
         }
       }
+    case DELETE_USER_INFO:
+      return {};
     default:
       return state;
   }

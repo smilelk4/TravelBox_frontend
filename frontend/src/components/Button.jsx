@@ -5,7 +5,8 @@ const Button = ({ type, bgcolor='white', linkTo='AAA' }) => {
   let buttonDisplay;
   if (type === "signup") buttonDisplay = "Sign Up";
   if (type === "login") buttonDisplay = "Log In";
-  
+  if (type === "logout") buttonDisplay = "Log Out";
+
   if (linkTo) {
     return (
       <input className={`button ${bgcolor}`} 
