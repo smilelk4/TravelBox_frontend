@@ -1,5 +1,5 @@
 // import { baseUrl } from '../../config';
-import { CREATE_USER, RESTORE_USER } from '../reducers/userReducer';
+import { GENERATE_USER_INFO } from '../reducers/userReducer';
 import { LOG_IN } from '../reducers/loginReducer';
 import { SIGNUP_FAIL, LOGIN_FAIL, CLEAR_ERRORS } from '../reducers/errorReducer';
 
@@ -26,7 +26,7 @@ export const createUser = data => {
 
       dispatch({ type: LOG_IN });
       dispatch({ type: CLEAR_ERRORS });
-      return dispatch({ type: CREATE_USER, ...userData});
+      return dispatch({ type: GENERATE_USER_INFO, ...userData});
     }
 
     const errorData = await res.json();
@@ -64,7 +64,7 @@ export const validateUser = data => {
   
       dispatch({ type: LOG_IN });
       dispatch({ type: CLEAR_ERRORS });
-      return dispatch({ type: RESTORE_USER, ...userData});
+      return dispatch({ type: GENERATE_USER_INFO, ...userData});
     }
     dispatch({ type: LOGIN_FAIL });
   }
@@ -79,11 +79,11 @@ export const restoreUserStore = token => {
     });
 
     if (res.ok) {
-      const userData = res.json();
+      const userData = await res.json();
       
       dispatch({ type: LOG_IN });
       dispatch({ type: CLEAR_ERRORS });
-      return dispatch({ type: RESTORE_USER, ...userData });
+      return dispatch({ type: GENERATE_USER_INFO, token, user: userData });
     }
   };
 };

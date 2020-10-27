@@ -1,9 +1,8 @@
-export const CREATE_USER = 'CREATE-USER';
-export const RESTORE_USER = 'RESTORE_USER';
+export const GENERATE_USER_INFO = 'CREATE-USER';
 
 const userReducer = (state = {}, action) => {
   switch(action.type) {
-    case CREATE_USER || RESTORE_USER:
+    case GENERATE_USER_INFO:
       return {
         token: action.token,
         user: {
@@ -14,10 +13,6 @@ const userReducer = (state = {}, action) => {
           username: action.user.username
         }
       }
-    // case RESTORE_USER:
-    //   return {
-    //     token: 
-    //   }
     default:
       return state;
   }
