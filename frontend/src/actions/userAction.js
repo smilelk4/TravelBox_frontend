@@ -16,9 +16,9 @@ export const createUser = data => {
 
     if(res.ok) {
       const userData = await res.json();
-      const { user } = userData;
+      const { token, user } = userData;
       localStorage.setItem('user-info', JSON.stringify({
-        token: null,
+        token,
         user: {
           id: user.id
         }
@@ -26,7 +26,7 @@ export const createUser = data => {
 
       dispatch({ type: LOG_IN });
       dispatch({ type: CLEAR_ERRORS });
-      return dispatch({ type: CREATE_USER, ...user});
+      return dispatch({ type: CREATE_USER, ...userData});
     }
 
     const errorData = await res.json();
@@ -35,6 +35,6 @@ export const createUser = data => {
       errors: errorData.errors
     })
 
-    console.log('Create user unsuccessful.')
+    console.log('Create user unsuccessful.');
   }
 };

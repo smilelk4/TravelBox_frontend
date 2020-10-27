@@ -5,11 +5,14 @@ const userReducer = (state = {}, action) => {
   switch(action.type) {
     case CREATE_USER:
       return {
-        id: action.id,
-        firstName: action.firstName,
-        lastName: action.lastName,
-        imageUrl: action.imageUrl,
-        username: action.username
+        token: action.token,
+        user: {
+          id: action.user.id,
+          firstName: action.user.firstName,
+          lastName: action.user.lastName,
+          imageUrl: action.user.imageUrl,
+          username: action.user.username
+        }
       }
     default:
       return state;
