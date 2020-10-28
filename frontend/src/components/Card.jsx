@@ -1,14 +1,14 @@
 import React, { useRef, useEffect } from 'react';
-import { useSelector } from 'react-redux';
 
-const Card = ({ type }) => {
+const Card = ({ type, id, userId, collectionName, description, createdAt, updatedAt }) => {
   const cardDiv = useRef();
-  const isLoggedIn = useSelector(state => state.isLoggedIn);
 
   useEffect(() => {
     if (type === 'horizontal-1') {
       cardDiv.current.classList.add(type);
     }
+
+    console.log(collectionName)
 
     const observer = new IntersectionObserver(entries => {
       if (entries[0].intersectionRatio > 0) {
@@ -25,7 +25,8 @@ const Card = ({ type }) => {
 
   return ( 
     <div ref={cardDiv} className='card'>
-      <h3>Hiii</h3>
+      <h3>{collectionName}</h3>
+      <p>{description}</p>
     </div>
   );
 }
