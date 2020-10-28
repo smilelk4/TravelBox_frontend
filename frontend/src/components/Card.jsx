@@ -1,10 +1,10 @@
 import React, { useRef, useEffect } from 'react';
 
-const Card = ({ type, id, userId, collectionName, description, createdAt, updatedAt }) => {
+const Card = ({ type, collection, wish }) => {
   const cardDiv = useRef();
 
   useEffect(() => {
-    if (type === 'horizontal-1') {
+    if (type) {
       cardDiv.current.classList.add(type);
     }
 
@@ -21,12 +21,25 @@ const Card = ({ type, id, userId, collectionName, description, createdAt, update
   });
 
 
-  return ( 
-    <div ref={cardDiv} className='card'>
-      <h3>{collectionName}</h3>
-      <p>{description}</p>
-    </div>
-  );
+  if (collection) {
+    const { id, userId, collectionName, description, createdAt, updatedAt } = collection;
+    return ( 
+      <div ref={cardDiv} className='card'>
+        <h3>{collectionName}</h3>
+        <p>{description}</p>
+      </div>
+    );
+  }
+  if (wish) {
+    const { collectionId, description, country, regionCity, targetSaving, interestLevel, targetDate, createdAt, updatedAt } = wish;
+    return ( 
+      <div ref={cardDiv} className='card'>
+        <h4>{description}</h4>
+        <p>{country}</p>
+        <p>{regionCity}</p>
+      </div>
+    );
+  }
 }
  
 export default Card;

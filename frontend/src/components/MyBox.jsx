@@ -25,11 +25,11 @@ const MyBox = () => {
     <div className="mybox">
       <DiagonalContainer />
       <div ref={containerDiv} className="mybox__card-container">
-        {collections.map(collection => <Card type='horizontal-1' {...collection} />)}
+        {collections.map(collection => <Card type='horizontal-1' collection={collection} />)}
       </div>
       <div className="mybox__starred-container">
       <PageTitle title="Starred Wishes" size="medium" />
-        {wishes.map(wish => <div>{wish.description}</div>)}
+        {wishes.map(wish => <Card type='rectangle-1' wish={wish}/>)}
       </div>
     </div>
   );

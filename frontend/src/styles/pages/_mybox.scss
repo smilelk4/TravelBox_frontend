@@ -6,7 +6,7 @@
   // grid-template-columns: repeat(auto-fit, minmax(2rem, 1fr));
 
   & * {
-    border: 1px solid black;
+    // border: 1px solid black;
   }
 
   &__card-container {
@@ -21,9 +21,9 @@
       display: none; 
     }
 
-    & > * {
-      margin: 3rem 0;
-    }
+    // & > * {
+    //   margin: 3rem 0;
+    // }
   }
 
   &__starred-container {

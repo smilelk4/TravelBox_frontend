@@ -1,6 +1,6 @@
 .card {
     // width: 14vw;
-    height: 32rem;
+    // height: 32rem;
     padding: 2rem;
     background-color: $color-bg-light1;
     border-radius: 3px;
@@ -12,6 +12,12 @@
 
     h3 {
       font-size: 3rem;
+      color: $color-green-dark;
+      @include border-bottom-grey();
+    }
+
+    h4 {
+      font-size: 2rem;
       color: $color-green-dark;
       @include border-bottom-grey();
     }
@@ -29,5 +35,12 @@
     margin: 2rem;
     width: auto;
     height: 20rem;
+  }
+
+  &.rectangle-1 {
+    margin: 1.5rem;
+    width: auto;
+    height: 100%;
+    // height: auto;
   }
 }

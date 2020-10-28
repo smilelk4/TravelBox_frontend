@@ -10,17 +10,13 @@ import Header from './components/Header';
 import Main from './components/Main';
 import MyBox from './components/MyBox';
 import Footer from './components/Footer';
+import Error from './components/Error';
 
 function App() {
   const dispatch = useDispatch();
   const userInfo = useSelector(state => state.userInfo);
   const isLoggedIn = useSelector(state => state.isLoggedIn);
 
-  // useEffect(() => {
-  //   if (!isLoggedIn && userInfo) {
-  //     dispatch(restoreUserStore(userInfo.token)); 
-  //   }
-  // }, [isLoggedIn, userInfo, dispatch]);
   useEffect(() => {
     if (!isLoggedIn && userInfo) {
       dispatch(restoreUserStore(userInfo.token)); 
@@ -44,6 +40,7 @@ function App() {
           render={props => <MyBox {...props} />}
         />
         }
+        <Route path='*' render={props => <Error />} />
       </Switch>
     </div>
   );
