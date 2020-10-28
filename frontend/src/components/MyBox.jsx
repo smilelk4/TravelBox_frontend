@@ -4,14 +4,14 @@ import Card from './Card';
 
 const MyBox = () => {
   return ( 
-    <>
+    <div className="mybox">
       <DiagonalContainer />
-      <div mybox__card-container>
+      <div className="mybox__card-container">
           <Card type='horizontal-1' />
           <Card type='horizontal-1' />
           <Card type='horizontal-1' />
       </div>
-    </>
+    </div>
   );
 }
  

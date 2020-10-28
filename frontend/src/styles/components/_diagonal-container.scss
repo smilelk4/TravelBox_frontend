@@ -3,6 +3,7 @@
   min-height: auto;
   height: 90vh;
   z-index: -1;
+  position: absolute;
 
   &__content {
     background-color: $color-bg-dark1;
