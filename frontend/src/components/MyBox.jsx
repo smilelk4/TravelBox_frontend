@@ -2,6 +2,7 @@ import React, { useRef, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchCollections } from '../actions/collectionActions';
 import DiagonalContainer from './DiagonalContainer';
+import PageTitle from './PageTitle';
 import Card from './Card';
 
 const MyBox = () => {
@@ -19,11 +20,18 @@ const MyBox = () => {
       <DiagonalContainer />
       <div ref={containerDiv} className="mybox__card-container">
         {collections.map(collection => <Card type='horizontal-1' {...collection} />)}
-        {/* <Card type='horizontal-1' />
-        <Card type='horizontal-1' />
-        <Card type='horizontal-1' />
-        <Card type='horizontal-1' />
-        <Card type='horizontal-1' /> */}
+      </div>
+      <div className="mybox__starred-container">
+      <PageTitle title="Starred Wishes" size="medium" />
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
       </div>
     </div>
   );

@@ -1,8 +1,11 @@
 .page-title {
-  font-size: 5rem;
   @include font-gradient-section-title();
+
+  &.large {
+    font-size: 5rem;
+  }
   position: absolute;
 
-  display: flex;
-  align-items: flex-end;
+  // display: flex;
+  // align-items: flex-end;
 }

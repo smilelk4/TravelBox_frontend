@@ -1,9 +1,10 @@
 import React from 'react';
 
-const PageTitle = ({title}) => {
-  return ( 
-    <h2 className='page-title'>{title}</h2>
-  );
+const PageTitle = ({title, size="large"}) => {
+
+  return (
+    <h2 className={`page-title ${size}`}>{title}</h2>
+  )
 }
  
 export default PageTitle;

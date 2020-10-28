@@ -1,18 +1,18 @@
 .mybox {
   width: 100vw;
   display: grid;
-  grid-template-columns: 1fr 3fr 1fr 3fr 1fr;
-  grid-template-rows: 8rem 70rem;
+  grid-template-columns: 1fr 3fr 1fr 1fr 2fr 1fr;
+  grid-template-rows: 8rem 4rem 70rem;
   // grid-template-columns: repeat(auto-fit, minmax(2rem, 1fr));
 
-  & > * {
-    // border: 1px solid black;
+  & * {
+    border: 1px solid black;
   }
 
   &__card-container {
-
     grid-column: 2 / span 1;
-    grid-row: 2 / span 1;
+    grid-row: 3 / span 1;
+    // background-color: $color-bg-light2-transparent;
     overflow-y: scroll;
     -ms-overflow-style: none;
     scrollbar-width: none;
@@ -24,5 +24,14 @@
     & > * {
       margin: 3rem 0;
     }
+  }
+
+  &__starred-container {
+    grid-column: -3 / span 1;
+    grid-row: 3 / span 1;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    grid-template-rows: repeat(auto, minmax(10rem, 1fr));
   }
 }
