@@ -16,7 +16,6 @@ function App() {
   const isLoggedIn = useSelector(state => state.isLoggedIn);
 
   useEffect(() => {
-    console.log('useeffect from app');
     if (!isLoggedIn && userInfo) {
       dispatch(restoreUserStore(userInfo.token)); 
     }

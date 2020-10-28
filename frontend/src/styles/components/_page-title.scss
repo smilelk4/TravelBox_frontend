@@ -1,6 +1,10 @@
 .page-title {
   @include font-gradient-section-title();
 
+  &.medium {
+    font-size: 3rem;
+    top: -5rem;
+  }
   &.large {
     font-size: 5rem;
   }

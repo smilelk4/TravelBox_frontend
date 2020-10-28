@@ -14,4 +14,4 @@ export const fetchCollections = id => {
     }
     dispatch({ type: COLLECTIONS_FETCH_FAIL });
   }
-}
+};
