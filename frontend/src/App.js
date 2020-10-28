@@ -9,6 +9,7 @@ import Navbar from './components/Navbar';
 import Header from './components/Header';
 import Main from './components/Main';
 import MyBox from './components/MyBox';
+import Collection from './components/Collection';
 import Footer from './components/Footer';
 import Error from './components/Error';
 
@@ -34,12 +35,14 @@ function App() {
             <Footer />
           </>
         } />
-        {isLoggedIn &&
         <Route 
-          path='/my-box'
-          render={props => <MyBox {...props} />}
+          exact path='/my-box'
+          render={props => isLoggedIn ? <MyBox {...props} /> : <Error />}
         />
-        }
+        <Route 
+          path='/my-collections/:id'
+          render={props => <Collection {...props} />}
+        />
         <Route path='*' render={props => <Error />} />
       </Switch>
     </div>

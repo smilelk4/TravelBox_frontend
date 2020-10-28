@@ -1,4 +1,5 @@
 import React, { useRef, useEffect } from 'react';
+import { NavLink } from 'react-router-dom';
 
 const Card = ({ type, collection, wish }) => {
   const cardDiv = useRef();
@@ -24,10 +25,12 @@ const Card = ({ type, collection, wish }) => {
   if (collection) {
     const { id, userId, collectionName, description, createdAt, updatedAt } = collection;
     return ( 
+      <NavLink to={`/my-collections/${id}`}>
       <div ref={cardDiv} className='card'>
         <h3>{collectionName}</h3>
         <p>{description}</p>
       </div>
+      </NavLink>
     );
   }
   if (wish) {
