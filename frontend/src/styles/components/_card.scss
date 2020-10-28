@@ -18,4 +18,9 @@
     transform: translate(-.8em, -.8rem);
     box-shadow: $shadow-box1;
   }
+
+  &.horizontal-1 {
+    width: 70rem;
+    height: 20rem;
+  }
 }

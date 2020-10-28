@@ -1,9 +1,17 @@
 import React from 'react';
 import DiagonalContainer from './DiagonalContainer';
+import Card from './Card';
 
 const MyBox = () => {
   return ( 
-    <DiagonalContainer />
+    <>
+      <DiagonalContainer />
+      <div mybox__card-container>
+          <Card type='horizontal-1' />
+          <Card type='horizontal-1' />
+          <Card type='horizontal-1' />
+      </div>
+    </>
   );
 }
  

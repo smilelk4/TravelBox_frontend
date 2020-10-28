@@ -6,9 +6,6 @@ const DiagonalContainer = () => {
   return ( 
     <div className="diagonal-container">
       <div className='diagonal-container__content'>
-        <Card />
-        <Card />
-        <Card />
       </div>
     </div>
   );
