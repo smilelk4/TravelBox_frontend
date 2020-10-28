@@ -26,7 +26,9 @@ export const createUser = data => {
 
       dispatch({ type: GENERATE_USER_INFO, ...userData});
       dispatch({ type: CLEAR_ERRORS });
-      return dispatch({ type: LOG_IN });
+      dispatch({ type: LOG_IN });
+      window.location.href='/my-box'
+      return;
     }
 
     const errorData = await res.json();
@@ -62,7 +64,9 @@ export const validateUser = data => {
   
       dispatch({ type: GENERATE_USER_INFO, ...userData});
       dispatch({ type: CLEAR_ERRORS });
-      return dispatch({ type: LOG_IN });
+      dispatch({ type: LOG_IN });
+      window.location.href='/my-box';
+      return;
     }
     dispatch({ type: LOGIN_FAIL });
   }
@@ -82,6 +86,7 @@ export const restoreUserStore = token => {
       dispatch({ type: GENERATE_USER_INFO, token, user: userData });
       dispatch({ type: CLEAR_ERRORS });
       dispatch({ type: LOG_IN });
+      return;
     }
   };
 };

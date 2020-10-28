@@ -22,11 +22,10 @@ function App() {
   //   }
   // }, [isLoggedIn, userInfo, dispatch]);
   useEffect(() => {
-    console.log('1111', userInfo)
     if (!isLoggedIn && userInfo) {
       dispatch(restoreUserStore(userInfo.token)); 
     }
-  }, [userInfo, dispatch]);
+  }, [isLoggedIn, userInfo, dispatch]);
 
   return (
     <div className="app">
@@ -39,15 +38,12 @@ function App() {
             <Footer />
           </>
         } />
+        {isLoggedIn &&
         <Route 
           path='/my-box'
           render={props => <MyBox {...props} />}
         />
-        {/* <PrivateRoute 
-          path = '/'
-          isLoggedIn = {isLoggedIn}
-          component={MyBox}
-        /> */}
+        }
       </Switch>
     </div>
   );

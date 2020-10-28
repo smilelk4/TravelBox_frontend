@@ -66,7 +66,7 @@ const Navbar = () => {
           <>
             'MyBox'
             <div onClick={handleLogout}>
-              <Button type="logout" />
+              <Button type="logout" linkTo='/' />
             </div>
             <div className='navbar__hamburger'>X</div>
           </>

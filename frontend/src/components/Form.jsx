@@ -61,7 +61,7 @@ const Form = ({ title }) => {
             label='Password'
             currentState={password}
             updateState={setPassword} />
-          <Button type='login' bgcolor='blue' linkTo='/my-box' />
+          <Button type='login' bgcolor='blue' reg='true' />
         </form>
       </>
     );
@@ -101,7 +101,7 @@ const Form = ({ title }) => {
             type='password' 
             label='Confirm Password' 
             updateState={setConfirmPassword} />
-          <Button type='signup' bgcolor='blue' linkTo='/my-box' />
+          <Button type='signup' bgcolor='blue' reg='true' />
         </form>
       </>
     );
