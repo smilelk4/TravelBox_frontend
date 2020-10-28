@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchCollections } from '../actions/collectionActions';
-import { restoreUserStore } from '../actions/userAction';
+import { fetchWishes } from '../actions/wishActions';
 import DiagonalContainer from './DiagonalContainer';
 import PageTitle from './PageTitle';
 import Card from './Card';
@@ -12,9 +12,11 @@ const MyBox = () => {
   const userInfo = useSelector(state => state.userInfo);
   // const userId = useSelector(state => state.userInfo.user.id);
   const collections = useSelector(state => state.collections);
+  const wishes = useSelector(state => state.wishes);
   
   useEffect(() => {
     dispatch(fetchCollections(userInfo.user.id));
+    dispatch(fetchWishes(userInfo.user.id));
   }, []);
 
   return ( 
@@ -25,15 +27,7 @@ const MyBox = () => {
       </div>
       <div className="mybox__starred-container">
       <PageTitle title="Starred Wishes" size="medium" />
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
+        {wishes.map(wish => <div>{wish.description}</div>)}
       </div>
     </div>
   );

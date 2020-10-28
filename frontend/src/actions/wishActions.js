@@ -1,5 +1,5 @@
 import { LOAD_WISHES } from '../reducers/wishReducer';
-import { WISHES_FETCH_FAIL } from '../reducers/error';
+import { WISHES_FETCH_FAIL } from '../reducers/errorReducer';
 
 export const fetchWishes = id => {
   return async dispatch => {
@@ -12,6 +12,7 @@ export const fetchWishes = id => {
         wishes
       });
     }
+    
     dispatch({ type: WISHES_FETCH_FAIL });
   }
 };
