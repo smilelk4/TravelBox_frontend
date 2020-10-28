@@ -1,12 +1,13 @@
 .card {
-    width: 14vw;
+    // width: 14vw;
     height: 32rem;
     padding: 2rem;
     background-color: $color-bg-light1;
     border-radius: 3px;
-    transition: transform .2s ease-in, box-shadow .5s ease-in;
+    transition: transform .2s ease-in, box-shadow .5s ease-in, opacity 1s ease-in;
     box-shadow: none;
     transform: translate(0);
+    opacity: 0;
 
     h3 {
       font-size: 3rem;
@@ -19,8 +20,12 @@
     box-shadow: $shadow-box1;
   }
 
+  &--visible {
+    opacity: 1;
+  }
+
   &.horizontal-1 {
-    width: 70rem;
+    width: auto;
     height: 20rem;
   }
 }

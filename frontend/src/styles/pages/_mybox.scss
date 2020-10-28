@@ -2,20 +2,24 @@
   width: 100vw;
   display: grid;
   grid-template-columns: 1fr 3fr 1fr 3fr 1fr;
-  grid-template-rows: 8rem 80rem;
+  grid-template-rows: 8rem 70rem;
   // grid-template-columns: repeat(auto-fit, minmax(2rem, 1fr));
 
   & > * {
-    border: 1px solid black;
+    // border: 1px solid black;
   }
 
   &__card-container {
-    width: 100%;
-    // height: 100rem;
+
     grid-column: 2 / span 1;
     grid-row: 2 / span 1;
     overflow-y: scroll;
-    overflow-x: none;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none; 
+    }
 
     & > * {
       margin: 3rem 0;
