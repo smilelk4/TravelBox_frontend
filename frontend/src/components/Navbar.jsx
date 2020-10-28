@@ -79,7 +79,7 @@ const Navbar = () => {
               <Button type="login" />
             </div>
             <div onClick={handleDemoLogin}>
-              <Button type="demo" bgcolor="green" />
+              <Button type="demo" bgcolor="green" linkTo='/my-box' />
             </div>
           </>
         )}

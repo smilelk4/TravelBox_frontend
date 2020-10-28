@@ -8,8 +8,6 @@ const Card = ({ type, id, userId, collectionName, description, createdAt, update
       cardDiv.current.classList.add(type);
     }
 
-    console.log(collectionName)
-
     const observer = new IntersectionObserver(entries => {
       if (entries[0].intersectionRatio > 0) {
       cardDiv.current.classList.add('card--visible');

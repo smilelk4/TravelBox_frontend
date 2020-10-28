@@ -60,9 +60,9 @@ export const validateUser = data => {
         }
       }));
   
-      dispatch({ type: CLEAR_ERRORS });
       dispatch({ type: GENERATE_USER_INFO, ...userData});
-      dispatch({ type: LOG_IN });
+      dispatch({ type: CLEAR_ERRORS });
+      return dispatch({ type: LOG_IN });
     }
     dispatch({ type: LOGIN_FAIL });
   }
@@ -80,8 +80,8 @@ export const restoreUserStore = token => {
       const userData = await res.json();
       
       dispatch({ type: GENERATE_USER_INFO, token, user: userData });
-      dispatch({ type: LOG_IN });
       dispatch({ type: CLEAR_ERRORS });
+      dispatch({ type: LOG_IN });
     }
   };
 };

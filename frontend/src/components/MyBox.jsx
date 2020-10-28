@@ -15,9 +15,11 @@ const MyBox = () => {
   const wishes = useSelector(state => state.wishes);
   
   useEffect(() => {
-    dispatch(fetchCollections(userInfo.user.id));
-    dispatch(fetchWishes(userInfo.user.id));
-  }, []);
+    if (userInfo) {
+      dispatch(fetchCollections(userInfo.user.id));
+      dispatch(fetchWishes(userInfo.user.id));
+    }
+  }, [userInfo]);
 
   return ( 
     <div className="mybox">

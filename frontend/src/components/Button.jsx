@@ -1,6 +1,7 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
-const Button = ({ type, bgcolor='white', linkTo='AAA' }) => {
+const Button = ({ type, bgcolor='white', linkTo='' }) => {
   let buttonDisplay;
   if (type === "signup") buttonDisplay = "Sign Up";
   if (type === "login") buttonDisplay = "Log In";
@@ -9,11 +10,13 @@ const Button = ({ type, bgcolor='white', linkTo='AAA' }) => {
 
   if (linkTo) {
     return (
-      <input className={`button ${bgcolor}`} 
+      <NavLink to={linkTo}>
+        <input className={`button ${bgcolor}`} 
         id={type} 
         value={ buttonDisplay.toUpperCase() }
-        type="submit"
+        // type="submit"
       />
+      </NavLink>
     );
   }
   

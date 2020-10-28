@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Switch } from 'react-router-dom';
 import { ProtectedRoute, PrivateRoute } from '../src/utils/route-util';
+import { Redirect, Route } from 'react-router-dom';
 import { restoreUserStore } from './actions/userAction';
 
 import Navbar from './components/Navbar';
@@ -15,34 +16,38 @@ function App() {
   const userInfo = useSelector(state => state.userInfo);
   const isLoggedIn = useSelector(state => state.isLoggedIn);
 
+  // useEffect(() => {
+  //   if (!isLoggedIn && userInfo) {
+  //     dispatch(restoreUserStore(userInfo.token)); 
+  //   }
+  // }, [isLoggedIn, userInfo, dispatch]);
   useEffect(() => {
+    console.log('1111', userInfo)
     if (!isLoggedIn && userInfo) {
       dispatch(restoreUserStore(userInfo.token)); 
     }
-  }, [isLoggedIn, userInfo, dispatch]);
+  }, [userInfo, dispatch]);
 
   return (
     <div className="app">
-      {isLoggedIn ? (
-        <>
-          <Navbar />
-          <MyBox />
-        </>
-      ) : (
-        <>
-          <Navbar />
-          <Header />
-          <Main />
-          <Footer />
-        </>
-      )}
-
+      <Navbar />
       <Switch>
-        <PrivateRoute 
-          path = '/my-box'
+        <Route exact path='/' render={props =>
+          <>
+            <Header />
+            <Main />
+            <Footer />
+          </>
+        } />
+        <Route 
+          path='/my-box'
+          render={props => <MyBox {...props} />}
+        />
+        {/* <PrivateRoute 
+          path = '/'
           isLoggedIn = {isLoggedIn}
           component={MyBox}
-        />
+        /> */}
       </Switch>
     </div>
   );
