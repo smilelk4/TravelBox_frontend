@@ -9,7 +9,6 @@ export const fetchCollection = id => {
 
     if (res.ok) {
       let { collection } = await res.json();
-      console.log('!!!!', collection)
       dispatch({
         type: LOAD_WISHES,
         wishes: collection.MyWishes
@@ -32,7 +31,7 @@ export const fetchCollections = id => {
     if (res.ok) {
       const { collections } = await res.json();
       return dispatch({
-        type: LOAD_COLLECTION,
+        type: LOAD_COLLECTIONS,
         collections
       });
     }
