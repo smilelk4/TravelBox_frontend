@@ -1,10 +1,10 @@
 import React from 'react';
 import PageTitle from './PageTitle';
-import Card from './Card';
 
 const DiagonalContainer = () => {
   return ( 
     <div className="diagonal-container">
+    <PageTitle title="MyCollections" />
       <div className='diagonal-container__content'>
       </div>
     </div>

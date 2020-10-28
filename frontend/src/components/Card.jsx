@@ -1,7 +1,9 @@
 import React, { useRef, useEffect } from 'react';
+import { useSelector } from 'react-redux';
 
-const Card = ({ type, root }) => {
+const Card = ({ type }) => {
   const cardDiv = useRef();
+  const isLoggedIn = useSelector(state => state.isLoggedIn);
 
   useEffect(() => {
     if (type === 'horizontal-1') {
@@ -16,11 +18,13 @@ const Card = ({ type, root }) => {
     }
     });
     observer.observe(cardDiv.current);
+  
+    return () => observer.disconnect();
   });
 
 
   return ( 
-    <div ref={cardDiv} className='card card--animation'>
+    <div ref={cardDiv} className='card'>
       <h3>Hiii</h3>
     </div>
   );

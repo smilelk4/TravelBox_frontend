@@ -31,9 +31,9 @@ const Navbar = () => {
   };
 
   const handleLogout = () => {
+    localStorage.removeItem('user-info');
     dispatch({ type: LOG_OUT });
     dispatch({ type: DELETE_USER_INFO });
-    localStorage.removeItem('user-info');
   }
 
   const handleDemoLogin = () => {
