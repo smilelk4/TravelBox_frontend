@@ -1,11 +1,11 @@
 import React from 'react';
 import PageTitle from './PageTitle';
 
-const DetailContainer = props => {
+const DetailContainer = (props) => {
   return ( 
     <div className="collection-detail">
       <div className="collection-detail__container">
-        <PageTitle title='hihihi'/>
+        <PageTitle title={props.title}/>
           <div className="collection-detail__contents">
             {props.children}
           </div>
