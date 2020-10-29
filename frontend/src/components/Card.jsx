@@ -1,8 +1,11 @@
 import React, { useRef, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { fetchCollection } from '../actions/collectionActions'
 import { NavLink } from 'react-router-dom';
 
 const Card = ({ type, collection, wish }) => {
   const cardDiv = useRef();
+  const dispatch = useDispatch();
 
   useEffect(() => {
     if (type) {
@@ -20,7 +23,6 @@ const Card = ({ type, collection, wish }) => {
   
     return () => observer.disconnect();
   });
-
 
   if (collection) {
     const { id, userId, collectionName, description, createdAt, updatedAt } = collection;

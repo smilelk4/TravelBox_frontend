@@ -15,14 +15,18 @@ import Error from './components/Error';
 
 function App() {
   const dispatch = useDispatch();
+  // const userInfo = localStorage.getItem('user-info');
   const userInfo = useSelector(state => state.userInfo);
   const isLoggedIn = useSelector(state => state.isLoggedIn);
+  const initState = useSelector(state => state)
+  console.log(1111, initState)
 
   useEffect(() => {
     if (!isLoggedIn && userInfo) {
+      console.log('HIIIIIIII!!!!!!!!!')
       dispatch(restoreUserStore(userInfo.token)); 
     }
-  }, [isLoggedIn, userInfo, dispatch]);
+  }, [dispatch]);
 
   return (
     <div className="app">
