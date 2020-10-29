@@ -17,14 +17,15 @@ function App() {
   const dispatch = useDispatch();
   // const userInfo = localStorage.getItem('user-info');
   const userInfo = useSelector(state => state.userInfo);
+  const token = useSelector(state => state.token);
   const isLoggedIn = useSelector(state => state.isLoggedIn);
   const initState = useSelector(state => state)
   console.log(1111, initState)
 
   useEffect(() => {
-    if (!isLoggedIn && userInfo) {
-      console.log('HIIIIIIII!!!!!!!!!')
-      dispatch(restoreUserStore(userInfo.token)); 
+    if (!isLoggedIn && !userInfo.id) {
+      // console.log('HIIIIIIII!!!!!!!!!')
+      dispatch(restoreUserStore(token)); 
     }
   }, [dispatch]);
 

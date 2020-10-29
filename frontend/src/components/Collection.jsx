@@ -15,12 +15,10 @@ const Collection = props => {
   // );
 
   useEffect(() => {
-    console.log(1, collection)
 
     if (!collection) {
       (async () => {
         await dispatch(fetchCollection(collectionId));
-        console.log(2, collection)
       })()
     }
 

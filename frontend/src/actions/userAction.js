@@ -2,6 +2,7 @@
 import { GENERATE_USER_INFO } from '../reducers/userReducer';
 import { LOG_IN } from '../reducers/loginReducer';
 import { SIGNUP_FAIL, LOGIN_FAIL, CLEAR_ERRORS } from '../reducers/errorReducer';
+import { ADD_TOKEN_INFO } from '../reducers/tokenReducer';
 
 export const createUser = data => {
   return async dispatch => {
@@ -24,7 +25,8 @@ export const createUser = data => {
         }
       }));
 
-      dispatch({ type: GENERATE_USER_INFO, ...userData});
+      dispatch({ type: GENERATE_USER_INFO, user: {...user}});
+      dispatch({ type: ADD_TOKEN_INFO, token });
       dispatch({ type: CLEAR_ERRORS });
       dispatch({ type: LOG_IN });
       window.location.href='/my-box'
@@ -37,7 +39,7 @@ export const createUser = data => {
       errors: errorData.errors
     });
 
-    console.log('Create user unsuccessful.');
+    console.error('Create user unsuccessful.');
   }
 };
 
@@ -62,7 +64,8 @@ export const validateUser = data => {
         }
       }));
   
-      dispatch({ type: GENERATE_USER_INFO, ...userData});
+      dispatch({ type: GENERATE_USER_INFO, user: {...user}});
+      dispatch({ type: ADD_TOKEN_INFO, token });
       dispatch({ type: CLEAR_ERRORS });
       dispatch({ type: LOG_IN });
       window.location.href='/my-box';
@@ -83,7 +86,8 @@ export const restoreUserStore = token => {
     if (res.ok) {
       const userData = await res.json();
       
-      dispatch({ type: GENERATE_USER_INFO, token, user: userData });
+      dispatch({ type: GENERATE_USER_INFO, user: userData });
+      dispatch({ type: ADD_TOKEN_INFO, token });
       dispatch({ type: CLEAR_ERRORS });
       dispatch({ type: LOG_IN });
       return;

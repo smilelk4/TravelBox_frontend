@@ -25,6 +25,7 @@ export const fetchCollection = id => {
 };
 
 export const fetchCollections = id => {
+  console.log(id, 'idid')
   return async dispatch => {
     const res = await fetch(`http://localhost:8000/api/users/${id}/collections`);
 

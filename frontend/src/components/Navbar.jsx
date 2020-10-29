@@ -6,6 +6,7 @@ import Modal from './Modal';
 import { validateUser } from '../actions/userAction';
 import { LOG_OUT } from '../reducers/loginReducer';
 import { DELETE_USER_INFO } from '../reducers/userReducer';
+import { DELETE_TOKEN_INFO } from '../reducers/tokenReducer';
 export const DemoContext = createContext({});
 
 const Navbar = () => {
@@ -34,6 +35,7 @@ const Navbar = () => {
     localStorage.removeItem('user-info');
     dispatch({ type: LOG_OUT });
     dispatch({ type: DELETE_USER_INFO });
+    dispatch({ type: DELETE_TOKEN_INFO });
   }
 
   const handleDemoLogin = () => {

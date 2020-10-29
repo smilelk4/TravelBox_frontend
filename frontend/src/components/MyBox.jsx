@@ -10,14 +10,13 @@ const MyBox = () => {
   const containerDiv = useRef();
   const dispatch = useDispatch();
   const userInfo = useSelector(state => state.userInfo);
-  // const userId = useSelector(state => state.userInfo.user.id);
   const collections = useSelector(state => state.collections);
   const wishes = useSelector(state => state.wishes);
   
   useEffect(() => {
     if (userInfo) {
-      dispatch(fetchCollections(userInfo.user.id));
-      dispatch(fetchStarredWishes(userInfo.user.id));
+      dispatch(fetchCollections(userInfo.id));
+      dispatch(fetchStarredWishes(userInfo.id));
     }
   }, [userInfo]);
 
