@@ -7,6 +7,7 @@ import WishDetail from './WishDetail';
 import DiagonalContainer from './DiagonalContainer';
 
 const DisplayWish = props => {
+  console.log('!!!!!!HUHUUHIUHUIHUIHiu')
   const dispatch = useDispatch();
   const collectionId = props.match.params.id;
   const wishes = useSelector(state => state.wishes);

@@ -1,6 +1,6 @@
 import React, { useRef, useContext, useEffect } from 'react';
 
-const InputField = ({ type, label, currentState = '', updateState }) => {
+const InputField = ({ type, label, currentState = '', updateState, size = '' }) => {
   const inputField = useRef();
   const inputLabel = useRef();
 
@@ -20,7 +20,7 @@ const InputField = ({ type, label, currentState = '', updateState }) => {
   }
 
   return ( 
-    <div>
+    <div className={size}>
       <input 
         type={type} 
         ref={inputField}

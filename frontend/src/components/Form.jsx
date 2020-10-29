@@ -78,15 +78,15 @@ const Form = ({ title }) => {
         </div>
         <form className="form" onSubmit={handleSignup}>
           <InputField 
-            type='username' 
+            type='text' 
             label='Username' 
             updateState={setUsername} />
           <InputField 
-            type='firstName' 
+            type='text' 
             label='First Name' 
             updateState={setFirstName} />
           <InputField 
-            type='lastName' 
+            type='text' 
             label='Last Name' 
             updateState={setLastName} />
           <InputField 

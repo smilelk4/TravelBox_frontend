@@ -7,6 +7,7 @@ const Button = ({ type, bgcolor='white', linkTo='', reg }) => {
   if (type === "login") buttonDisplay = "Log In";
   if (type === "logout") buttonDisplay = "Log Out";
   if (type === "demo") buttonDisplay = "Demo";
+  if (type === "createWish") buttonDisplay = "Create a New Wish";
 
   if (linkTo) {
     return (

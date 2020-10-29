@@ -10,6 +10,7 @@ import Main from './components/Main';
 import MyBox from './components/MyBox';
 import DisplayCollection from './components/DisplayCollection';
 import DisplayWish from './components/DisplayWish';
+import CreateWish from './components/CreateWish';
 // import Wish from './components/Wish';
 import Footer from './components/Footer';
 import Error from './components/Error';
@@ -38,7 +39,11 @@ function App() {
           render={props => <DisplayCollection {...props} />}
         />
         <Route 
-          path='/my-wishes/:id'
+          path='/my-wishes/create'
+          render={props => <CreateWish {...props} />}
+        />
+        <Route 
+          exact path='/my-wishes/:id'
           render={props => <DisplayWish {...props} />}
         />
         <Route path='*' render={props => <Error {...props} />} />
