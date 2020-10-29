@@ -4,7 +4,6 @@ import { useSelector, useDispatch } from 'react-redux';
 import { fetchCollection } from '../actions/collectionActions'
 import DetailContainer from './DetailContainer';
 import CollectionDetail from './CollectionDetail';
-import WishDetail from './WishDetail';
 
 const DisplayCollection = props => {
   const dispatch = useDispatch();
@@ -15,16 +14,18 @@ const DisplayCollection = props => {
   // const [currentWishSelected, setCurrentWishSelected] = useState(null);
 
   useEffect(() => {
+    // console.log('a')
     if(!collection) {
       (async () => {
         await dispatch(fetchCollection(collectionId));
         setIsUserLoaded(true);
       })()
+      // console.log('b')
     }
-  }, [collection, dispatch])
+  })
 
 
-  if (isUserLoaded) {    
+  if (collection) {    
     return (
       <>
         <DetailContainer title={collection.collectionName}>
