@@ -14,12 +14,10 @@ const DisplayCollection = props => {
   // const [currentWishSelected, setCurrentWishSelected] = useState(null);
 
   useEffect(() => {
-    // if(!collection) {
-      (async () => {
-        await dispatch(fetchCollection(collectionId));
-        setIsUserLoaded(true);
-      })()
-    // }
+    (async () => {
+      await dispatch(fetchCollection(collectionId));
+      setIsUserLoaded(true);
+    })()
   }, [props.match.params.id])
 
 

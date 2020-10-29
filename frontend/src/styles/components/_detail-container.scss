@@ -35,6 +35,7 @@
 
   h2 {
     @include border-bottom-grey();
+    margin: 1rem 3rem;
   }
 
   img {

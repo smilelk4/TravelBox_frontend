@@ -1,26 +1,20 @@
 import React, { useEffect } from 'react';
-
+import PageSection from './PageSection';
 
 const WishDetail = (props) => {
-  const { id, description, collectionId, country, regionCity, interestLevel, targetDate, targetSaving, starred, accomplished, createdAt, updatedAt, ToDos: toDos } = props;
+  const { id, title, description, collectionId, country, regionCity, interestLevel, goalDate, goalSaving, starred, accomplished, createdAt, updatedAt, ToDos: toDos } = props;
   return ( 
     <div>
       <div className="wish-detail">
         <div className="wish-detail__container">
           <div className="wish-detail__contents">
+            <PageSection label='Description:' value={description}/>
+            <PageSection label='Country:' value={country}/>
+            <PageSection label='Region/City:' value={regionCity}/>
+            <PageSection label='Interest Level:' value={interestLevel}/>
+            <PageSection label='Goal Date:' value={goalDate}/>
+            <PageSection label='Goal Saving:' value={goalSaving}/>
 
-            <p className="wish-detail__label">Description:</p>
-            <p>{description}</p>
-            <p className="wish-detail__label">Country:</p>
-            <p>{country}</p>
-            <p className="wish-detail__label">Region/City:</p>
-            <p>{regionCity}</p>
-            <p className="wish-detail__label">Interest Level:</p>
-            <p>{interestLevel}</p>
-            <p className="wish-detail__label">Goal Date:</p>
-            <p>{targetDate}</p>
-            <p className="wish-detail__label">Goal Saving:</p>
-            <p>{targetSaving}</p>
             {toDos && (
               <ul>
               {toDos.map(toDo => <li key={toDo.id}>{toDo.description}</li>)}
