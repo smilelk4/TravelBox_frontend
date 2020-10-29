@@ -13,13 +13,8 @@ const Collection = props => {
   const collection = useSelector(state => state.collections[0]);
   const wishes = useSelector(state => state.wishes);
   const [isUserLoaded, setisUserLoaded] = useState(false);
-  // const [selectedWish, setSelectedWish] = useState(null); 
-  
-  // const wishSelected = wishes.filter(wish => wish.id === props.match.params.id);
-  // // const wishSelected = wishes.find(wish => wish.id === props.match.params.id);
-  // console.log(wishSelected)
-  
-  // console.log(props.match.params.id, 'PARAM')
+  // const [currentWishSelected, setCurrentWishSelected] = useState(null);
+
   useEffect(() => {
     (async () => {
       await dispatch(fetchCollection(collectionId));
@@ -28,16 +23,20 @@ const Collection = props => {
   }, [])
 
   useEffect(() => {
-    wishes.forEach(wish => console.log(wish.id))
-    console.log(props.match.params.id, "PROPS")
-    const wishSelected = wishes.find(wish => wish.id === 3);
-    console.log(wishSelected)
-  }, [props.match.params.id])
+    if (props.match.path === '/my-wishes/:id') {
+      // setCurrentWishSelected(props.match.params.id);
+      console.log(props.match.params.id)
+      
+      const a = wishes.find(wish => wish.id === props.match.params.id);
+      console.log('WITH PARAMS', a);
+
+      const b = wishes.find(wish => wish.id === 1);
+      console.log('WITHOUT PARAMS', b);
+    }
+
+  })
   
-  {/* <CollectionDetail {...collection}/> */}
-  if (isUserLoaded) {
-    // const wishSelected = wishes.filter(wish => wish.id === props.match.params.id);
-    
+  if (isUserLoaded) {    
     return (
       <>
         <DiagonalContainer type="vertical-1" />

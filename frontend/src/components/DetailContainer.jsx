@@ -3,10 +3,10 @@ import PageTitle from './PageTitle';
 
 const DetailContainer = (props) => {
   return ( 
-    <div className="collection-detail">
-      <div className="collection-detail__container">
+    <div className="detail-container">
+      <div className="detail-container__container">
         <PageTitle title={props.title}/>
-          <div className="collection-detail__contents">
+          <div className="detail-container__contents">
             {props.children}
           </div>
       </div>
