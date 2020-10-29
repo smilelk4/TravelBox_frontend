@@ -12,15 +12,15 @@
   }
 
   &.vertical-1 {
-    width: 35vw;
+    width: 60rem;
     min-height: auto;
-    height: 180vh;
+    height: 120rem;
     transform: rotate(49deg);
   }
 
   &.vertical-2 {
     background-color: $color-blue;
-    width: 35vw;
+    width: 80rem;
     min-height: auto;
     height: 50rem;
     transform: translateX(130rem);
