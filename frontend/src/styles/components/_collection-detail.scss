@@ -1,6 +1,6 @@
 .collection-detail {
   width: 100vw;
-  height: auto;
+  height: 100rem;
   display: flex;
   justify-content: center;
   margin-top: 5rem;
@@ -12,11 +12,13 @@
     background-color: $color-bg-light1-transparent;
     border-radius: 1rem;
     box-shadow: $shadow-box3;
+    position: relative;
+
   }
 
   &__contents {
     margin: 10rem 3rem;
-    height: auto;
+    height: 85%;
     display: flex;
     flex-direction: column;
     overflow-y: scroll;
@@ -27,9 +29,15 @@
       display: none; 
     }
 
-    &__info {
-      
+    & > * {
+      margin: .8rem 1rem;
     }
+  }
+
+  &__info {
+    position: absolute;
+    bottom: 1rem;
+    right: 3rem;
   }
 
   img {
