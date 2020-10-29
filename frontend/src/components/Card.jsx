@@ -5,7 +5,6 @@ import { NavLink } from 'react-router-dom';
 
 const Card = ({ type, collection, wish }) => {
   const cardDiv = useRef();
-  const dispatch = useDispatch();
 
   useEffect(() => {
     if (type) {
