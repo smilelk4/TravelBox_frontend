@@ -35,14 +35,17 @@ const Card = ({ type, collection, wish }) => {
       </NavLink>
     );
   }
+
   if (wish) {
-    const { collectionId, description, country, regionCity, targetSaving, interestLevel, targetDate, createdAt, updatedAt } = wish;
+    const { id, collectionId, description, country, regionCity, targetSaving, interestLevel, targetDate, createdAt, updatedAt } = wish;
     return ( 
-      <div ref={cardDiv} className='card'>
-        <h4>{description}</h4>
-        <p>{country}</p>
-        <p>{regionCity}</p>
-      </div>
+      <NavLink to={`/my-wishes/${id}`}>
+        <div ref={cardDiv} className='card'>
+          <h4>{description}</h4>
+          <p>{country}</p>
+          <p>{regionCity}</p>
+        </div>
+      </NavLink>
     );
   }
 }
