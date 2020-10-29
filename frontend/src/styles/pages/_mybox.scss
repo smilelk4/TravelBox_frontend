@@ -12,7 +12,6 @@
   &__card-container {
     grid-column: 2 / span 1;
     grid-row: 3 / span 1;
-    // background-color: $color-bg-light2-transparent;
     overflow-y: scroll;
     -ms-overflow-style: none;
     scrollbar-width: none;
@@ -20,10 +19,6 @@
     &::-webkit-scrollbar {
       display: none; 
     }
-
-    // & > * {
-    //   margin: 3rem 0;
-    // }
   }
 
   &__starred-container {

@@ -5,10 +5,35 @@
   justify-content: center;
   margin-top: 5rem;
 
-  &__contents {
-    border: 1px solid black;
+  &__container {
+    // border: 1px solid black;
     height: 100vh;
-    width: 70rem;
+    width: 90rem;
+    background-color: $color-bg-light1-transparent;
+    border-radius: 1rem;
+    box-shadow: $shadow-box3;
+  }
 
+  &__contents {
+    margin: 10rem 3rem;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none; 
+    }
+  }
+
+  img {
+    width: 40rem;
+    align-self: center;
+  }
+
+  h2 {
+    @include border-bottom-grey();
   }
 }

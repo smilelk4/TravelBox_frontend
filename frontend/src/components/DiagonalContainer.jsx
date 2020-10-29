@@ -7,8 +7,6 @@ const DiagonalContainer = ({ title, type = "horizontal-1"}) => {
   return ( 
     <div className={`diagonal-container ${type}`}>
     <PageTitle title={title} />
-      <div className='diagonal-container__content'>
-      </div>
     </div>
   );
 }
