@@ -1,9 +1,11 @@
 import React from 'react';
 import PageTitle from './PageTitle';
 import DiagonalContainer from './DiagonalContainer';
+import Card from './Card';
+import { useSelector } from 'react-redux';
 
-const CollectionDisplay = ({ id, collectionName, description, createdAt, updatedAt }) => {
-  
+const CollectionDetail = ({ id, collectionName, description, createdAt, updatedAt }) => {
+  const wishes = useSelector(state => state.wishes);
   return ( 
     <>
       <DiagonalContainer type="vertical-1" />
@@ -14,14 +16,17 @@ const CollectionDisplay = ({ id, collectionName, description, createdAt, updated
       <div className="collection-detail__contents">
         <img src="http://www.clarksonmotors.co.uk/wp-content/uploads/2015/04/placeholder-600x400.png"></img>
         <p> { description } </p>
-        <p>{ id }</p>
-        <p>{ createdAt }</p>
-        <p>{ updatedAt }</p>
+        {wishes.map(wish => <Card wish={wish} />)}
       </div>
+      <p className="collection-detail__info">
+        <span>collection id: { id }</span>
+        <span>created at: { createdAt }</span>
+        <span>last updated: { updatedAt }</span>
+      </p>
         </div>
      </div>
     </>
   );
 }
  
-export default CollectionDisplay;
+export default CollectionDetail;
