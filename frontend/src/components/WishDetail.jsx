@@ -2,16 +2,18 @@ import React, { useEffect } from 'react';
 import PageTitle from './PageTitle';
 
 const WishDetail = (props) => {
-  const { id, collectionId, description, country, regionCity, interestLevel, targetDate, targetSaving, starred, accomplished, createdAt, updatedAt } = props;
+  const { id, collectionId, country, regionCity, interestLevel, targetDate, targetSaving, starred, accomplished, createdAt, updatedAt } = props;
 
   return ( 
     <div>
       <div className="wish-detail">
         <div className="wish-detail__container">
-          <h1>WISHDETAIILL</h1>
-          <PageTitle title={description}/>
           <div className="wish-detail__contents">
-            <img src="http://www.clarksonmotors.co.uk/wp-content/uploads/2015/04/placeholder-600x400.png"></img>
+            <p>Country: {country}</p>
+            <p>Region/City: {regionCity}</p>
+            <p>Interest Level: {interestLevel}</p>
+            <p>Goal Date: {targetDate}</p>
+            <p>Goal Saving: {targetSaving}</p>
           </div>
           <p className="wish-detail__info">
             <span>wish id: { id }</span>

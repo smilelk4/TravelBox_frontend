@@ -24,7 +24,7 @@ const DisplayWish = props => {
     
     return (
       <>
-        <DetailContainer>
+        <DetailContainer title={wish.description}>
           <WishDetail {...wish}/>
         </DetailContainer>
       </>
