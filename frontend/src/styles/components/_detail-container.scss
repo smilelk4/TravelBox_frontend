@@ -33,12 +33,6 @@
     }
   }
 
-  &__info {
-    position: absolute;
-    bottom: 1rem;
-    right: 3rem;
-  }
-
   h2 {
     @include border-bottom-grey();
   }
