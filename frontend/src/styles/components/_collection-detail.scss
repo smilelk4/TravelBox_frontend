@@ -1,0 +1,14 @@
+.collection-detail {
+  width: 100vw;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  margin-top: 5rem;
+
+  &__contents {
+    border: 1px solid black;
+    height: 100vh;
+    width: 70rem;
+
+  }
+}

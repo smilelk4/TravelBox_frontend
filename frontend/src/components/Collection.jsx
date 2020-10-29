@@ -2,8 +2,7 @@ import React, { useEffect } from 'react';
 import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchCollection } from '../actions/collectionActions'
-import { DELETE_COLLECTIONS } from '../reducers/collectionReducer'
-import useRestoreUser from '../customHooks/useRestoreUser';
+import CollectionDisplay from './CollectionDetail';
 
 const Collection = props => {
   const dispatch = useDispatch();
@@ -22,11 +21,7 @@ const Collection = props => {
   if (isUserLoaded) {
     return ( 
       <>
-        <div>{collection.id}</div>
-        <div>{collection.collectionName}</div>
-        <div>{collection.description}</div>
-        <div>{collection.createdAt}</div>
-        <div>{collection.updatedAt}</div>
+        <CollectionDisplay {...collection}/>
       </>
     );
   }
