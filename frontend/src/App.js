@@ -1,9 +1,8 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import React from 'react';
+import { useSelector } from 'react-redux';
 import { Switch } from 'react-router-dom';
-import { ProtectedRoute, PrivateRoute } from '../src/utils/route-util';
-import { Redirect, Route } from 'react-router-dom';
-import { restoreUserStore } from './actions/userAction';
+import { Route } from 'react-router-dom';
+import useRestoreUser from './customHooks/useRestoreUser';
 
 import Navbar from './components/Navbar';
 import Header from './components/Header';
@@ -14,20 +13,8 @@ import Footer from './components/Footer';
 import Error from './components/Error';
 
 function App() {
-  const dispatch = useDispatch();
-  // const userInfo = localStorage.getItem('user-info');
-  const userInfo = useSelector(state => state.userInfo);
-  const token = useSelector(state => state.token);
   const isLoggedIn = useSelector(state => state.isLoggedIn);
-  const initState = useSelector(state => state)
-  console.log(1111, initState)
-
-  useEffect(() => {
-    if (!isLoggedIn && !userInfo.id) {
-      // console.log('HIIIIIIII!!!!!!!!!')
-      dispatch(restoreUserStore(token)); 
-    }
-  }, [dispatch]);
+  useRestoreUser();
 
   return (
     <div className="app">
