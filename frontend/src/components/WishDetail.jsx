@@ -1,12 +1,12 @@
 import React from 'react';
+import PageTitle from './PageTitle';
 
 const WishDetail = ({ id, collectionId, description, country, regionCity, targetSaving, interest:evel, targetDate, starred, accomplished, createdAt, updatedAt }) => {
   return ( 
     <div>
-      <DiagonalContainer type="vertical-1" />
-      <DiagonalContainer type="vertical-2" />
       <div className="wish-detail">
         <div className="wish-detail__container">
+          <h1>WISHDETAIILL</h1>
           <PageTitle title={description}/>
           <div className="wish-detail__contents">
             <img src="http://www.clarksonmotors.co.uk/wp-content/uploads/2015/04/placeholder-600x400.png"></img>

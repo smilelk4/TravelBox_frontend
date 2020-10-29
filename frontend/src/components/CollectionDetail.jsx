@@ -9,8 +9,6 @@ const CollectionDetail = ({ id, collectionName, description, createdAt, updatedA
   const wishes = useSelector(state => state.wishes);
   return ( 
     <>
-      <DiagonalContainer type="vertical-1" />
-      <DiagonalContainer type="vertical-2" />
       <div className="collection-detail">
         <div className="collection-detail__container">
           <PageTitle title={collectionName}/>
