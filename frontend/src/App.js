@@ -8,7 +8,8 @@ import Navbar from './components/Navbar';
 import Header from './components/Header';
 import Main from './components/Main';
 import MyBox from './components/MyBox';
-import Collection from './components/Collection';
+import DisplayCollection from './components/DisplayCollection';
+import DisplayWish from './components/DisplayWish';
 // import Wish from './components/Wish';
 import Footer from './components/Footer';
 import Error from './components/Error';
@@ -34,13 +35,13 @@ function App() {
         />
         <Route 
           path='/my-collections/:id'
-          render={props => <Collection {...props} />}
+          render={props => <DisplayCollection {...props} />}
         />
         <Route 
           path='/my-wishes/:id'
-          render={props => <Collection {...props} />}
+          render={props => <DisplayWish {...props} />}
         />
-        <Route path='*' render={props => <Error />} />
+        <Route path='*' render={props => <Error {...props} />} />
       </Switch>
     </div>
   );

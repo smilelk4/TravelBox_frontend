@@ -42,4 +42,8 @@
   h2 {
     @include border-bottom-grey();
   }
+
+  img {
+    width: 50rem;
+  }
 }
