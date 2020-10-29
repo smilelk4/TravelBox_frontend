@@ -1,18 +1,23 @@
 import React from 'react';
-import Card from './Card';
+import PageTitle from './PageTitle';
+import DiagonalContainer from './DiagonalContainer';
 
 const CollectionDisplay = ({ id, collectionName, description, createdAt, updatedAt }) => {
   
   return ( 
-    <div className="collection-detail">
+    <>
+      <DiagonalContainer type="vertical-1" />
+      <DiagonalContainer type="vertical-2" />
+      <div className="collection-detail">
       <div className="collection-detail__contents">
-        <h4> {collectionName} Hiii</h4>
-        <p> { description } </p>
-        <p>{ id }</p>
-        <p>{ createdAt }</p>
-        <p>{ updatedAt }</p>
-      </div>
-    </div>
+        <PageTitle title={collectionName}/>
+          <p> { description } </p>
+          <p>{ id }</p>
+          <p>{ createdAt }</p>
+          <p>{ updatedAt }</p>
+        </div>
+     </div>
+    </>
   );
 }
  

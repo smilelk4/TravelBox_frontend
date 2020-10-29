@@ -22,7 +22,7 @@ const MyBox = () => {
 
   return ( 
     <div className="mybox">
-      <DiagonalContainer />
+      <DiagonalContainer title='MyCollections' />
       <div ref={containerDiv} className="mybox__card-container">
         {collections.map(collection => <Card type='horizontal-1' collection={collection} />)}
       </div>
