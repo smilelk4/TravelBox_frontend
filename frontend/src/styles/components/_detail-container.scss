@@ -4,19 +4,28 @@
   display: flex;
   justify-content: center;
   margin-top: 5rem;
+  position: relative;
 
   .add-icon {
+    width: 1px;
+    height: 1px;
     position: absolute;
     z-index: 5;
-    right: 3rem;
-    top: 3rem;
+    right: -7rem;
+    top: -7rem;
+    
     cursor: pointer;
     opacity: 1;
     transition: opacity .2s ease-in;
 
-    &:hover {
-      opacity: .8;
+    & > * {
+      padding: 10rem;
+      position: absolute;
+      right: 0;
+      top: 0;
+      transform: rotate(0);
     }
+    
   }
 
   &__container {
