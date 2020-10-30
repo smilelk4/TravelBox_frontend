@@ -18,6 +18,7 @@ export const fetchdWishes = id => {
   }
 };
 
+
 export const fetchStarredWishes = id => {
   return async dispatch => {
     const res = await fetch(`${baseUrl}/users/${id}/starred-wishes`);
