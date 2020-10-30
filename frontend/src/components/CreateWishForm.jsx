@@ -67,7 +67,7 @@ const CreateWishForm = ({ title, collectionId }) => {
           type='number' 
           label='Goal Saving'
           size='lg-1'
-          updateState={setGoalSaving} />
+          updateState={setGoalSaving} /> 
         <InputField 
           type='number' 
           label='Interest Level'
