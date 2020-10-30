@@ -5,6 +5,7 @@ import { fetchStarredWishes } from '../actions/wishActions';
 import DiagonalContainer from './DiagonalContainer';
 import PageTitle from './PageTitle';
 import Card from './Card';
+import { LightAddIcon } from '../icons/AddIcon';
 
 const MyBox = () => {
   const containerDiv = useRef();
@@ -23,12 +24,13 @@ const MyBox = () => {
   return ( 
     <div className="mybox">
       <DiagonalContainer title='MyCollections' />
+      <LightAddIcon  type='mb'/>
       <div ref={containerDiv} className="mybox__card-container">
         {collections.map(collection => <Card type='horizontal-1' collection={collection} />)}
       </div>
       <div className="mybox__starred-container">
-      <PageTitle title="Starred Wishes" size="medium" />
-        {wishes.map(wish => <Card type='rectangle-1' wish={wish}/>)}
+        <PageTitle title="Starred Wishes" size="medium" />
+          {wishes.map(wish => <Card type='rectangle-1' wish={wish}/>)}
       </div>
     </div>
   );

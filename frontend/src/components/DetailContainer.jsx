@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import PageTitle from './PageTitle';
 import DiagonalContainer from './DiagonalContainer';
 import AddCircleIcon from '@material-ui/icons/AddCircle';
-import AddIcon from '../icons/AddIcon';
+import { DarkAddIcon } from '../icons/AddIcon';
 
 const DetailContainer = (props) => {
   return ( 
@@ -13,7 +13,7 @@ const DetailContainer = (props) => {
       <div className="detail-container">
         <div className="detail-container__container">
           <NavLink to='/my-wishes/create'>
-            <AddIcon/>
+            <DarkAddIcon type='dc'/>
             {/* <AddCircleIcon className='add-icon' fontSize='large'/> */}
           </NavLink>
           <PageTitle title={props.title}/>

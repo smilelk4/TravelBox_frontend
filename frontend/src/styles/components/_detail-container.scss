@@ -6,28 +6,6 @@
   margin-top: 5rem;
   position: relative;
 
-  .add-icon {
-    width: 1px;
-    height: 1px;
-    position: absolute;
-    z-index: 5;
-    right: -7rem;
-    top: -7rem;
-    
-    cursor: pointer;
-    opacity: 1;
-    transition: opacity .2s ease-in;
-
-    & > * {
-      padding: 10rem;
-      position: absolute;
-      right: 0;
-      top: 0;
-      transform: rotate(0);
-    }
-    
-  }
-
   &__container {
     // border: 1px solid black;
     height: 100vh;

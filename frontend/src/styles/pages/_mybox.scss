@@ -3,6 +3,7 @@
   display: grid;
   grid-template-columns: 1fr 3fr 1fr 1fr 2fr 1fr;
   grid-template-rows: 8rem 4rem 70rem;
+  // position: relative;
   // grid-template-columns: repeat(auto-fit, minmax(2rem, 1fr));
 
   & * {

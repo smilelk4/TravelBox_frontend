@@ -1,15 +1,26 @@
 import React from 'react';
 
-const AddIcon = () => {
+export const DarkAddIcon = ({ type='' }) => {
   return ( 
-    <div className='add-icon'>
-      <svg width="225" height="225" viewBox="0 0 225 225" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="112.5" cy="112.5" r="106.5" stroke="black" stroke-width="12"/>
-      <line x1="113" y1="193" x2="113" y2="32" stroke="black" stroke-width="12"/>
-      <line x1="32" y1="115" x2="193" y2="115" stroke="black" stroke-width="12"/>
+    <div className={`add-icon ${type}`}>
+      <svg width="254" height="254" viewBox="0 0 254 254" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="127" cy="127" r="119.5" stroke="#616161" stroke-width="15"/>
+      <line x1="126.5" y1="218" x2="126.5" y2="36" stroke="#616161" stroke-width="15"/>
+      <line x1="36" y1="129.5" x2="218" y2="129.5" stroke="#616161" stroke-width="15"/>
       </svg>
     </div>
    );
 }
  
-export default AddIcon;
+export const LightAddIcon = ({ type='' }) => {
+  return ( 
+    <div className={`add-icon ${type}`}>
+    <svg width="254" height="254" viewBox="0 0 254 254" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="127" cy="127" r="119.5" stroke="#F7F9F7" stroke-width="15"/>
+    <line x1="126.5" y1="218" x2="126.5" y2="36" stroke="#F7F9F7" stroke-width="15"/>
+    <line x1="36" y1="129.5" x2="218" y2="129.5" stroke="#F7F9F7" stroke-width="15"/>
+    </svg>
+    </div>
+   );
+}
+ 
