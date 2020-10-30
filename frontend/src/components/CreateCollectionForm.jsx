@@ -16,11 +16,9 @@ const CreateCollectionForm = ({ title }) => {
   const handleSubmit = e => {
     e.preventDefault();
     const formData = { userId, collectionName, description };
-
     dispatch(createCollection(formData, token));
   }
-
-
+  
   return (
     <>
       <h3 className="form__header">{title}</h3>

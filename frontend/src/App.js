@@ -43,7 +43,7 @@ function App() {
           render={props => <DisplayCollection {...props} />}
         />
         <Route 
-          path='/my-wishes/create'
+          path='/my-wishes/create/:id'
           render={props => <CreateWish {...props} />}
         />
         <Route 

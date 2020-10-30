@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import InputField from './InputField';
 import Button from './Button';
+import Alert from '@material-ui/lab/Alert';
 
 const CreateWishForm = ({ title }) => {
   const [ wishTitle, setWishTitle ] = useState('');
@@ -10,16 +12,30 @@ const CreateWishForm = ({ title }) => {
   const [ goalSaving, setGoalSaving ] = useState(0);
   const [ interestLevel, setInterestLevel ] = useState(0);
   const [ goalDate, setGoalDate ] = useState('');
+  const dispatch = useDispatch();
+  const token = useSelector(state => state.token);
+  const userId = useSelector(state => state.userInfo.id);
+  const errorLog = useSelector(state => state.errors);
+  
+  const handleSubmit = e => {
+    e.preventDefault();
+    const formData = { 
+      userId, 
+      wishTitle, 
+      description
+     };
+    // dispatch(createCollection(formData, token));
+  }
 
   return (
     <>
       <h3 className="form__header">{title}</h3>
       <div className="form__error-container">
-        {/* {errorLog.map(err => (
+        {errorLog.map(err => (
           <Alert severity="error">{err}</Alert> 
-        ))} */}
+        ))}
       </div>
-      <form className="form">
+      <form className="form" onSubmit={handleSubmit}>
         <InputField 
           type='text' 
           label='Title'
