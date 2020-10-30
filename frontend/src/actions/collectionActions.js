@@ -44,7 +44,7 @@ export const createCollection = (data, token) => {
     const res = await fetch('http://localhost:8000/api/collections', {
       method: 'POST',
       headers: {
-        'Authorization': token,
+        'Authorization': `Bearer ${token}`,
         'Content-Type': 'application/json',
         'Accept': 'application/json'
       },
@@ -52,7 +52,7 @@ export const createCollection = (data, token) => {
     });
 
     if (res.ok) {
-      const collectionData = await res.json();
+      // const collectionData = await res.json();
       window.location.href='/my-box';
       return;
     }

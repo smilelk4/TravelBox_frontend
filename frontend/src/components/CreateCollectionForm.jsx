@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { createCollection } from '../actions/collectionActions';
 import InputField from './InputField';
 import Button from './Button';
+import Alert from '@material-ui/lab/Alert';
 
 const CreateCollectionForm = ({ title }) => {
   const [ collectionName , setCollectionName ] = useState('');
@@ -10,6 +11,7 @@ const CreateCollectionForm = ({ title }) => {
   const dispatch = useDispatch();
   const token = useSelector(state => state.token);
   const userId = useSelector(state => state.userInfo.id);
+  const errorLog = useSelector(state => state.errors);
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -23,9 +25,9 @@ const CreateCollectionForm = ({ title }) => {
     <>
       <h3 className="form__header">{title}</h3>
       <div className="form__error-container">
-        {/* {errorLog.map(err => (
+        {errorLog.map(err => (
           <Alert severity="error">{err}</Alert> 
-        ))} */}
+        ))}
       </div>
       <form className="form" onSubmit={handleSubmit}>
         <InputField 
