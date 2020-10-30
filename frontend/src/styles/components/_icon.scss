@@ -1,35 +1,46 @@
-  .add-icon {
-    position: absolute;
-    z-index: 5;
-    
-    cursor: pointer;
-    opacity: 1;
-    transition: opacity .2s ease-in;
+.add-icon {
+  position: absolute;
+  z-index: 5;
+  
+  cursor: pointer;
+  opacity: 1;
+  transition: opacity .2s ease-in;
 
-    &:hover {
-      opacity: .8;
-      animation: rotate-1 .15s linear;
-    }
+  &:hover {
+    opacity: .8;
+    animation: rotate-1 .15s linear;
+  }
 
-    
-    &.dc {
-      right: -7rem;
-      top: -7rem;
+  
+  &.dc {
+    right: -7rem;
+    top: -7rem;
 
-      & > * {
-        padding: 11.2rem;
-      }
-    }
-
-    &.mb {
-      top: 1.5rem;
-      right: 33%;
-
-      & > * {
-        padding: 10rem;
-      }
+    & > * {
+      padding: 11.2rem;
     }
   }
+
+  &.mb {
+    top: 1.5rem;
+    right: 33%;
+
+    & > * {
+      padding: 10rem;
+    }
+  }
+}
+
+.site-logo {
+  // position: absolute;
+  z-index: 5;
+  left: 30rem;
+  top: 50rem;
+
+  & > * {
+    // padding: 11.2rem;
+  }
+}
 
 @keyframes rotate-1 {  
   0% { -webkit-transform: rotate(0deg); }

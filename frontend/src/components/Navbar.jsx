@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import Button from './Button';
 import Modal from './Modal';
+import { LightSiteLogo } from '../icons/SiteLogo';
 import { validateUser } from '../actions/userAction';
 import { LOG_OUT } from '../reducers/loginReducer';
 import { DELETE_USER_INFO } from '../reducers/userReducer';
@@ -54,6 +55,7 @@ const Navbar = () => {
       <nav className='navbar__left'>
         <NavLink to='/'>
           <h1 className='navbar__title'>Travel Box</h1>
+          <LightSiteLogo />
         </NavLink>
       </nav>
         <Modal 
