@@ -49,7 +49,7 @@ const CreateCollectionForm = ({ title }) => {
         <input
         type="file"
         placeholder="Upload an image"
-        // onChange={e => setImage(e.target.files[0])} 
+        onChange={e => setImage(e.target.files[0])} 
         />
         <Button type='createCollection' bgcolor='blue' reg='true'/>
       </form>
