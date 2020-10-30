@@ -1,10 +1,23 @@
 import React, { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { createCollection } from '../actions/collectionActions';
 import InputField from './InputField';
 import Button from './Button';
 
 const CreateCollectionForm = ({ title }) => {
   const [ collectionName , setCollectionName ] = useState('');
   const [ description, setDescription ] = useState('');
+  const dispatch = useDispatch();
+  const token = useSelector(state => state.token);
+  const userId = useSelector(state => state.userInfo.id);
+
+  const handleSubmit = e => {
+    e.preventDefault();
+    const formData = { userId, collectionName, description };
+
+    dispatch(createCollection(formData, token));
+  }
+
 
   return (
     <>
@@ -14,7 +27,7 @@ const CreateCollectionForm = ({ title }) => {
           <Alert severity="error">{err}</Alert> 
         ))} */}
       </div>
-      <form className="form">
+      <form className="form" onSubmit={handleSubmit}>
         <InputField 
           type='text' 
           label='Collection Name'
@@ -25,7 +38,7 @@ const CreateCollectionForm = ({ title }) => {
           label='Description'
           size='lg-1'
           updateState={setDescription} /> 
-        <Button type='createCollection' bgcolor='blue' reg='true' />
+        <Button type='createCollection' bgcolor='blue' reg='true'/>
       </form>
     </>
   );

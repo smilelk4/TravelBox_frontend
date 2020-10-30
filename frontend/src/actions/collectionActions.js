@@ -1,7 +1,7 @@
 import { LOAD_COLLECTION } from '../reducers/collectionReducer';
 import { LOAD_COLLECTIONS } from '../reducers/collectionReducer';
 import { LOAD_WISHES } from '../reducers/wishReducer';
-import { COLLECTIONS_FETCH_FAIL } from '../reducers/errorReducer';
+import { COLLECTIONS_FETCH_FAIL, CREATE_COLLECTION_FAIL } from '../reducers/errorReducer';
 
 export const fetchCollection = id => {
   return async dispatch => {
@@ -38,3 +38,32 @@ export const fetchCollections = id => {
     dispatch({ type: COLLECTIONS_FETCH_FAIL });
   }
 };
+
+export const createCollection = (data, token) => {
+  return async dispatch => {
+    const res = await fetch('http://localhost:8000/api/collections', {
+      method: 'POST',
+      headers: {
+        'Authorization': token,
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify(data)
+    });
+
+    if (res.ok) {
+      const collectionData = await res.json();
+      window.location.href='/my-box';
+      return;
+    }
+
+    const errorData = await res.json();
+    dispatch({
+      type: CREATE_COLLECTION_FAIL,
+      errors: errorData.errors
+    });
+
+    console.error('Create collection unsuccessful.');
+
+  };
+}
