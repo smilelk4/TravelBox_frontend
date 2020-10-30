@@ -2,10 +2,11 @@ import { LOAD_COLLECTION } from '../reducers/collectionReducer';
 import { LOAD_COLLECTIONS } from '../reducers/collectionReducer';
 import { LOAD_WISHES } from '../reducers/wishReducer';
 import { COLLECTIONS_FETCH_FAIL, CREATE_COLLECTION_FAIL } from '../reducers/errorReducer';
+import { baseUrl } from '../config';
 
 export const fetchCollection = id => {
   return async dispatch => {
-    const res = await fetch(`http://localhost:8000/api/collections/${id}`);
+    const res = await fetch(`${baseUrl}/collections/${id}`);
 
     if (res.ok) {
       let { collection } = await res.json();
@@ -26,7 +27,7 @@ export const fetchCollection = id => {
 
 export const fetchCollections = id => {
   return async dispatch => {
-    const res = await fetch(`http://localhost:8000/api/users/${id}/collections`);
+    const res = await fetch(`${baseUrl}/users/${id}/collections`);
 
     if (res.ok) {
       const { collections } = await res.json();
@@ -41,7 +42,7 @@ export const fetchCollections = id => {
 
 export const createCollection = (data, token) => {
   return async dispatch => {
-    const res = await fetch('http://localhost:8000/api/collections', {
+    const res = await fetch(`${baseUrl}/collections`, {
       method: 'POST',
       headers: {
         'Authorization': `Bearer ${token}`,

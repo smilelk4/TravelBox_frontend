@@ -1,9 +1,10 @@
 import { LOAD_WISHES } from '../reducers/wishReducer';
 import { WISHES_FETCH_FAIL, CREATE_WISH_FAIL } from '../reducers/errorReducer';
+import { baseUrl } from '../config';
 
 export const fetchdWishes = id => {
   return async dispatch => {
-    const res = await fetch(`http://localhost:8000/api/users/${id}/wishes`);
+    const res = await fetch(`${baseUrl}/users/${id}/wishes`);
 
     if (res.ok) {
       const { wishes } = await res.json();
@@ -19,7 +20,7 @@ export const fetchdWishes = id => {
 
 export const fetchStarredWishes = id => {
   return async dispatch => {
-    const res = await fetch(`http://localhost:8000/api/users/${id}/starred-wishes`);
+    const res = await fetch(`${baseUrl}/users/${id}/starred-wishes`);
 
     if (res.ok) {
       const { wishes } = await res.json();
@@ -35,7 +36,7 @@ export const fetchStarredWishes = id => {
 
 export const createWish = (data, token) => {
   return async dispatch => {
-    const res = await fetch('http://localhost:8000/api/wishes', {
+    const res = await fetch(`${baseUrl}/wishes`, {
       method: 'POST',
       headers: {
         'Authorization': `Bearer ${token}`,

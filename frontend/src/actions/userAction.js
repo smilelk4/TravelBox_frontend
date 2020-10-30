@@ -3,10 +3,11 @@ import { GENERATE_USER_INFO } from '../reducers/userReducer';
 import { LOG_IN } from '../reducers/loginReducer';
 import { SIGNUP_FAIL, LOGIN_FAIL, CLEAR_ERRORS } from '../reducers/errorReducer';
 import { ADD_TOKEN_INFO } from '../reducers/tokenReducer';
+import { baseUrl } from '../config';
 
 export const createUser = data => {
   return async dispatch => {
-    const res = await fetch('http://localhost:8000/api/users', {
+    const res = await fetch(`${baseUrl}/users`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -45,7 +46,7 @@ export const createUser = data => {
 
 export const validateUser = data => {
   return async dispatch => {
-    const res = await fetch('http://localhost:8000/api/users/auth', {
+    const res = await fetch(`${baseUrl}/users/auth`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -77,7 +78,7 @@ export const validateUser = data => {
 
 export const restoreUserStore = token => {
   return async dispatch => {
-    const res = await fetch('http://localhost:8000/api/users/token', {
+    const res = await fetch(`${baseUrl}/users/token`, {
       headers: {
         Authorization: `Bearer ${token}`
       }
