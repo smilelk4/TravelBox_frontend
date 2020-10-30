@@ -3,8 +3,9 @@ import { useSelector, useDispatch } from 'react-redux';
 import InputField from './InputField';
 import Button from './Button';
 import Alert from '@material-ui/lab/Alert';
+import { createWish } from '../actions/wishActions'
 
-const CreateWishForm = ({ title }) => {
+const CreateWishForm = ({ title, collectionId }) => {
   const [ wishTitle, setWishTitle ] = useState('');
   const [ description, setDescription ] = useState('');
   const [ country, setCountry ] = useState('');
@@ -20,11 +21,17 @@ const CreateWishForm = ({ title }) => {
   const handleSubmit = e => {
     e.preventDefault();
     const formData = { 
-      userId, 
-      wishTitle, 
-      description
+      userId,
+      collectionId,
+      title: wishTitle, 
+      description,
+      country,
+      regionCity,
+      goalSaving,
+      interestLevel,
+      goalDate
      };
-    // dispatch(createCollection(formData, token));
+    dispatch(createWish(formData, token));
   }
 
   return (
