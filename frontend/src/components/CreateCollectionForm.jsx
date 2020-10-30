@@ -8,6 +8,7 @@ import Alert from '@material-ui/lab/Alert';
 const CreateCollectionForm = ({ title }) => {
   const [ collectionName , setCollectionName ] = useState('');
   const [ description, setDescription ] = useState('');
+  const [ image, setImage ] = useState('');
   const dispatch = useDispatch();
   const token = useSelector(state => state.token);
   const userId = useSelector(state => state.userInfo.id);
@@ -15,8 +16,15 @@ const CreateCollectionForm = ({ title }) => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    const formData = { userId, collectionName, description };
-    dispatch(createCollection(formData, token));
+    const data = new FormData();
+    data.append('userId', userId);
+    data.append('collectionName', collectionName);
+    data.append('description', description);
+    data.append('file', image);
+    dispatch(createCollection(data, token));
+
+    // const formData = { userId, collectionName, description };
+    // dispatch(createCollection(formData, token));
   }
   
   return (
@@ -38,6 +46,11 @@ const CreateCollectionForm = ({ title }) => {
           label='Description'
           size='lg-1'
           updateState={setDescription} /> 
+        <input
+        type="file"
+        placeholder="Upload an image"
+        // onChange={e => setImage(e.target.files[0])} 
+        />
         <Button type='createCollection' bgcolor='blue' reg='true'/>
       </form>
     </>
