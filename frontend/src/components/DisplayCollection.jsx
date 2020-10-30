@@ -24,7 +24,7 @@ const DisplayCollection = props => {
   if (collection) {    
     return (
       <>
-        <DetailContainer title={collection.collectionName}>
+        <DetailContainer {...props} title={collection.collectionName}>
           <CollectionDetail {...collection}/>
         </DetailContainer>
       </>

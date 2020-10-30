@@ -1,12 +1,18 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React, { useEffect, useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import PageTitle from './PageTitle';
 import DiagonalContainer from './DiagonalContainer';
 import { DarkAddIcon } from '../icons/AddIcon';
 
 const DetailContainer = (props) => {
-  const collectionId = useSelector(state => state.collections[0].id);
+  const [currentCollectionId, setCurrentCollectionId] = useState('');
+
+  useEffect(() => {
+    if (props.match.params.id) {
+      setCurrentCollectionId(props.match.params.id);
+    }
+  })
 
   return ( 
     <>
@@ -14,9 +20,8 @@ const DetailContainer = (props) => {
       <DiagonalContainer type="vertical-2" />
       <div className="detail-container">
         <div className="detail-container__container">
-          <NavLink to={`/my-wishes/create/${collectionId}`}>
+          <NavLink to={`/my-wishes/create/${currentCollectionId}`}>
             <DarkAddIcon type='dc'/>
-            {/* <AddCircleIcon className='add-icon' fontSize='large'/> */}
           </NavLink>
           <PageTitle title={props.title}/>
             <div className="detail-container__contents">

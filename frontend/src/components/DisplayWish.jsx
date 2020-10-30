@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchCollection } from '../actions/collectionActions'
 import DetailContainer from './DetailContainer';
@@ -7,7 +7,6 @@ import WishDetail from './WishDetail';
 import DiagonalContainer from './DiagonalContainer';
 
 const DisplayWish = props => {
-  console.log('!!!!!!HUHUUHIUHUIHUIHiu')
   const dispatch = useDispatch();
   const collectionId = props.match.params.id;
   const wishes = useSelector(state => state.wishes);

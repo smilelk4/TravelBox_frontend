@@ -3,10 +3,10 @@ import DetailContainer from './DetailContainer';
 import CreateCollectionForm from './CreateCollectionForm';
 import InputField from './InputField';
 
-const CreateCollection = () => {
+const CreateCollection = (props) => {
   return ( 
     <div>
-      <DetailContainer>
+      <DetailContainer {...props}>
         <CreateCollectionForm title='Create a New Collection' />
       </DetailContainer>
     </div>
