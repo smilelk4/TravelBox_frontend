@@ -19,7 +19,7 @@ const CreateWishForm = ({ title }) => {
           <Alert severity="error">{err}</Alert> 
         ))} */}
       </div>
-      <form className="form" onSubmit={() => console.log('hi')}>
+      <form className="form">
         <InputField 
           type='text' 
           label='Title'

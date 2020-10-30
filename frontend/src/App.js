@@ -11,7 +11,7 @@ import MyBox from './components/MyBox';
 import DisplayCollection from './components/DisplayCollection';
 import DisplayWish from './components/DisplayWish';
 import CreateWish from './components/CreateWish';
-import CreateCollection from './components/CreateWish';
+import CreateCollection from './components/CreateCollection';
 import Footer from './components/Footer';
 import Error from './components/Error';
 

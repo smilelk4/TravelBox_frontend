@@ -1,5 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { NavLink } from 'react-router-dom';
 import { fetchCollections } from '../actions/collectionActions';
 import { fetchStarredWishes } from '../actions/wishActions';
 import DiagonalContainer from './DiagonalContainer';
@@ -24,7 +25,9 @@ const MyBox = () => {
   return ( 
     <div className="mybox">
       <DiagonalContainer title='MyCollections' />
-      <LightAddIcon  type='mb'/>
+      <NavLink to='/my-collections/create'>
+        <LightAddIcon  type='mb'/>
+      </NavLink>
       <div ref={containerDiv} className="mybox__card-container">
         {collections.map(collection => <Card type='horizontal-1' collection={collection} />)}
       </div>
