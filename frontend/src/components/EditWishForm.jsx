@@ -58,7 +58,6 @@ const EditWishForm = (props, { title }) => {
       starred: false,
       accomplished: false
      };
-     console.log(formData)
     dispatch(editWish(formData, token, wish.id));
   }
   
@@ -122,7 +121,6 @@ const EditWishForm = (props, { title }) => {
   return (
     <div>...Loading</div>
   )
-
 }
  
 export default EditWishForm;

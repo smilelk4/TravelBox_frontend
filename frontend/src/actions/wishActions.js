@@ -105,3 +105,27 @@ export const editWish = (data, token, wishId) => {
     console.error('Editing wish unsuccessful.');
   };
 }
+
+export const deleteWish = (token, wishId) => {
+  return async dispatch => {
+    const res = await fetch(`${baseUrl}/wishes/${wishId}`, {
+      method: 'DELETE',
+      headers: {
+        'Authorization': `Bearer ${token}`,
+      }
+    });
+
+    if (res.ok) {
+      window.location.href='/my-box';
+      return;
+    }
+
+    const errorData = await res.json();
+    dispatch({
+      type: DELETE_WISH_FAIL,
+      errors: errorData.errors
+    });
+
+    console.error('Deleting wish unsuccessful.');
+  };
+}
