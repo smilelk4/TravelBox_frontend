@@ -7,7 +7,6 @@ import { baseUrl } from '../config';
 export const fetchCollection = id => {
   return async dispatch => {
     const res = await fetch(`${baseUrl}/collections/${id}`);
-
     if (res.ok) {
       let { collection } = await res.json();
       dispatch({

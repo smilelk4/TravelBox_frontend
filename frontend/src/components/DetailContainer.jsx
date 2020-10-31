@@ -11,6 +11,7 @@ const DetailContainer = (props) => {
   useEffect(() => {
     if (props.match.params.id) {
       setCurrentCollectionId(props.match.params.id);
+      console.log(props.match.params.id, '!!!!!')
     }
   })
 
