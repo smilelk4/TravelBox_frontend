@@ -28,6 +28,7 @@ const MyBox = () => {
       <NavLink to='/my-collections/create'>
         <LightAddIcon  type='mb'/>
       </NavLink>
+      <PageTitle title="MyCollection"/>
       <div ref={containerDiv} className="mybox__card-container">
         {collections.map(collection => <Card type='horizontal-1' collection={collection} />)}
       </div>

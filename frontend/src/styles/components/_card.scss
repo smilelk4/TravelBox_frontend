@@ -1,6 +1,4 @@
 .card {
-    // width: 14vw;
-    // height: 32rem;
     padding: 2rem;
     background-color: $color-bg-light1;
     border-radius: 3px;
@@ -18,8 +16,33 @@
 
     h4 {
       font-size: 2rem;
+      height: 7rem;
       color: $color-green-dark;
       @include border-bottom-grey();
+    }
+
+    &__description {
+      font-size: 1.4rem;
+      width: 100%;
+      // height: 7rem;
+      height: auto;
+      margin: 1.5rem auto;
+    }
+
+    &__see-details {
+      bottom: 0;
+      width: 100%;
+      text-align: right;
+      transition: color .25s ease-in;
+      font-size: 1.2rem;
+      position: absolute;
+      width: auto;
+      right: 1.5rem;
+      bottom: 1.5rem;
+
+      &:hover {
+        color: $color-pink;
+      }
     }
 
     &:hover {
@@ -38,9 +61,19 @@
   }
 
   &.rectangle-1 {
-    margin: 1.5rem;
     width: auto;
     height: 100%;
-    // height: auto;
+    display: flex;
+    flex-direction: column;
+
+    span {
+      font-weight: bold;
+    }
+
+    p {
+      line-height: 2.5rem;
+      font-size: 1.1rem;
+    }
+
   }
 }

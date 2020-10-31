@@ -1,5 +1,6 @@
 .page-title {
   @include font-gradient-section-title();
+  position: absolute;
 
   &.medium {
     font-size: 3rem;
@@ -7,9 +8,7 @@
   }
   &.large {
     font-size: 5rem;
+    top: 5rem;
+    left: 6rem;
   }
-  position: absolute;
-
-  // display: flex;
-  // align-items: flex-end;
 }
