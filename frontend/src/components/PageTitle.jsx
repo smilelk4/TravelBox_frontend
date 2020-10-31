@@ -1,9 +1,9 @@
 import React from 'react';
 
-const PageTitle = ({title, size="large"}) => {
+const PageTitle = ({title, size="large", option}) => {
 
   return (
-    <h2 className={`page-title ${size}`}>{title}</h2>
+    <h2 className={`page-title ${size} ${option}`}>{title}</h2>
   )
 }
  

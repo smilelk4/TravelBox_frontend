@@ -5,10 +5,14 @@
   &.medium {
     font-size: 3rem;
     top: -5rem;
+    padding: 0 2rem;
   }
   &.large {
     font-size: 5rem;
-    top: 5rem;
-    left: 6rem;
+
+    &.my-box {
+      top: 5rem;
+      left: 6rem;
+    }
   }
 }

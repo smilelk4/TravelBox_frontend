@@ -28,12 +28,12 @@ const MyBox = () => {
       <NavLink to='/my-collections/create'>
         <LightAddIcon  type='mb'/>
       </NavLink>
-      <PageTitle title="MyCollection"/>
+      <PageTitle title="MyCollection" option="my-box"/>
       <div ref={containerDiv} className="mybox__card-container">
         {collections.map(collection => <Card type='horizontal-1' collection={collection} />)}
       </div>
       <div className="mybox__starred-container">
-        <PageTitle title="Starred Wishes" size="medium" />
+        <PageTitle title="Starred Wishes" size="medium"/>
           {wishes.map(wish => <Card type='rectangle-1' wish={wish}/>)}
       </div>
     </div>
