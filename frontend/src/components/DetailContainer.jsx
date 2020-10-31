@@ -20,6 +20,9 @@ const DetailContainer = (props) => {
       <DiagonalContainer type="vertical-2" />
       <div className="detail-container">
         <div className="detail-container__container">
+          <NavLink to={`/my-collections/edit/${currentCollectionId}`}>
+            <p>Edit</p>
+          </NavLink>
           <NavLink to={`/my-wishes/create/${currentCollectionId}`}>
             <DarkAddIcon type='dc'/>
           </NavLink>

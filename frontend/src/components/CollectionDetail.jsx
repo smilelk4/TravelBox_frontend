@@ -1,17 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import Card from './Card';
-// import AddIcon from '../icons/AddIcon';
 import { useSelector } from 'react-redux';
 
 const CollectionDetail = ({ id, collectionName, description, createdAt, updatedAt }) => {
   const wishes = useSelector(state => state.wishes);
   const images = useSelector(state => state.collections[0].CollectionImages);
-  // const state = useSelector(state => state);
   const [isImageLoaded, setIsImageLoaded] = useState(false);
 
   useEffect(() => {
     if (images) setIsImageLoaded(true);
-  }, [])
+  }, []);
 
   return ( 
     <>

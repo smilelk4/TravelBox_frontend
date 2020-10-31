@@ -11,7 +11,6 @@ const DisplayCollection = props => {
   const collection = useSelector(state => state.collections[0]);
   const wishes = useSelector(state => state.wishes);
   const [isUserLoaded, setIsUserLoaded] = useState(false);
-  // const [currentWishSelected, setCurrentWishSelected] = useState(null);
 
   useEffect(() => {
     (async () => {

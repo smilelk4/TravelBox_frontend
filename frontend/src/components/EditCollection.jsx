@@ -1,17 +1,17 @@
 import React from 'react';
 import DetailContainer from './DetailContainer';
-import CreateCollectionForm from './CreateCollectionForm';
+import EditCollectionForm from './EditCollectionForm';
 import InputField from './InputField';
 
-const CreateCollection = (props) => {
+const EditCollection = (props) => {
   return ( 
     <div>
       <DetailContainer {...props}>
-        <CreateCollectionForm title='Create a New Collection' />
+        <EditCollectionForm title='Edit Your Collection' />
       </DetailContainer>
     </div>
 
   );
 }
  
-export default CreateCollection;
+export default EditCollection;

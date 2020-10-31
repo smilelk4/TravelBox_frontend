@@ -12,6 +12,7 @@ import DisplayCollection from './components/DisplayCollection';
 import DisplayWish from './components/DisplayWish';
 import CreateWish from './components/CreateWish';
 import CreateCollection from './components/CreateCollection';
+import EditCollection from './components/EditCollection';
 import Footer from './components/Footer';
 import Error from './components/Error';
 
@@ -37,6 +38,10 @@ function App() {
         <Route 
           path='/my-collections/create'
           render={props => <CreateCollection {...props} />}
+        />
+        <Route 
+          path='/my-collections/edit'
+          render={props => <EditCollection {...props} />}
         />
         <Route 
           path='/my-collections/:id'
