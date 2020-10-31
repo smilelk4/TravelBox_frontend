@@ -9,6 +9,8 @@ const Button = ({ type, bgcolor='white', linkTo='', reg }) => {
   if (type === "demo") buttonDisplay = "Demo";
   if (type === "createWish") buttonDisplay = "Create a New Wish";
   if (type === "createCollection") buttonDisplay = "Create a New Collection";
+  if (type === "editCollection") buttonDisplay = "Edit Collection";
+  if (type === "deleteCollection") buttonDisplay = "Delete Collection";
 
   if (linkTo) {
     return (

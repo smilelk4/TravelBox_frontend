@@ -23,6 +23,9 @@ const DetailContainer = (props) => {
           <NavLink to={`/my-collections/edit/${currentCollectionId}`}>
             <p>Edit</p>
           </NavLink>
+          <NavLink to={`/my-collections/delete/${currentCollectionId}`}>
+            <p>Delete</p>
+          </NavLink>
           <NavLink to={`/my-wishes/create/${currentCollectionId}`}>
             <DarkAddIcon type='dc'/>
           </NavLink>

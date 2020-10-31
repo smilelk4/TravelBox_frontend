@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { editCollection, fetchCollection } from '../actions/collectionActions';
+import { deleteCollection, fetchCollection } from '../actions/collectionActions';
 import InputField from './InputField';
 import Button from './Button';
+import PageSection from './PageSection';
 import Alert from '@material-ui/lab/Alert';
 
-const EditCollectionForm = (props, { title }) => {
+const DeleteCollectionForm = (props) => {
   const [ collectionName , setCollectionName ] = useState('');
   const [ description, setDescription ] = useState('');
   const [ image, setImage ] = useState('');
@@ -17,9 +18,7 @@ const EditCollectionForm = (props, { title }) => {
   const errorLog = useSelector(state => state.errors);
 
   useEffect(() => {
-    (async () => {
-      await dispatch(fetchCollection(collectionId));
-    })();
+    dispatch(fetchCollection(collectionId));
   }, [props.match.params.id]);
 
   useEffect(() => {
@@ -30,44 +29,30 @@ const EditCollectionForm = (props, { title }) => {
   }, [collection]);
 
   const handleSubmit = e => {
+    console.log(collection.id, '!!!!!')
     e.preventDefault();
-    const data = new FormData();
-    data.append('userId', userId);
-    // data.append('collectionId', collection.id);
-    data.append('collectionName', collectionName);
-    data.append('description', description);
-    data.append('file', image);
-    dispatch(editCollection(data, token, collection.id));
+    dispatch(deleteCollection(token, collection.id));
   }
   
   if (collection) {
     return (
       <>
-        <h3 className="form__header">{title}</h3>
+        <h3 className="form__header">{props.title}</h3>
         <div className="form__error-container">
           {errorLog.map(err => (
             <Alert severity="error">{err}</Alert> 
           ))}
         </div>
+        <PageSection 
+          label='Collection Name:'
+          value={collectionName}
+        />
+        <PageSection 
+          label='Description'
+          value={description}
+        />
         <form className="form" onSubmit={handleSubmit}>
-          <InputField 
-            type='text' 
-            label='Collection Name'
-            currentState={collectionName}
-            size='lg-1'
-            updateState={setCollectionName} /> 
-          <InputField 
-            type='text' 
-            label='Description'
-            currentState={description}
-            size='lg-1'
-            updateState={setDescription} /> 
-          <input
-          type="file"
-          placeholder="Upload an image"
-          onChange={e => setImage(e.target.files[0])} 
-          />
-          <Button type='editCollection' bgcolor='blue' reg='true'/>
+          <Button type='deleteCollection' bgcolor='pink' reg='true'/>
         </form>
       </>
     );
@@ -78,4 +63,4 @@ const EditCollectionForm = (props, { title }) => {
 
 }
  
-export default EditCollectionForm;
+export default DeleteCollectionForm;
