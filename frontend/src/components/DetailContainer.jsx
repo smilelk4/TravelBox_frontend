@@ -6,12 +6,18 @@ import DiagonalContainer from './DiagonalContainer';
 import { DarkAddIcon } from '../icons/AddIcon';
 
 const DetailContainer = (props) => {
-  const [currentCollectionId, setCurrentCollectionId] = useState('');
+  const [currentWishId, setCurrentWishId] = useState(null);
+  const [currentCollectionId, setCurrentCollectionId] = useState(null);
 
   useEffect(() => {
     if (props.match.params.id) {
-      setCurrentCollectionId(props.match.params.id);
-      console.log(props.match.params.id, '!!!!!')
+      if (window.location.pathname.startsWith('/my-collections/')) {
+        setCurrentCollectionId(props.match.params.id);
+        setCurrentWishId(null);
+      } else if (window.location.pathname.startsWith('/my-wishes')) {
+        setCurrentCollectionId(null);
+        setCurrentWishId(props.match.params.id);
+      }
     }
   })
 
@@ -21,10 +27,16 @@ const DetailContainer = (props) => {
       <DiagonalContainer type="vertical-2" />
       <div className="detail-container">
         <div className="detail-container__container">
-          <NavLink to={`/my-collections/edit/${currentCollectionId}`}>
+          <NavLink to={currentCollectionId ? 
+          `/my-collections/edit/${currentCollectionId}` :
+          `/my-wishes/edit/${currentWishId}`
+          }>
             <p>Edit</p>
           </NavLink>
-          <NavLink to={`/my-collections/delete/${currentCollectionId}`}>
+          <NavLink to={currentCollectionId ? 
+          `/my-collections/delete/${currentCollectionId}` :
+          `/my-wishes/delete/${currentWishId}`
+          }>
             <p>Delete</p>
           </NavLink>
           <NavLink to={`/my-wishes/create/${currentCollectionId}`}>
