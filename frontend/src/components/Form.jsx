@@ -80,26 +80,32 @@ const Form = ({ title }) => {
           <InputField 
             type='text' 
             label='Username' 
+            currentState={username}
             updateState={setUsername} />
           <InputField 
             type='text' 
             label='First Name' 
+            currentState={firstName}
             updateState={setFirstName} />
           <InputField 
             type='text' 
             label='Last Name' 
+            currentState={lastName}
             updateState={setLastName} />
           <InputField 
             type='email' 
             label='Email' 
+            currentState={email}
             updateState={setEmail} />
           <InputField 
             type='password' 
             label='Password' 
+            currentState={password}
             updateState={setPassword} />
           <InputField 
             type='password' 
             label='Confirm Password' 
+            currentState={confirmPassword}
             updateState={setConfirmPassword} />
           <Button type='signup' bgcolor='blue' reg='true' />
         </form>

@@ -27,6 +27,7 @@ const InputField = ({ type, label, currentState = '', updateState, size = '' }) 
 
   return ( 
     <div className={size}>
+      {console.log(currentState, '!!!')}
       <input 
         type={type} 
         value={currentState}
