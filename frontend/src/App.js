@@ -40,7 +40,7 @@ function App() {
           render={props => <CreateCollection {...props} />}
         />
         <Route 
-          path='/my-collections/edit'
+          path='/my-collections/edit/:id'
           render={props => <EditCollection {...props} />}
         />
         <Route 

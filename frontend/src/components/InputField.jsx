@@ -4,6 +4,12 @@ const InputField = ({ type, label, currentState = '', updateState, size = '' }) 
   const inputField = useRef();
   const inputLabel = useRef();
 
+  useEffect(() => {
+    if (inputField.current.value) {
+      inputLabel.current.classList.add('tag-selected');
+    }
+  })
+
   const addSelectedClass = () => {
     inputLabel.current.classList.add('tag-selected');
     inputLabel.current.parentNode.classList.add('container-selected');
@@ -23,6 +29,7 @@ const InputField = ({ type, label, currentState = '', updateState, size = '' }) 
     <div className={size}>
       <input 
         type={type} 
+        value={currentState}
         ref={inputField}
         onFocus={addSelectedClass}
         onBlur={removeSelectedClass}

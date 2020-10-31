@@ -7,7 +7,7 @@ const EditCollection = (props) => {
   return ( 
     <div>
       <DetailContainer {...props}>
-        <EditCollectionForm title='Edit Your Collection' />
+        <EditCollectionForm title='Edit Your Collection' {...props} />
       </DetailContainer>
     </div>
 
