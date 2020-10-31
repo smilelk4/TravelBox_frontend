@@ -14,6 +14,20 @@
     border-radius: 1rem;
     box-shadow: $shadow-box3;
     position: relative;
+    padding: 2rem;
+  }
+
+  &__header {
+    display: flex;
+    margin-right: 5.5rem;
+    margin-top: 3rem;
+    width: 8rem;
+    position: absolute;
+    right: 9rem;
+    top: 5rem;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.3rem;
   }
 
   &__contents {

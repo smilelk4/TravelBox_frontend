@@ -27,23 +27,27 @@ const DetailContainer = (props) => {
       <DiagonalContainer type="vertical-2" />
       <div className="detail-container">
         <div className="detail-container__container">
-          <NavLink to={currentCollectionId ? 
-          `/my-collections/edit/${currentCollectionId}` :
-          `/my-wishes/edit/${currentWishId}`
-          }>
-            <p>Edit</p>
-          </NavLink>
-          <NavLink to={currentCollectionId ? 
-          `/my-collections/delete/${currentCollectionId}` :
-          `/my-wishes/delete/${currentWishId}`
-          }>
-            <p>Delete</p>
-          </NavLink>
-          <NavLink to={`/my-wishes/create/${currentCollectionId}`}>
-            <DarkAddIcon type='dc'/>
-          </NavLink>
-          <PageTitle title={props.title}/>
+          {/* <div className="detail-container__header"> */}
+            <NavLink to={`/my-wishes/create/${currentCollectionId}`}>
+              <DarkAddIcon type='dc'/>
+            </NavLink>
+          {/* </div> */}
+            <PageTitle title={props.title}/>
             <div className="detail-container__contents">
+              <div className="detail-container__header">
+                <NavLink to={currentCollectionId ? 
+                `/my-collections/edit/${currentCollectionId}` :
+                `/my-wishes/edit/${currentWishId}`
+                }>
+                <p className='detail-container__menu'>Edit</p>
+                </NavLink>
+                <NavLink to={currentCollectionId ? 
+                `/my-collections/delete/${currentCollectionId}` :
+                `/my-wishes/delete/${currentWishId}`
+                }>
+                  <p className='detail-container__menu'>Delete</p>
+                </NavLink>
+              </div>
               {props.children}
             </div>
         </div>

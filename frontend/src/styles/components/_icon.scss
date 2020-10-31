@@ -1,6 +1,7 @@
 .add-icon {
   position: absolute;
   z-index: 5;
+  right: 1rem;
   
   cursor: pointer;
   opacity: 1;
@@ -13,33 +14,20 @@
 
   
   &.dc {
-    right: -7rem;
-    top: -7rem;
-
-    & > * {
-      padding: 11.2rem;
-    }
+    right: 5rem;
+    top: 5rem;
   }
 
   &.mb {
-    top: 1.5rem;
-    right: 33%;
-
-    & > * {
-      padding: 10rem;
-    }
+    top: 5rem;
+    right: 38%;
   }
 }
 
 .site-logo {
-  // position: absolute;
   z-index: 5;
   left: 30rem;
   top: 50rem;
-
-  & > * {
-    // padding: 11.2rem;
-  }
 }
 
 @keyframes rotate-1 {  

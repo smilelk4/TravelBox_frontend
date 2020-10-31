@@ -1,6 +1,8 @@
 .page-title {
   @include font-gradient-section-title();
   position: absolute;
+  background-color: slateblue;
+  width: 80rem;
 
   &.medium {
     font-size: 3rem;
