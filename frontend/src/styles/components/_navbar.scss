@@ -1,6 +1,6 @@
 .navbar {
   padding: 0 3vw;
-  width: 100vw;
+  width: 100%;
   grid-column: 1 / -1;
   
   display: flex;
@@ -36,9 +36,10 @@
   &--initial {
     background-color: $color-bg-dark1;
   }
-
+  
   &--scrolled {
     background-color: $color-bg-dark1-transparent;
+    transition: background .2s ease-in-out;
     box-shadow: $shadow-nav;
     position: sticky;
     top: 0;
