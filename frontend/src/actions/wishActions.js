@@ -1,4 +1,4 @@
-import { LOAD_WISHES } from '../reducers/wishReducer';
+import { LOAD_WISHES, LOAD_WISH } from '../reducers/wishReducer';
 import { WISHES_FETCH_FAIL, CREATE_WISH_FAIL } from '../reducers/errorReducer';
 import { baseUrl } from '../config';
 
@@ -11,6 +11,23 @@ export const fetchdWishes = id => {
       return dispatch({
         type: LOAD_WISHES,
         wishes
+      });
+    }
+    
+    dispatch({ type: WISHES_FETCH_FAIL });
+  }
+};
+
+export const fetchWish = id => {
+  return async dispatch => {
+    const res = await fetch(`${baseUrl}/wishes/${id}`);
+
+    if (res.ok) {
+      const { wish } = await res.json();
+      console.log('YAY', wish)
+      return dispatch({
+        type: LOAD_WISH,
+        wish
       });
     }
     
