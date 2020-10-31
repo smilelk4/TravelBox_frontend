@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 
 const CollectionDetail = ({ id, collectionName, description, createdAt, updatedAt }) => {
   const wishes = useSelector(state => state.wishes);
-  const images = useSelector(state => state.collections[0].CollectionImages);
+  const images = useSelector(state => state.collections[0].Images);
   const [isImageLoaded, setIsImageLoaded] = useState(false);
 
   useEffect(() => {
@@ -12,8 +12,10 @@ const CollectionDetail = ({ id, collectionName, description, createdAt, updatedA
   }, []);
 
   return ( 
-    <>
-      {isImageLoaded && images.map(img => <img src={img.image} />)}
+    <> 
+      <div className="detail-container__image-container">
+        {isImageLoaded && images.map(img => <img src={img.image} />)}
+      </div>
       <p> { description } </p>
       {wishes.map(wish => <Card wish={wish} id={id} />)}
       <p className="collection-detail__info">

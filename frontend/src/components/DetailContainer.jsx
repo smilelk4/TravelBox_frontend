@@ -27,11 +27,9 @@ const DetailContainer = (props) => {
       <DiagonalContainer type="vertical-2" />
       <div className="detail-container">
         <div className="detail-container__container">
-          {/* <div className="detail-container__header"> */}
             <NavLink to={`/my-wishes/create/${currentCollectionId}`}>
               <DarkAddIcon type='dc'/>
             </NavLink>
-          {/* </div> */}
             <PageTitle title={props.title}/>
             <div className="detail-container__contents">
               <div className="detail-container__header">

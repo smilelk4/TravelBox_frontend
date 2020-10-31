@@ -48,6 +48,18 @@
     }
   }
 
+  &__image-container {
+    display: flex;
+    height: 30rem;
+    justify-content: center;
+
+    img {
+      height: 100%;
+      // width: 100%;
+      object-fit: cover;
+    }
+  }
+
   h2 {
     @include border-bottom-grey();
     margin: 1rem 3rem;
