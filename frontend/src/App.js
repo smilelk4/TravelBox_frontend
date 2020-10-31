@@ -11,6 +11,8 @@ import MyBox from './components/MyBox';
 import DisplayCollection from './components/DisplayCollection';
 import DisplayWish from './components/DisplayWish';
 import CreateWish from './components/CreateWish';
+import EditWish from './components/EditWish';
+// import DeleteWish from './components/DeleteWish';
 import CreateCollection from './components/CreateCollection';
 import EditCollection from './components/EditCollection';
 import DeleteCollection from './components/DeleteCollection';
@@ -56,6 +58,14 @@ function App() {
           path='/my-wishes/create/:id'
           render={props => <CreateWish {...props} />}
         />
+        <Route 
+          exact path='/my-wishes/edit/:id'
+          render={props => <EditWish {...props} />}
+        />
+        {/* <Route 
+          exact path='/my-wishes/delete/:id'
+          render={props => <DeleteWish {...props} />}
+        /> */}
         <Route 
           exact path='/my-wishes/:id'
           render={props => <DisplayWish {...props} />}

@@ -105,10 +105,10 @@ export const deleteCollection = (token, collectionId) => {
       }
     });
 
-    if (res.ok) {
-      window.location.href='/my-box';
-      return;
-    }
+    // if (res.ok) {
+    //   window.location.href='/my-box';
+    //   return;
+    // }
 
     const errorData = await res.json();
     dispatch({
