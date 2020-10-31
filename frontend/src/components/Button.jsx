@@ -8,6 +8,8 @@ const Button = ({ type, bgcolor='white', linkTo='', reg }) => {
   if (type === "logout") buttonDisplay = "Log Out";
   if (type === "demo") buttonDisplay = "Demo";
   if (type === "createWish") buttonDisplay = "Create a New Wish";
+  if (type === "editWish") buttonDisplay = "Edit Wish";
+  if (type === "deleteWish") buttonDisplay = "Delete Wish";
   if (type === "createCollection") buttonDisplay = "Create a New Collection";
   if (type === "editCollection") buttonDisplay = "Edit Collection";
   if (type === "deleteCollection") buttonDisplay = "Delete Collection";

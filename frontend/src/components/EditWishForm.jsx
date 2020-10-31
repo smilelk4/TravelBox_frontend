@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchWish } from '../actions/wishActions';
+import { fetchWish, editWish } from '../actions/wishActions';
 import InputField from './InputField';
 import Button from './Button';
 import Alert from '@material-ui/lab/Alert';
 
 const EditWishForm = (props, { title }) => {
   const [ wishTitle, setWishTitle ] = useState('');
+  const [ collectionId, setCollectionId ] = useState('');
   const [ description, setDescription ] = useState('');
   const [ country, setCountry ] = useState('');
   const [ regionCity , setRegionCity ] = useState('');
@@ -18,22 +19,27 @@ const EditWishForm = (props, { title }) => {
   const userId = useSelector(state => state.userInfo.id);
   const errorLog = useSelector(state => state.errors);
   const wish = useSelector(state => state.wishes[0]);
-
+  
   useEffect(() => {
-    (async () => {
-      dispatch(fetchWish(props.match.params.id));
-    })();
+    dispatch(fetchWish(props.match.params.id));
   }, [props.match.params.id]);
-
+  
   useEffect(() => {
     if (wish) {
+      const convertedDate = new Date(wish.goalDate)
+      const year = convertedDate.getFullYear();
+      const month = convertedDate.getMonth();
+      const date = convertedDate.getDate();
+
       setWishTitle(wish.title);
+      setCollectionId(wish.collectionId);
       setDescription(wish.description)
       setCountry(wish.country);
       setRegionCity(wish.regionCity);
       setGoalSaving(wish.goalSaving);
       setInterestLevel(wish.interestLevel);
-      setGoalDate(wish.goalDate);
+      setGoalDate(`${year}-${month + 1}-${date}`);
+
     }
   }, [wish]);
 
@@ -41,16 +47,19 @@ const EditWishForm = (props, { title }) => {
     e.preventDefault();
       const formData = { 
       userId,
-      // collectionId,
+      collectionId,
       title: wishTitle, 
       description,
       country,
       regionCity,
       goalSaving,
       interestLevel,
-      goalDate
+      goalDate,
+      starred: false,
+      accomplished: false
      };
-    // dispatch(editCollection(formData, token, collection.id));
+     console.log(formData)
+    dispatch(editWish(formData, token, wish.id));
   }
   
   if (wish) {
@@ -105,7 +114,7 @@ const EditWishForm = (props, { title }) => {
           size='lg-1'
           currentState={goalDate}
           updateState={setGoalDate} />
-          <Button type='editCollection' bgcolor='blue' reg='true'/>
+          <Button type='editWish' bgcolor='blue' reg='true'/>
         </form>
       </>
     );

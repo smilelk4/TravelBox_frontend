@@ -6,6 +6,8 @@ export const CREATE_COLLECTION_FAIL = 'CREATE_COLLECTION_FAIL';
 export const EDIT_COLLECTION_FAIL = 'EDIT_COLLECTION_FAIL';
 export const DELETE_COLLECTION_FAIL = 'DELETE_COLLECTION_FAIL';
 export const CREATE_WISH_FAIL = 'CREATE_WISH_FAIL';
+export const EDIT_WISH_FAIL = 'EDIT_WISH_FAIL';
+export const DELETE_WISH_FAIL = 'DELETE_WISH_FAIL';
 export const CLEAR_ERRORS = 'CLEAR_ERRORS';
 
 const errorReducer = (state = [], action) => {
