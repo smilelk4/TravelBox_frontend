@@ -32,7 +32,7 @@
    -webkit-clip-path: polygon(0 0, 100% 0, 0 85%);
     clip-path: polygon(0 0, 100% 0, 0 85%);
     background-image: 
-    $gradient-light-transparent,
+    // $gradient-light-transparent,
     url(https://images.pexels.com/photos/2265876/pexels-photo-2265876.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
    }
 
@@ -40,7 +40,7 @@
       -webkit-clip-path: polygon(0 0, 100% 0, 0 85%);
       clip-path: polygon(0 0, 100% 0, 0 85%);
       background-image: 
-      $gradient-light-transparent,
+      // $gradient-light-transparent,
       url(https://images.pexels.com/photos/2175952/pexels-photo-2175952.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
     }
   }

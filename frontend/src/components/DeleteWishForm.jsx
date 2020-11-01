@@ -34,10 +34,8 @@ const DeleteWishForm = (props) => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    (async () => {
-      await dispatch(deleteWish(token, wish.id));
-      window.location.href='/my-box';
-    })();
+    dispatch(deleteWish(token, wish.id));
+    window.location.href='/my-box';
   }
   
   if (wish) {

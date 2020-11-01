@@ -30,10 +30,13 @@ const MyBox = () => {
       </NavLink>
       <PageTitle title="MyCollection" option="my-box"/>
       <div ref={containerDiv} className="mybox__card-container">
+        {!collections.length && <p className='no-contents'>You don't have any collections yet.
+          Create your first collection <NavLink to='/my-collections/create'>HERE</NavLink>.</p>}
         {collections.map(collection => <Card key={collection.id} type='horizontal-1' collection={collection} />)}
       </div>
       <div className="mybox__starred-container">
         <PageTitle title="Starred Wishes" size="medium"/>
+          {!wishes.length && <p className='no-contents'>You don't have any wishes yet.</p>}
           {wishes.map(wish => <Card key={wish.id} type='rectangle-1' wish={wish}/>)}
       </div>
     </div>

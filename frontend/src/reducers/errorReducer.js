@@ -22,7 +22,11 @@ const errorReducer = (state = [], action) => {
       return ['Could not load your wishes.'];
     case CREATE_COLLECTION_FAIL:
       return action.errors;
+    case EDIT_WISH_FAIL:
+      return action.errors;
     case EDIT_COLLECTION_FAIL:
+      return action.errors;
+    case DELETE_WISH_FAIL:
       return action.errors;
     case DELETE_COLLECTION_FAIL:
       return action.errors;

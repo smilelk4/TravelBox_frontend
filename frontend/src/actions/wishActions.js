@@ -116,7 +116,6 @@ export const deleteWish = (token, wishId) => {
     });
 
     if (res.ok) {
-      window.location.href='/my-box';
       return;
     }
 

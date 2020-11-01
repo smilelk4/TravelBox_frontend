@@ -9,6 +9,18 @@
     // border: 1px solid black;
   }
 
+  .no-contents {
+    background-color: $color-bg-light1;
+    padding: 2rem;
+    border-radius: 5px;
+    position: relative;
+    top: 3rem;
+
+    a {
+      color: $color-pink;
+    }
+  }
+
   &__card-container {
     grid-column: 2 / span 1;
     grid-row: 3 / span 1;
