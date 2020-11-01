@@ -84,14 +84,14 @@ const Navbar = () => {
         {isLoggedIn ? (
           <>
             <NavLink to='/my-box'>MyBox</NavLink>
-            <NavLink to='/my-collections/create'>Create a New Collection</NavLink>
-            <div onClick={handleLogout}>
-            </div>
             <div className='navbar__hamburger' onClick={toggleMenu} >
               <img src={profilePic} />
             </div>
             <div ref={menu} className='navbar__menu'>
-              <Button type="logout" linkTo='/' />
+              <NavLink to='/my-collections/create'>Create a New Collection</NavLink>
+              <div onClick={handleLogout}>
+                <Button type="logout" linkTo='/' />
+              </div>
             </div>
           </>
         ) : (
