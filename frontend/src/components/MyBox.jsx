@@ -20,7 +20,7 @@ const MyBox = () => {
       dispatch(fetchCollections(userInfo.id));
       dispatch(fetchStarredWishes(userInfo.id));
     }
-  }, [userInfo]);
+  }, [userInfo, dispatch]);
 
   return ( 
     <div className="mybox">

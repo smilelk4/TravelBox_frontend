@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import { fetchCollection } from '../actions/collectionActions'
+// import { useDispatch } from 'react-redux';
+// import { fetchCollection } from '../actions/collectionActions'
 import { NavLink } from 'react-router-dom';
 
 const Card = ({ type, collection, wish }) => {
@@ -24,7 +24,7 @@ const Card = ({ type, collection, wish }) => {
   });
 
   if (collection) {
-    const { id, collectionName, description, createdAt, updatedAt } = collection;
+    const { id, collectionName, description } = collection;
     return ( 
       <NavLink to={`/my-collections/${id}`}>
       <div ref={cardDiv} className='card'>
@@ -37,7 +37,7 @@ const Card = ({ type, collection, wish }) => {
   }
 
   if (wish) {
-    const { id, collectionId, title, description, country, regionCity, targetSaving, interestLevel, targetDate, createdAt, updatedAt } = wish;
+    const { id, title, description, country, regionCity } = wish;
     return ( 
       <NavLink to={`/my-wishes/${id}`}>
         <div ref={cardDiv} className='card'>

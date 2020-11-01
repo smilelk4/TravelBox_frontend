@@ -20,14 +20,14 @@ const EditCollectionForm = (props, { title }) => {
     (async () => {
       await dispatch(fetchCollection(collectionId));
     })();
-  }, [props.match.params.id]);
+  }, [props.match.params.id, collectionId, dispatch]);
 
   useEffect(() => {
     if (collection) {
       setCollectionName(collection.collectionName);
       setDescription(collection.description)
     }
-  }, [collection]);
+  }, [collection, dispatch]);
 
   const handleSubmit = e => {
     e.preventDefault();

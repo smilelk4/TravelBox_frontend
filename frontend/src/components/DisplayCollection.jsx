@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchCollection } from '../actions/collectionActions'
 import DetailContainer from './DetailContainer';
@@ -17,7 +16,7 @@ const DisplayCollection = props => {
       await dispatch(fetchCollection(collectionId));
       // setIsUserLoaded(true);
     })()
-  }, [props.match.params.id])
+  }, [props.match.params.id, collectionId, dispatch])
 
 
   if (collection) {    

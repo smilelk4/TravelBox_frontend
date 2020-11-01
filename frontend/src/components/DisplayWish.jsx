@@ -2,14 +2,12 @@ import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchCollection } from '../actions/collectionActions'
 import DetailContainer from './DetailContainer';
-import CollectionDetail from './CollectionDetail';
 import WishDetail from './WishDetail';
-import DiagonalContainer from './DiagonalContainer';
 
 const DisplayWish = props => {
   const dispatch = useDispatch();
   // const collectionId = props.match.params.id;
-  const [wishId, setWishId] = useState(props.match.params.id);
+  // const [wishId, setWishId] = useState(props.match.params.id);
   const [collectionId, setCollectionId] = useState('');
 
   const wishes = useSelector(state => state.wishes);
@@ -22,7 +20,7 @@ const DisplayWish = props => {
         await dispatch(fetchCollection(collectionId));
       })();
     }
-  }, [wishes, dispatch])
+  }, [wishes, collectionId, props.history, props.match.params.id, dispatch])
   
   if (wishes.length) {
     const wish = wishes.find(wish => wish.id === parseInt(props.match.params.id));

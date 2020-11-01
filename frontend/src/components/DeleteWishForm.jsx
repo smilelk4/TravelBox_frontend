@@ -20,7 +20,7 @@ const DeleteWishForm = (props) => {
 
   useEffect(() => {
     dispatch(fetchWish(wishId));
-  }, [props.match.params.id]);
+  }, [props.match.params.id, wishId, dispatch]);
 
   useEffect(() => {
     if (wish) {
@@ -30,7 +30,7 @@ const DeleteWishForm = (props) => {
       setCountry(wish.country);
       setRegionCity(wish.regionCity);
     }
-  }, [wish]);
+  }, [wish, dispatch]);
 
   const handleSubmit = e => {
     e.preventDefault();

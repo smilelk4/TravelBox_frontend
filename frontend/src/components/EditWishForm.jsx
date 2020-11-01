@@ -22,7 +22,7 @@ const EditWishForm = (props, { title }) => {
   
   useEffect(() => {
     dispatch(fetchWish(props.match.params.id));
-  }, [props.match.params.id]);
+  }, [props.match.params.id, dispatch]);
   
   useEffect(() => {
     if (wish) {

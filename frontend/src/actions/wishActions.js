@@ -71,7 +71,7 @@ export const createWish = (data, token) => {
 
     const errorData = await res.json();
     dispatch({
-      type: EDIT_WISH_FAIL,
+      type: CREATE_WISH_FAIL,
       errors: errorData.errors
     });
 

@@ -1,6 +1,6 @@
 import React, { useState, useEffect, createContext, useRef } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import Button from './Button';
 import Modal from './Modal';
 import { LightSiteLogo } from '../icons/SiteLogo';
@@ -28,7 +28,7 @@ const Navbar = () => {
       setModalStatus('hidden');
       setProfilePic(loadedProfileImage);
     }
-  });
+  }, [isLoggedIn, loadedProfileImage, dispatch]);
 
   const handleSignupOrLogin = e => {
     modalStatus === 'hidden' ? setModalStatus('active') : setModalStatus('hidden');
@@ -85,7 +85,7 @@ const Navbar = () => {
           <>
             <NavLink to='/my-box'>MyBox</NavLink>
             <div className='navbar__hamburger' onClick={toggleMenu} >
-              <img src={profilePic} />
+              <img src={profilePic} alt={profilePic} />
             </div>
             <div ref={menu} className='navbar__menu'>
               <NavLink to='/my-collections/create'>Create a New Collection</NavLink>

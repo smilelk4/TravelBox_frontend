@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import PageTitle from './PageTitle';
 import DiagonalContainer from './DiagonalContainer';
@@ -19,7 +18,7 @@ const DetailContainer = (props) => {
         setCurrentWishId(props.match.params.id);
       }
     }
-  })
+  }, [props.match.params.id])
 
   return ( 
     <>

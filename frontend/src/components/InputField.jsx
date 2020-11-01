@@ -1,4 +1,4 @@
-import React, { useRef, useContext, useEffect } from 'react';
+import React, { useRef, useEffect } from 'react';
 
 const InputField = ({ type, label, currentState = '', updateState, size = '' }) => {
   const inputField = useRef();

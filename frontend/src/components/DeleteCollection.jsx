@@ -1,7 +1,6 @@
 import React from 'react';
 import DetailContainer from './DetailContainer';
 import DeleteCollectionForm from './DeleteCollectionForm';
-import InputField from './InputField';
 
 const DeleteCollection = (props) => {
   return ( 
