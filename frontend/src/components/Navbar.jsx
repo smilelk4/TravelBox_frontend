@@ -97,7 +97,7 @@ const Navbar = () => {
         ) : (
           <>
             <div onClick={handleSignupOrLogin}>
-              <Button type="signup" />
+              <Button type="signup" className='nav-signup' />
             </div>
             <div onClick={handleSignupOrLogin}>
               <Button type="login" />

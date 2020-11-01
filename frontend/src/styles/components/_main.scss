@@ -32,6 +32,16 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    h3 {
+      cursor: pointer;
+      transition: opacity .2s ease-in;
+      opacity: 1;
+
+      &:hover {
+        opacity: .8;
+      }
+    }
   }
 
   &__right {
@@ -64,26 +74,26 @@
 
     &:nth-child(1) {
       background-image: 
-      $gradient-green-transparent3,
+      $gradient-light-transparent,
       url(https://images.pexels.com/photos/210012/pexels-photo-210012.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
     }
 
     &:nth-child(2) {
       background-image: 
-      $gradient-green-transparent2,
+      $gradient-light-transparent,
       url(https://images.pexels.com/photos/2533092/pexels-photo-2533092.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
     }
 
     &:nth-child(3) {
       background-image: 
-      $gradient-green-transparent3,
+      $gradient-light-transparent,
       url(https://images.pexels.com/photos/1313814/pexels-photo-1313814.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
     }
 
      &:nth-child(4) {
       background-position: center bottom;
       background-image: 
-      $gradient-green-transparent2,
+      $gradient-light-transparent,
       url(https://images.pexels.com/photos/2422265/pexels-photo-2422265.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
     }
 }

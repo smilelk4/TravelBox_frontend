@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 
-const Button = ({ type, bgcolor='white', linkTo='', reg }) => {
+const Button = ({ type, bgcolor='white', linkTo='', reg, className}) => {
   let buttonDisplay;
   if (type === "signup") buttonDisplay = "Sign Up";
   if (type === "login") buttonDisplay = "Log In";
@@ -37,8 +37,8 @@ const Button = ({ type, bgcolor='white', linkTo='', reg }) => {
   }
   
   return ( 
-    <input className={`button ${bgcolor}`} 
-      id={type} 
+    <input className={`button ${bgcolor} ${className}`} 
+      id={type}
       value={ buttonDisplay.toUpperCase() }
     />
   );

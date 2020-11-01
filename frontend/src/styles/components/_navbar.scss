@@ -18,12 +18,12 @@
   }
 
   &__right {
-    display: flex;
-    align-items: center;
     min-width: 10rem;
+    // max-width: 50rem;
     display: flex;
     justify-content: space-between;
     position: relative;
+    align-items: center;
     right: 0;
   }
 
