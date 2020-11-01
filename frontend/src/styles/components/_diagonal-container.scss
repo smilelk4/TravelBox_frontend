@@ -11,6 +11,12 @@
     height: 90vh;
   }
 
+  &.horizontal-2 {
+    width: 65vw;
+    min-height: auto;
+    height: 60rem;
+  }
+
   &.vertical-1 {
     width: 60rem;
     min-height: auto;

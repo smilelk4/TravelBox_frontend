@@ -76,4 +76,22 @@
     }
 
   }
+
+  &.rectangle-2 {
+    width: 30rem;
+    height: 90%;
+    margin: 2rem 4rem;
+    display: flex;
+    flex-direction: column;
+
+    span {
+      font-weight: bold;
+    }
+
+    p {
+      line-height: 2.5rem;
+      font-size: 1.1rem;
+    }
+
+  }
 }

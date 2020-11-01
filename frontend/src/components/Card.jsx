@@ -51,6 +51,12 @@ const Card = ({ type, collection, wish }) => {
       </NavLink>
     );
   }
+  return ( 
+    <div ref={cardDiv} className='card__image'>
+      <div className='card__image'></div>
+    </div>
+  )
 }
+
  
 export default Card;

@@ -1,9 +1,89 @@
 .main {
   grid-column: 1 / -1;
-  display: flex;
-  justify-content: center;
+  // padding: 4rem;
+  margin: 7rem 0;
 
-  & > * {
-    margin: 10rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 40rem 60rem;
+
+  &__contents {
+    display: flex;
+    justify-content: center;
+    grid-column: 1 / -1;
+    // background-color:pink;
   }
+
+  &__main {
+    background-color: $color-bg-dark1;
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__left {
+    // flex-grow: 1;
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+    color:$color-bg-light1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__right {
+    // flex-grow: 1;
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__section {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: center;
+  }
+
+  & * {
+    // border: 1px solid black;
+  }
+}
+
+.main__image {
+  // flex-grow: 1;
+ background-size: cover;
+//  padding: 2rem;
+ width: 10rem;
+ height: 100%;
+  // &__image {
+    background-color: steelblue;
+    // height: 40%;
+
+    &:nth-child(1) {
+      background-image: 
+      $gradient-green-transparent3,
+      url(https://images.pexels.com/photos/210012/pexels-photo-210012.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+    }
+
+    &:nth-child(2) {
+      background-image: 
+      $gradient-green-transparent2,
+      url(https://images.pexels.com/photos/2533092/pexels-photo-2533092.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+    }
+
+    &:nth-child(3) {
+      background-image: 
+      $gradient-green-transparent3,
+      url(https://images.pexels.com/photos/1313814/pexels-photo-1313814.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+    }
+
+     &:nth-child(4) {
+      background-position: center bottom;
+      background-image: 
+      $gradient-green-transparent2,
+      url(https://images.pexels.com/photos/2422265/pexels-photo-2422265.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+    }
 }
