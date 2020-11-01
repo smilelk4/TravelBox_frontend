@@ -14,6 +14,7 @@ $color-green-mid: rgba(179, 222, 193, 1);
 $color-green-mid-transparent: rgba(179, 222, 193, .8);
 $color-green-midlight: rgba(211, 243, 222, 1);
 $color-green-midlight-transparent: rgba(211, 243, 222, .8);
+$color-green-midlight-transparent2: rgba(211, 243, 222, .4);
 $color-green-light: rgba(219, 249, 240, 1);
 
 $color-bg-dark1: rgb(97, 97, 97);
@@ -32,6 +33,7 @@ $color-orange: #FFB17A;
 $color-pink:#EF767A;
 $color-blue:rgb(176, 218, 219);
 $color-blue-transparent:rgba(176, 218, 219, .8);
+$color-blue-transparent2:rgba(176, 218, 219, .4);
 // #A39594
 
 $font-roboto: 'Roboto';
@@ -41,9 +43,11 @@ $font-open-sans: 'Open Sans';
 
 $gradient-green1: linear-gradient(125deg, $color-green-mid 20%, $color-blue 90%, $color-green-midlight);
 $gradient-green-transparent: linear-gradient(125deg, $color-green-mid-transparent 20%, $color-blue-transparent 90%, $color-green-midlight-transparent);
+$gradient-green-transparent2: linear-gradient(125deg, $color-green-mid-transparent 20%, $color-blue-transparent2 90%, $color-green-midlight-transparent2);
+$gradient-green-transparent3: linear-gradient(125deg, $color-green-mid-transparent 20%, $color-green-midlight-transparent2 90%, $color-blue-transparent2);
 
-$gradient-blue-transparent: linear-gradient(125deg, rgba(176, 218, 219, .45) 90%, $color-green-midlight-transparent);
-$gradient-grey-transparent: linear-gradient(125deg, rgba(177, 177, 177, .45), 90%, rgba(176, 218, 219, .45));
+// $gradient-blue-transparent: linear-gradient(125deg, rgba(176, 218, 219, .4) 90%, $color-green-midlight-transparent);
+// $gradient-grey-transparent: linear-gradient(125deg, rgba(177, 177, 177, .25), 90%, rgba(176, 218, 219, .4));
 
 $shadow-box1: .5rem .5rem 1.8rem $color-font-grey1;
 $shadow-box2: 0 .5rem 3rem $color-font-grey2-transparent;

@@ -10,7 +10,7 @@ const CollectionDetail = ({ id, collectionName, description, createdAt, updatedA
 
   useEffect(() => {
     if (images) setIsImageLoaded(true);
-  }, []);
+  }, [images]);
 
   return ( 
     <> 

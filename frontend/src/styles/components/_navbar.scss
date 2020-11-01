@@ -79,9 +79,11 @@
   
   &--scrolled {
     background-color: $color-bg-dark1-transparent;
-    transition: background .2s ease-in-out;
+    transition: background .2s ease-in;
     box-shadow: $shadow-nav;
-    position: sticky;
+    position: fixed;
     top: 0;
+    height: 6rem;
+    z-index: 5;
   }
 }
