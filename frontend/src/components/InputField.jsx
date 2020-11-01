@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 
-const InputField = ({ type, label, currentState = '', updateState, size = '' }) => {
+const InputField = ({ type, label, currentState = '', updateState, size = ''}) => {
   const inputField = useRef();
   const inputLabel = useRef();
 
@@ -28,7 +28,7 @@ const InputField = ({ type, label, currentState = '', updateState, size = '' }) 
   return ( 
     <div className={size}>
       <input 
-        type={type} 
+        type={type}
         value={currentState}
         ref={inputField}
         onFocus={addSelectedClass}

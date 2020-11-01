@@ -49,6 +49,8 @@ $gradient-green-transparent2: linear-gradient(125deg, $color-green-mid-transpare
 $gradient-green-transparent3: linear-gradient(125deg, $color-green-mid-transparent2 20%, $color-green-midlight-transparent2 90%, $color-blue-transparent2);
 $gradient-light-transparent: linear-gradient(125deg, $color-bg-light1-transparent2 20%, $color-green-midlight-transparent2 90%, $color-bg-light1-transparent2);
 
+$gradient-blue1: linear-gradient(125deg, rgba(176, 218, 219, 1) 20%,rgb(176, 202, 219) 90%, $color-bg-light1-transparent2);
+
 // $gradient-blue-transparent: linear-gradient(125deg, rgba(176, 218, 219, .4) 90%, $color-green-midlight-transparent);
 // $gradient-grey-transparent: linear-gradient(125deg, rgba(177, 177, 177, .25), 90%, rgba(176, 218, 219, .4));
 

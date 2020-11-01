@@ -50,7 +50,7 @@ const CreateWishForm = ({ title, collectionId }) => {
       <form className="form" onSubmit={handleSubmit}>
         <InputField 
           type='text' 
-          label='Title'
+          label='Title (Required)'
           size='lg-1'
           currentState={wishTitle}
           updateState={setWishTitle} />

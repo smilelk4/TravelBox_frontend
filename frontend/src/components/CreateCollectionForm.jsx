@@ -35,13 +35,16 @@ const CreateCollectionForm = ({ title }) => {
       <form className="form" onSubmit={handleSubmit}>
         <InputField 
           type='text' 
-          label='Collection Name'
+          label='Collection Name (Required)'
+          required='required'
           size='lg-1'
+          currentState={collectionName}
           updateState={setCollectionName} /> 
         <InputField 
           type='text' 
           label='Description'
           size='lg-1'
+          currentState={description}
           updateState={setDescription} /> 
         <input
         type="file"
