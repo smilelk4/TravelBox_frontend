@@ -22,4 +22,10 @@ a:active,
 a:visited {
   color: $color-bg-dark1;
   text-decoration: none;
+  opacity: 1;
+  transition: opacity .2s ease-in;
+
+  &:hover {
+    opacity: .8;
+  }
 }

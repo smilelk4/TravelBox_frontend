@@ -16,10 +16,10 @@ const CollectionDetail = ({ id, collectionName, description, createdAt, updatedA
     <> 
       <div className="detail-container__image-container">
         {isImageLoaded ? (
-          images.map(img => <img src={img.image} alt={img.image} /> )):( <div>AA</div>)}
+          images.map(img => <img src={img.image} alt={img.image} key={img.image}/> )):( <div>AA</div>)}
       </div>
       <p> { description } </p>
-      {wishes.map(wish => <Card wish={wish} id={id} />)}
+      {wishes.map(wish => <Card wish={wish} id={id} key={wish.id}/>)}
       <p className="collection-detail__info">
         <span>collection id: { id }</span>  |
         <span>created at: { dateDisplay(createdAt) }</span> |

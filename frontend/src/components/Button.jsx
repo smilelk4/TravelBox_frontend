@@ -40,6 +40,7 @@ const Button = ({ type, bgcolor='white', linkTo='', reg, className}) => {
     <input className={`button ${bgcolor} ${className}`} 
       id={type}
       value={ buttonDisplay.toUpperCase() }
+      readOnly
     />
   );
 }

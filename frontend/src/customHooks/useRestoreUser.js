@@ -9,7 +9,7 @@ const useRestoreUser = () => {
   const isLoggedIn = useSelector(state => state.isLoggedIn);
 
   useEffect(() => {
-    if (!isLoggedIn && !userInfo.id) {
+    if (!isLoggedIn && !userInfo.id && window.location.pathname !== '/') {
       dispatch(restoreUserStore(token)); 
     }
   }, );

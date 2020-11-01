@@ -57,7 +57,7 @@ const Form = ({ title }) => {
             currentState={email}
             updateState={setEmail} />
           <InputField 
-            type='password' 
+            type='new-password' 
             label='Password'
             currentState={password}
             updateState={setPassword} />
@@ -98,12 +98,12 @@ const Form = ({ title }) => {
             currentState={email}
             updateState={setEmail} />
           <InputField 
-            type='password' 
+            type='new-password' 
             label='Password' 
             currentState={password}
             updateState={setPassword} />
           <InputField 
-            type='password' 
+            type='new-password' 
             label='Confirm Password' 
             currentState={confirmPassword}
             updateState={setConfirmPassword} />
