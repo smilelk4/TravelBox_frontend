@@ -42,6 +42,9 @@ $font-open-sans: 'Open Sans';
 $gradient-green1: linear-gradient(125deg, $color-green-mid 20%, $color-blue 90%, $color-green-midlight);
 $gradient-green-transparent: linear-gradient(125deg, $color-green-mid-transparent 20%, $color-blue-transparent 90%, $color-green-midlight-transparent);
 
+$gradient-blue-transparent: linear-gradient(125deg, rgba(176, 218, 219, .45) 90%, $color-green-midlight-transparent);
+$gradient-grey-transparent: linear-gradient(125deg, rgba(177, 177, 177, .45), 90%, rgba(176, 218, 219, .45));
+
 $shadow-box1: .5rem .5rem 1.8rem $color-font-grey1;
 $shadow-box2: 0 .5rem 3rem $color-font-grey2-transparent;
 $shadow-box3: 0 .5rem 1rem $color-font-grey2-transparent;
