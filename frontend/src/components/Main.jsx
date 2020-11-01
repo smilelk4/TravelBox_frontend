@@ -20,6 +20,7 @@ const Main = () => {
             <div className='main__image'></div>
             <div className='main__image'></div>
             <div className='main__image'></div>
+            <div className='main__image'></div>
           </div>
       
         </div>

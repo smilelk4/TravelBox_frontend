@@ -9,13 +9,13 @@ const DisplayCollection = props => {
   const dispatch = useDispatch();
   const collectionId = props.match.params.id;
   const collection = useSelector(state => state.collections[0]);
-  const wishes = useSelector(state => state.wishes);
-  const [isUserLoaded, setIsUserLoaded] = useState(false);
+  // const wishes = useSelector(state => state.wishes)
+  // const [isUserLoaded, setIsUserLoaded] = useState(false);
 
   useEffect(() => {
     (async () => {
       await dispatch(fetchCollection(collectionId));
-      setIsUserLoaded(true);
+      // setIsUserLoaded(true);
     })()
   }, [props.match.params.id])
 

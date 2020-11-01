@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import PageSection from './PageSection';
 
 const WishDetail = (props) => {
-  const { id, title, description, collectionId, country, regionCity, interestLevel, goalDate, goalSaving, starred, accomplished, createdAt, updatedAt, ToDos: toDos } = props;
+  const { id, description, collectionId, country, regionCity, interestLevel, goalDate, goalSaving, starred, accomplished, createdAt, updatedAt, ToDos: toDos } = props;
   return ( 
     <div>
       <div className="wish-detail">
@@ -14,6 +14,8 @@ const WishDetail = (props) => {
             <PageSection label='Interest Level:' value={interestLevel}/>
             <PageSection label='Goal Date:' value={goalDate}/>
             <PageSection label='Goal Saving:' value={goalSaving}/>
+            <PageSection label='Starred:' value={starred}/>
+            <PageSection label='Accomplished:' value={accomplished}/>
 
             {toDos && (
               <ul>
@@ -23,6 +25,7 @@ const WishDetail = (props) => {
           </div>
           <p className="wish-detail__info">
             <span>wish id: { id }</span>
+            <span>collection id: { collectionId }</span>
             <span>created at: { createdAt }</span>
             <span>last updated: { updatedAt }</span>
           </p>

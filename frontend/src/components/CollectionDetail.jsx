@@ -16,8 +16,7 @@ const CollectionDetail = ({ id, collectionName, description, createdAt, updatedA
     <> 
       <div className="detail-container__image-container">
         {isImageLoaded ? (
-          images.map(img => <img src={img.image} /> )):( <div>AA</div>)}
-        {/* {isImageLoaded && images.map(img => <img src={img.image} />)} */}
+          images.map(img => <img src={img.image} alt={img.image} /> )):( <div>AA</div>)}
       </div>
       <p> { description } </p>
       {wishes.map(wish => <Card wish={wish} id={id} />)}

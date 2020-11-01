@@ -30,11 +30,11 @@ const MyBox = () => {
       </NavLink>
       <PageTitle title="MyCollection" option="my-box"/>
       <div ref={containerDiv} className="mybox__card-container">
-        {collections.map(collection => <Card type='horizontal-1' collection={collection} />)}
+        {collections.map(collection => <Card key={collection.id} type='horizontal-1' collection={collection} />)}
       </div>
       <div className="mybox__starred-container">
         <PageTitle title="Starred Wishes" size="medium"/>
-          {wishes.map(wish => <Card type='rectangle-1' wish={wish}/>)}
+          {wishes.map(wish => <Card key={wish.id} type='rectangle-1' wish={wish}/>)}
       </div>
     </div>
   );

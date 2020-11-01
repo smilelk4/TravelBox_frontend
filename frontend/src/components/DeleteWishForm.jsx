@@ -13,7 +13,7 @@ const DeleteWishForm = (props) => {
   const [ regionCity , setRegionCity ] = useState('');
   const wishId = props.match.params.id;
   const dispatch = useDispatch();
-  const collection = useSelector(state => state.collections[0]);
+  // const collection = useSelector(state => state.collections[0]);
   const token = useSelector(state => state.token);
   const errorLog = useSelector(state => state.errors);
   const wish = useSelector(state => state.wishes[0]);

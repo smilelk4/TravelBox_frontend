@@ -22,6 +22,45 @@
     justify-content: space-between;
   }
 
+  &__image {
+    background-size: cover;
+    // width: 10rem;
+    height: 100%;
+    flex-grow: 1;
+
+    &:nth-child(1) {
+      background-image: 
+      $gradient-light-transparent,
+      url(https://images.pexels.com/photos/210012/pexels-photo-210012.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+    }
+
+    &:nth-child(2) {
+      background-image: 
+      $gradient-light-transparent,
+      url(https://images.pexels.com/photos/2533092/pexels-photo-2533092.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+    }
+
+    &:nth-child(3) {
+      background-image: 
+      $gradient-light-transparent,
+      url(https://images.pexels.com/photos/1313814/pexels-photo-1313814.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+    }
+
+     &:nth-child(4) {
+      background-position: center bottom;
+      background-image: 
+      $gradient-light-transparent,
+      url(https://images.pexels.com/photos/2422265/pexels-photo-2422265.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+     }
+
+     &:nth-child(5) {
+      background-position: center bottom;
+      background-image: 
+      $gradient-light-transparent,
+      url(https://images.pexels.com/photos/586687/pexels-photo-586687.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+     }
+  }
+
   &__left {
     // flex-grow: 1;
     width: 50%;
@@ -56,44 +95,4 @@
     display: flex;
     justify-content: center;
   }
-
-  & * {
-    // border: 1px solid black;
-  }
-}
-
-.main__image {
-  // flex-grow: 1;
- background-size: cover;
-//  padding: 2rem;
- width: 10rem;
- height: 100%;
-  // &__image {
-    background-color: steelblue;
-    // height: 40%;
-
-    &:nth-child(1) {
-      background-image: 
-      $gradient-light-transparent,
-      url(https://images.pexels.com/photos/210012/pexels-photo-210012.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
-    }
-
-    &:nth-child(2) {
-      background-image: 
-      $gradient-light-transparent,
-      url(https://images.pexels.com/photos/2533092/pexels-photo-2533092.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
-    }
-
-    &:nth-child(3) {
-      background-image: 
-      $gradient-light-transparent,
-      url(https://images.pexels.com/photos/1313814/pexels-photo-1313814.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
-    }
-
-     &:nth-child(4) {
-      background-position: center bottom;
-      background-image: 
-      $gradient-light-transparent,
-      url(https://images.pexels.com/photos/2422265/pexels-photo-2422265.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
-    }
 }

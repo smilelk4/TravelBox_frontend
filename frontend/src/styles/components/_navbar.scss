@@ -8,6 +8,10 @@
   justify-content: space-between;
   align-items: center;
 
+  input {
+    max-width: 10rem;
+  }
+
   &__left {
     width: 20rem;
     a {

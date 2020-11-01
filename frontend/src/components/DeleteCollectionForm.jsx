@@ -16,7 +16,7 @@ const DeleteCollectionForm = (props) => {
 
   useEffect(() => {
     dispatch(fetchCollection(collectionId));
-  }, [props.match.params.id]);
+  }, [props.match.params.id, dispatch, collectionId]);
 
   useEffect(() => {
     if (collection) {
