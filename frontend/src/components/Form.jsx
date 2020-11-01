@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import Alert from '@material-ui/lab/Alert';
+import ErrorContainer from './ErrorContainer';
 import { createUser, validateUser } from '../actions/userAction';
 import InputField from './InputField';
 import Button from './Button';
@@ -47,7 +47,7 @@ const Form = ({ title }) => {
         <h3 className="form__header">{title}</h3>
         <div className="form__error-container">
           {errorLog.map(err => (
-            <Alert severity="error">{err}</Alert> 
+            <ErrorContainer>{err}</ErrorContainer> 
           ))}
         </div>
         <form className="form" onSubmit={handleLogin}>
@@ -73,7 +73,7 @@ const Form = ({ title }) => {
         <h3 className="form__header">{title}</h3>
         <div className="form__error-container">
           {errorLog.map(err => (
-            <Alert severity="error">{err}</Alert> 
+            <ErrorContainer>{err}</ErrorContainer> 
           ))}
         </div>
         <form className="form" onSubmit={handleSignup}>

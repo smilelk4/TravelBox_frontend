@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { createCollection } from '../actions/collectionActions';
 import InputField from './InputField';
 import Button from './Button';
-import Alert from '@material-ui/lab/Alert';
+import ErrorContainer from './ErrorContainer';
 
 const CreateCollectionForm = ({ title }) => {
   const [ collectionName , setCollectionName ] = useState('');
@@ -29,7 +29,7 @@ const CreateCollectionForm = ({ title }) => {
       <h3 className="form__header">{title}</h3>
       <div className="form__error-container">
         {errorLog.map(err => (
-          <Alert severity="error">{err}</Alert> 
+          <ErrorContainer>{err}</ErrorContainer> 
         ))}
       </div>
       <form className="form" onSubmit={handleSubmit}>

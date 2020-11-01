@@ -1,0 +1,11 @@
+.error-container {
+  background-color: $color-pink-light-transparent;
+  width: auto;
+  border-radius: 5px;
+  height: 5rem;
+  color: $color-pink-dark;
+  display: flex;
+  align-items: center;
+  padding: 0 2rem;
+  font-size: 1rem;
+}

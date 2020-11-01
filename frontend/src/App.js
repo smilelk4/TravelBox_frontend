@@ -17,7 +17,7 @@ import CreateCollection from './components/CreateCollection';
 import EditCollection from './components/EditCollection';
 import DeleteCollection from './components/DeleteCollection';
 import Footer from './components/Footer';
-import Error from './components/Error';
+import Loading from './components/Loading';
 
 function App() {
   const isLoggedIn = useSelector(state => state.isLoggedIn);
@@ -36,7 +36,7 @@ function App() {
         } />
         <Route 
           exact path='/my-box'
-          render={props => isLoggedIn ? <MyBox {...props} /> : <Error />}
+          render={props => isLoggedIn ? <MyBox {...props} /> : <Loading />}
         />
         <Route 
           path='/my-collections/create'
@@ -70,7 +70,7 @@ function App() {
           exact path='/my-wishes/:id'
           render={props => <DisplayWish {...props} />}
         />
-        <Route path='*' render={props => <Error {...props} />} />
+        <Route path='*' render={props => <Loading {...props} />} />
       </Switch>
     </div>
   );

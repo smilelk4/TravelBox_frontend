@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import InputField from './InputField';
 import Button from './Button';
-import Alert from '@material-ui/lab/Alert';
+import ErrorContainer from './ErrorContainer';
 import { createWish } from '../actions/wishActions'
 
 const CreateWishForm = ({ title, collectionId }) => {
@@ -44,7 +44,7 @@ const CreateWishForm = ({ title, collectionId }) => {
       <h3 className="form__header">{title}</h3>
       <div className="form__error-container">
         {errorLog.map(err => (
-          <Alert severity="error">{err}</Alert> 
+          <ErrorContainer>{err}</ErrorContainer> 
         ))}
       </div>
       <form className="form" onSubmit={handleSubmit}>

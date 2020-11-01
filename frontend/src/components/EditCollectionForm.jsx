@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { editCollection, fetchCollection } from '../actions/collectionActions';
 import InputField from './InputField';
 import Button from './Button';
-import Alert from '@material-ui/lab/Alert';
+import ErrorContainer from './ErrorContainer';
 
 const EditCollectionForm = (props) => {
   const [ collectionName , setCollectionName ] = useState('');
@@ -46,7 +46,7 @@ const EditCollectionForm = (props) => {
         <h3 className="form__header">{props.title}</h3>
         <div className="form__error-container">
           {errorLog.map(err => (
-            <Alert severity="error">{err}</Alert> 
+            <ErrorContainer>{err}</ErrorContainer> 
           ))}
         </div>
         <form className="form" onSubmit={handleSubmit}>

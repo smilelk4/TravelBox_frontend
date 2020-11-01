@@ -17,16 +17,6 @@
     margin: .8rem;
   }
 
-  .required {
-    &::after {
-      content: 'required';
-      position: relative;
-      top: -3rem;
-      font-size: 1rem;
-      color: $color-pink;
-    }
-  }
-
   .tag-selected {
     transform: translateY(-180%);
     font-size: 1rem;

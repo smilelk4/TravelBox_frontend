@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { fetchWish, deleteWish } from '../actions/wishActions';
 import Button from './Button';
 import PageSection from './PageSection';
-import Alert from '@material-ui/lab/Alert';
+import ErrorContainer from './ErrorContainer';
 
 const DeleteWishForm = (props) => {
   const [ wishTitle, setWishTitle ] = useState('');
@@ -13,7 +13,6 @@ const DeleteWishForm = (props) => {
   const [ regionCity , setRegionCity ] = useState('');
   const wishId = props.match.params.id;
   const dispatch = useDispatch();
-  // const collection = useSelector(state => state.collections[0]);
   const token = useSelector(state => state.token);
   const errorLog = useSelector(state => state.errors);
   const wish = useSelector(state => state.wishes[0]);
@@ -44,7 +43,7 @@ const DeleteWishForm = (props) => {
         <h3 className="form__header">{props.title}</h3>
         <div className="form__error-container">
           {errorLog.map(err => (
-            <Alert severity="error">{err}</Alert> 
+            <ErrorContainer>{err}</ErrorContainer> 
           ))}
         </div>
         <PageSection 

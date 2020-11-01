@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { fetchWish, editWish } from '../actions/wishActions';
 import InputField from './InputField';
 import Button from './Button';
-import Alert from '@material-ui/lab/Alert';
+import ErrorContainer from './ErrorContainer';
 
 const EditWishForm = (props) => {
   const [ wishTitle, setWishTitle ] = useState('');
@@ -67,7 +67,7 @@ const EditWishForm = (props) => {
         <h3 className="form__header">{props.title}</h3>
         <div className="form__error-container">
           {errorLog.map(err => (
-            <Alert severity="error">{err}</Alert> 
+            <ErrorContainer>{err}</ErrorContainer> 
           ))}
         </div>
         <form className="form" onSubmit={handleSubmit}>

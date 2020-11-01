@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { deleteCollection, fetchCollection } from '../actions/collectionActions';
 import Button from './Button';
 import PageSection from './PageSection';
-import Alert from '@material-ui/lab/Alert';
+import ErrorContainer from './ErrorContainer';
 
 const DeleteCollectionForm = (props) => {
   const [ collectionName , setCollectionName ] = useState('');
@@ -37,7 +37,7 @@ const DeleteCollectionForm = (props) => {
         <h3 className="form__header">{props.title}</h3>
         <div className="form__error-container">
           {errorLog.map(err => (
-            <Alert severity="error">{err}</Alert> 
+            <ErrorContainer>{err}</ErrorContainer> 
           ))}
         </div>
         <PageSection 

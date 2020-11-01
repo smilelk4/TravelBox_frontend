@@ -1,10 +1,10 @@
 import React from 'react';
 
-const Error = () => {
+const Loading = () => {
 
   return ( 
     <h4>Loading...</h4>
   );
 }
  
-export default Error;
+export default Loading;
