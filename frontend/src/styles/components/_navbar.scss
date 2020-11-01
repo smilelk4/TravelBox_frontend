@@ -2,7 +2,7 @@
   padding: 0 3vw;
   width: 100%;
   grid-column: 1 / -1;
-  position: relative;
+  // position: relative;
 
   a,
   a::before,
@@ -98,9 +98,9 @@
     background-color: $color-bg-dark1-transparent;
     transition: background .2s ease-in;
     box-shadow: $shadow-nav;
-    // position: fixed;
-    top: 0;
+    position: sticky;
     height: 6rem;
-    z-index: 5;
+    top: 0;
+    z-index: 50;
   }
 }

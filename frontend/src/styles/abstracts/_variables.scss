@@ -15,14 +15,14 @@ $color-green-mid-transparent: rgba(179, 222, 193, .8);
 $color-green-mid-transparent2: rgba(179, 222, 193, .3);
 $color-green-midlight: rgba(211, 243, 222, 1);
 $color-green-midlight-transparent: rgba(211, 243, 222, .8);
-$color-green-midlight-transparent2: rgba(211, 243, 222, .3);
+$color-green-midlight-transparent2: rgba(211, 243, 222, .1);
 $color-green-light: rgba(219, 249, 240, 1);
 
 $color-bg-dark1: rgb(97, 97, 97);
 $color-bg-dark1-transparent: rgba(97, 97, 97, 0);
 $color-bg-light1: rgba(247, 249, 247, 1);
 $color-bg-light1-transparent: rgba(247, 249, 247, .8);
-$color-bg-light1-transparent2: rgba(247, 249, 247, .2);
+$color-bg-light1-transparent2: rgba(247, 249, 247, .4);
 $color-bg-light2: rgb(240, 238, 238);
 $color-bg-light2-transparent: rgba(247, 249, 247, .1);
 $color-bg-light3: rgb(209, 209, 209);
@@ -50,6 +50,7 @@ $gradient-green1: linear-gradient(125deg, $color-green-mid 20%, $color-blue 90%,
 $gradient-green-transparent: linear-gradient(125deg, $color-green-mid-transparent 20%, $color-blue-transparent 90%, $color-green-midlight-transparent);
 $gradient-green-transparent2: linear-gradient(125deg, $color-green-mid-transparent2 20%, $color-blue-transparent2 90%, $color-green-midlight-transparent2);
 $gradient-green-transparent3: linear-gradient(125deg, $color-green-mid-transparent2 20%, $color-green-midlight-transparent2 90%, $color-blue-transparent2);
+
 $gradient-light-transparent: linear-gradient(125deg, $color-bg-light1-transparent2 20%, $color-green-midlight-transparent2 90%, $color-bg-light1-transparent2);
 
 $gradient-blue1: linear-gradient(125deg, rgba(176, 218, 219, 1) 20%,rgb(176, 202, 219) 90%, $color-bg-light1-transparent2);
