@@ -22,9 +22,6 @@ const CreateCollectionForm = ({ title }) => {
     data.append('description', description);
     data.append('file', image);
     dispatch(createCollection(data, token));
-
-    // const formData = { userId, collectionName, description };
-    // dispatch(createCollection(formData, token));
   }
   
   return (

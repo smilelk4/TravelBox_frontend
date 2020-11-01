@@ -20,8 +20,8 @@ const CollectionDetail = ({ id, collectionName, description, createdAt, updatedA
       <p> { description } </p>
       {wishes.map(wish => <Card wish={wish} id={id} />)}
       <p className="collection-detail__info">
-        <span>collection id: { id }</span> 
-        <span>created at: { dateDisplay(createdAt) }</span>
+        <span>collection id: { id }</span>  |
+        <span>created at: { dateDisplay(createdAt) }</span> |
         <span>last updated: { dateDisplay(updatedAt) }</span>
       </p>
     </>

@@ -2,6 +2,7 @@
   padding: 0 3vw;
   width: 100%;
   grid-column: 1 / -1;
+  // position: relative;
   
   display: flex;
   justify-content: space-between;
@@ -30,7 +31,34 @@
   &__hamburger {
     width: 4.5rem;
     height: 4.5rem;
+    border-radius: 50%;
     background-color: $color-bg-light1;
+    overflow: hidden;
+    cursor: pointer;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__menu {
+    position: absolute;
+    width: 16rem;
+    height: 50rem;
+    // position: relative;
+    z-index:10;
+    right: 0;
+    top: 6rem;
+    transform: translate(0);
+    opacity: 1;
+    transition: all 0.3s ease-in-out;
+    border: 1px solid black;
+    
+    &.active {
+    //  transform: translate(100%);
+    //  opacity: 0;
+    }
   }
 
   &--initial {

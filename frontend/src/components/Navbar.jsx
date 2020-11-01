@@ -1,6 +1,6 @@
-import React, { useState, useEffect, createContext } from 'react';
+import React, { useState, useEffect, createContext, useRef } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import Button from './Button';
 import Modal from './Modal';
 import { LightSiteLogo } from '../icons/SiteLogo';
@@ -8,17 +8,26 @@ import { validateUser } from '../actions/userAction';
 import { LOG_OUT } from '../reducers/loginReducer';
 import { DELETE_USER_INFO } from '../reducers/userReducer';
 import { DELETE_TOKEN_INFO } from '../reducers/tokenReducer';
+import { DELETE_COLLECTIONS } from '../reducers/collectionReducer';
+import { DELETE_WISHES } from '../reducers/wishReducer';
+
 export const DemoContext = createContext({});
 
 const Navbar = () => {
   const [ modalStatus, setModalStatus ] = useState('hidden');
   const [ navbarStatus, setNavbarStatus ] = useState('initial');
   const [ modalToDisplay, setModalToDisplay ] = useState(null);
+  const [ profilePic, setProfilePic ] = useState('');
   const isLoggedIn = useSelector(state => state.isLoggedIn);
+  const loadedProfileImage  = useSelector(state => state.userInfo.imageUrl);
   const dispatch = useDispatch();
+  const menu = useRef('');;
 
   useEffect(() => {
-    if (isLoggedIn) setModalStatus('hidden');
+    if (isLoggedIn) {
+      setModalStatus('hidden');
+      setProfilePic(loadedProfileImage);
+    }
   });
 
   const handleSignupOrLogin = e => {
@@ -37,6 +46,8 @@ const Navbar = () => {
     dispatch({ type: LOG_OUT });
     dispatch({ type: DELETE_USER_INFO });
     dispatch({ type: DELETE_TOKEN_INFO });
+    dispatch({ type: DELETE_WISHES });
+    dispatch({ type: DELETE_COLLECTIONS });
   }
 
   const handleDemoLogin = () => {
@@ -44,6 +55,10 @@ const Navbar = () => {
       "email": "demo@demo.com",
       "password": "Password123!"
     }));
+  }
+
+  const toggleMenu = () => {
+    menu.current.classList.toggle('active');
   }
 
   window.addEventListener('scroll', e => {
@@ -68,11 +83,16 @@ const Navbar = () => {
       <div className='navbar__right'>
         {isLoggedIn ? (
           <>
-            'MyBox'
+            <NavLink to='/my-box'>MyBox</NavLink>
+            <NavLink to='/my-collections/create'>Create a New Collection</NavLink>
             <div onClick={handleLogout}>
+            </div>
+            <div className='navbar__hamburger' onClick={toggleMenu} >
+              <img src={profilePic} />
+            </div>
+            <div ref={menu} className='navbar__menu'>
               <Button type="logout" linkTo='/' />
             </div>
-            <div className='navbar__hamburger'>X</div>
           </>
         ) : (
           <>
