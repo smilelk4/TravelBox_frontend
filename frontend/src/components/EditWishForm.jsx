@@ -5,7 +5,7 @@ import InputField from './InputField';
 import Button from './Button';
 import Alert from '@material-ui/lab/Alert';
 
-const EditWishForm = (props, { title }) => {
+const EditWishForm = (props) => {
   const [ wishTitle, setWishTitle ] = useState('');
   const [ collectionId, setCollectionId ] = useState('');
   const [ description, setDescription ] = useState('');
@@ -64,7 +64,7 @@ const EditWishForm = (props, { title }) => {
   if (wish) {
     return (
       <>
-        <h3 className="form__header">{title}</h3>
+        <h3 className="form__header">{props.title}</h3>
         <div className="form__error-container">
           {errorLog.map(err => (
             <Alert severity="error">{err}</Alert> 

@@ -24,11 +24,13 @@ const DetailContainer = (props) => {
     <>
       <DiagonalContainer type="vertical-1" />
       <DiagonalContainer type="vertical-2" />
-      <div className="detail-container">
+      <div className={`detail-container ${props.option}`}>
         <div className="detail-container__container">
+          {props.match.path === '/my-collections/:id' && (
             <NavLink to={`/my-wishes/create/${currentCollectionId}`}>
               <DarkAddIcon type='dc'/>
             </NavLink>
+          )}
             <PageTitle title={props.title}/>
             <div className="detail-container__contents">
               <div className="detail-container__header">

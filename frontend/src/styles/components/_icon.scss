@@ -1,9 +1,11 @@
 .add-icon {
   position: absolute;
   z-index: 5;
-  right: 1rem;
+  // right: 5rem;
+  top: 5rem;
+  right: 5rem;
   
-  cursor: pointer;
+  // cursor: pointer;
   opacity: 1;
   transition: opacity .2s ease-in;
 
@@ -12,9 +14,13 @@
     animation: rotate-1 .15s linear;
   }
 
+  & * {
+    // cursor: pointer;
+  }
+
   
   &.dc {
-    right: 5rem;
+    right: 16rem;
     top: 5rem;
   }
 

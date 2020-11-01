@@ -1,26 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchCollection } from '../actions/collectionActions'
+import { fetchCollection } from '../actions/collectionActions';
+import { fetchWish } from '../actions/wishActions';
 import DetailContainer from './DetailContainer';
 import WishDetail from './WishDetail';
 
 const DisplayWish = props => {
   const dispatch = useDispatch();
-  // const collectionId = props.match.params.id;
-  // const [wishId, setWishId] = useState(props.match.params.id);
-  const [collectionId, setCollectionId] = useState('');
+  const wishId = props.match.params.id;
 
   const wishes = useSelector(state => state.wishes);
   
   useEffect(() => {
-    if (!wishes.length) {
-      (async () => {
-        props.history.goBack();
-        setCollectionId(props.match.params.id);
-        await dispatch(fetchCollection(collectionId));
-      })();
-    }
-  }, [wishes, collectionId, props.history, props.match.params.id, dispatch])
+    dispatch(fetchWish(wishId));
+  }, [props.match.params.id, wishId, dispatch]);
   
   if (wishes.length) {
     const wish = wishes.find(wish => wish.id === parseInt(props.match.params.id));

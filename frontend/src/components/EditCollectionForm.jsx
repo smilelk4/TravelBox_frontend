@@ -5,7 +5,7 @@ import InputField from './InputField';
 import Button from './Button';
 import Alert from '@material-ui/lab/Alert';
 
-const EditCollectionForm = (props, { title }) => {
+const EditCollectionForm = (props) => {
   const [ collectionName , setCollectionName ] = useState('');
   const [ description, setDescription ] = useState('');
   const [ image, setImage ] = useState('');
@@ -43,7 +43,7 @@ const EditCollectionForm = (props, { title }) => {
   if (collection) {
     return (
       <>
-        <h3 className="form__header">{title}</h3>
+        <h3 className="form__header">{props.title}</h3>
         <div className="form__error-container">
           {errorLog.map(err => (
             <Alert severity="error">{err}</Alert> 

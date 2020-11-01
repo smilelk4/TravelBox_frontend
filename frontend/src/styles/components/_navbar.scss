@@ -28,7 +28,7 @@
   }
 
   &__right {
-    min-width: 10rem;
+    min-width: 10.5rem;
     // max-width: 50rem;
     display: flex;
     justify-content: space-between;
@@ -77,6 +77,12 @@
     flex-direction: column;
     align-items: center;
     padding: 3rem 0;
+    
+    a,
+    a::before,
+    a::after {
+      color: $color-font-grey2;
+    }
     
     &.active {
       transform: translate(0);

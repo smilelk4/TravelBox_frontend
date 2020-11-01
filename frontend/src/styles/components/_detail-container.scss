@@ -7,7 +7,6 @@
   position: relative;
 
   &__container {
-    // border: 1px solid black;
     height: 100%;
     width: 90rem;
     background-color: $color-bg-light1-transparent;
@@ -23,7 +22,7 @@
     margin-top: 3rem;
     width: 8rem;
     position: absolute;
-    right: 9rem;
+    right: 5rem;
     top: 5rem;
     justify-content: space-between;
     align-items: center;
@@ -59,8 +58,13 @@
     }
   }
 
+  // &.underline {
+  //   h2 {
+  //     @include border-bottom-grey();
+  //   }
+  // }
+
   h2 {
-    @include border-bottom-grey();
     margin: 1rem 3rem;
   }
 

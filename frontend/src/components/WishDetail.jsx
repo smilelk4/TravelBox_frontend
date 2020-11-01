@@ -1,5 +1,6 @@
 import React from 'react';
 import PageSection from './PageSection';
+import dateDisplay from '../utils/date-converter';
 
 const WishDetail = (props) => {
   const { id, description, collectionId, country, regionCity, interestLevel, goalDate, goalSaving, starred, accomplished, createdAt, updatedAt, ToDos: toDos } = props;
@@ -24,10 +25,10 @@ const WishDetail = (props) => {
             )}
           </div>
           <p className="wish-detail__info">
-            <span>wish id: { id }</span>
-            <span>collection id: { collectionId }</span>
-            <span>created at: { createdAt }</span>
-            <span>last updated: { updatedAt }</span>
+            <span>wish id: { id }</span> |
+            <span>collection id: { collectionId }</span> |
+        <span>created at: { dateDisplay(createdAt) }</span> |
+        <span>last updated: { dateDisplay(updatedAt) }</span>
           </p>
         </div>
      </div>

@@ -1,5 +1,5 @@
 const dateDisplay = dateString => {
-  const date = new Date();
+  const date = new Date(dateString);
   const year = date.getFullYear();
   const month = date.getMonth();
   const day = date.getDate();
