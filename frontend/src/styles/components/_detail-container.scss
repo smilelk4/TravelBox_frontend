@@ -28,6 +28,13 @@
     align-items: center;
     font-size: 1.3rem;
   }
+  
+  &__menu {
+    transition: color .2s;
+    &:hover {
+      color: $color-pink;
+    }
+  }
 
   &__contents {
     margin: 10rem 3rem;

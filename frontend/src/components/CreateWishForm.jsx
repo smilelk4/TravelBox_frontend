@@ -4,20 +4,16 @@ import InputField from './InputField';
 import Button from './Button';
 import ErrorContainer from './ErrorContainer';
 import { createWish } from '../actions/wishActions'
+import dateDisplay from '../utils/date-converter';
 
 const CreateWishForm = ({ title, collectionId }) => {
-  const dateNow = new Date();
-  const year = dateNow.getFullYear();
-  const month = dateNow.getMonth();
-  const date = dateNow.getDate();
-
   const [ wishTitle, setWishTitle ] = useState('');
   const [ description, setDescription ] = useState('');
   const [ country, setCountry ] = useState('');
   const [ regionCity , setRegionCity ] = useState('');
   const [ goalSaving, setGoalSaving ] = useState(0);
   const [ interestLevel, setInterestLevel ] = useState(0);
-  const [ goalDate, setGoalDate ] = useState(`${year}-${month + 1}-${date}`);
+  const [ goalDate, setGoalDate ] = useState(dateDisplay(new Date()));
   const dispatch = useDispatch();
   const token = useSelector(state => state.token);
   const userId = useSelector(state => state.userInfo.id);
