@@ -28,7 +28,7 @@ const WishDetail = (props) => {
            {starred ? <span　onClick={handleClick} className='wish-detail__star'>★</span> : <span　onClick={handleClick} className='wish-detail__star'>☆</span>}
           <div className="detail-container__image-container">
             {isImageLoaded ? (
-              images.map(img => <img src={img.image} alt={img.image} key={img.image}/> )):( <div>AA</div>)}
+              images.map(img => <img src={img.image} alt={img.image} key={img.image}/> )):( <div>Loading...</div>)}
           </div>
           <div className="wish-detail__contents">
             <PageSection label='Description:' value={description}/>
