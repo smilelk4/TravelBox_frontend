@@ -16,7 +16,6 @@ const WishDetail = (props) => {
     if (images) setIsImageLoaded(true);
   }, [images]);
 
-
   const handleClick = e => {
     e.preventDefault();
     dispatch(toggleStar(token, id));
@@ -37,7 +36,7 @@ const WishDetail = (props) => {
             <PageSection label='Region/City:' value={regionCity}/>
             <PageSection label='Interest Level:' value={interestLevel}/>
             <PageSection label='Goal Date:' value={ DisplayDate(goalDate) }/>
-            <PageSection label='Goal Saving:' value={goalSaving}/>
+            <PageSection label='Goal Saving:' value={`$${goalSaving}`}/>
             <PageSection label='Starred:' value={starred ? 'Yes' : 'No'}/>
             <PageSection label='Accomplished:' value={accomplished ? 'Yes' : 'No'}/>
 

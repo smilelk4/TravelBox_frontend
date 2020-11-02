@@ -57,14 +57,12 @@ export const createWish = (data, token) => {
       method: 'POST',
       headers: {
         'Authorization': `Bearer ${token}`,
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
       },
-      body: JSON.stringify(data)
+      body: data
     });
 
     if (res.ok) {
-      // const collectionData = await res.json();
+      const data = await res.json();
       window.location.href=`/my-collections/${data.collectionId}`;
       return;
     }
