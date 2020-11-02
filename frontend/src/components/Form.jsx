@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import ErrorContainer from './ErrorContainer';
 import { createUser, validateUser } from '../actions/userAction';
 import InputField from './InputField';
 import Button from './Button';
+import { CLEAR_ERRORS } from '../reducers/errorReducer';
 
 const Form = ({ title }) => {
   const [ username, setUsername ] = useState('');
@@ -15,6 +16,10 @@ const Form = ({ title }) => {
 
   const errorLog = useSelector(state => state.errors);
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    return () => dispatch({ type: CLEAR_ERRORS });
+  }, [dispatch]);
 
   const handleSignup = e => {
     e.preventDefault();
@@ -47,7 +52,7 @@ const Form = ({ title }) => {
         <h3 className="form__header">{title}</h3>
         <div className="form__error-container">
           {errorLog.map(err => (
-            <ErrorContainer>{err}</ErrorContainer> 
+            <ErrorContainer key={err}>{err}</ErrorContainer> 
           ))}
         </div>
         <form className="form" onSubmit={handleLogin}>
@@ -57,7 +62,8 @@ const Form = ({ title }) => {
             currentState={email}
             updateState={setEmail} />
           <InputField 
-            type='new-password' 
+            type='password' 
+            autocomplete="on"
             label='Password'
             currentState={password}
             updateState={setPassword} />
@@ -73,7 +79,7 @@ const Form = ({ title }) => {
         <h3 className="form__header">{title}</h3>
         <div className="form__error-container">
           {errorLog.map(err => (
-            <ErrorContainer>{err}</ErrorContainer> 
+            <ErrorContainer key={err}>{err}</ErrorContainer> 
           ))}
         </div>
         <form className="form" onSubmit={handleSignup}>
@@ -98,12 +104,14 @@ const Form = ({ title }) => {
             currentState={email}
             updateState={setEmail} />
           <InputField 
-            type='new-password' 
+            type='password' 
+            autocomplete="on"
             label='Password' 
             currentState={password}
             updateState={setPassword} />
           <InputField 
-            type='new-password' 
+            type='password' 
+            autocomplete="on"
             label='Confirm Password' 
             currentState={confirmPassword}
             updateState={setConfirmPassword} />

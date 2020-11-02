@@ -29,7 +29,6 @@ const Button = ({ type, bgcolor='white', linkTo='', reg, className}) => {
   if (reg) {
     return (
       <input className={`button ${bgcolor}`} 
-        id={type} 
         value={ buttonDisplay.toUpperCase() }
         type="submit"
       />

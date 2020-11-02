@@ -70,7 +70,7 @@
     z-index: 1;
     left: -1rem;
     top: 6rem;
-    transform: translate(100%);
+    transform: translate(100%) scaleX(0);
     opacity: 0;
     transition: all 0.2s ease-in-out;
     display: flex;
@@ -85,7 +85,7 @@
     }
     
     &.active {
-      transform: translate(0);
+      transform: translate(0) scaleX(1);
       opacity: 1;
     }
   }

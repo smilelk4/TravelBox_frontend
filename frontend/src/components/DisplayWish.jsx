@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchCollection } from '../actions/collectionActions';
 import { fetchWish } from '../actions/wishActions';
 import DetailContainer from './DetailContainer';
 import WishDetail from './WishDetail';

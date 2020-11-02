@@ -15,11 +15,11 @@ const errorReducer = (state = [], action) => {
     case SIGNUP_FAIL:
       return action.errors;
     case LOGIN_FAIL:
-      return ['Invalid login.'];
+      return ['Invalid login information.'];
     case COLLECTIONS_FETCH_FAIL:
-      return ['Could not load your collections.'];
+      return [];
     case WISHES_FETCH_FAIL:
-      return ['Could not load your wishes.'];
+      return [];
     case CREATE_COLLECTION_FAIL:
       return action.errors;
     case EDIT_WISH_FAIL:

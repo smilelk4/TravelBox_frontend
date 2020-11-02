@@ -44,7 +44,7 @@ const CreateWishForm = ({ title, collectionId }) => {
       <h3 className="form__header">{title}</h3>
       <div className="form__error-container">
         {errorLog.map(err => (
-          <ErrorContainer>{err}</ErrorContainer> 
+          <ErrorContainer key={err}>{err}</ErrorContainer> 
         ))}
       </div>
       <form className="form" onSubmit={handleSubmit}>

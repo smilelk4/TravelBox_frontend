@@ -21,7 +21,7 @@ const Navbar = () => {
   const isLoggedIn = useSelector(state => state.isLoggedIn);
   const loadedProfileImage  = useSelector(state => state.userInfo.imageUrl);
   const dispatch = useDispatch();
-  const menu = useRef('');;
+  const menu = useRef('');
 
   useEffect(() => {
     if (isLoggedIn) {
@@ -97,7 +97,7 @@ const Navbar = () => {
         ) : (
           <>
             <div onClick={handleSignupOrLogin}>
-              <Button type="signup" className='nav-signup' />
+              <Button type="signup" />
             </div>
             <div onClick={handleSignupOrLogin}>
               <Button type="login" />
