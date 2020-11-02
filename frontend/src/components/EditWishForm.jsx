@@ -4,6 +4,7 @@ import { fetchWish, editWish } from '../actions/wishActions';
 import InputField from './InputField';
 import Button from './Button';
 import ErrorContainer from './ErrorContainer';
+import dateDisplay from '../utils/date-converter';
 
 const EditWishForm = (props) => {
   const [ wishTitle, setWishTitle ] = useState('');
@@ -26,11 +27,6 @@ const EditWishForm = (props) => {
   
   useEffect(() => {
     if (wish) {
-      const convertedDate = new Date(wish.goalDate)
-      const year = convertedDate.getFullYear();
-      const month = convertedDate.getMonth();
-      const date = convertedDate.getDate();
-
       setWishTitle(wish.title);
       setCollectionId(wish.collectionId);
       setDescription(wish.description)
@@ -38,8 +34,7 @@ const EditWishForm = (props) => {
       setRegionCity(wish.regionCity);
       setGoalSaving(wish.goalSaving);
       setInterestLevel(wish.interestLevel);
-      setGoalDate(`${year}-${month + 1}-${date}`);
-
+      setGoalDate(dateDisplay(wish.goalDate));
     }
   }, [wish]);
 
