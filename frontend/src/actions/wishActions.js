@@ -7,7 +7,7 @@ export const fetchdWishes = id => {
     const res = await fetch(`${baseUrl}/users/${id}/wishes`);
 
     if (res.ok) {
-      const { wishes } = await res.json();
+      let { wishes } = await res.json();
       return dispatch({
         type: LOAD_WISHES,
         wishes
@@ -65,7 +65,7 @@ export const createWish = (data, token) => {
 
     if (res.ok) {
       // const collectionData = await res.json();
-      window.location.href='/my-box';
+      window.location.href=`/my-collections/${data.collectionId}`;
       return;
     }
 
@@ -92,7 +92,7 @@ export const editWish = (data, token, wishId) => {
     });
 
     if (res.ok) {
-      window.location.href='/my-box';
+      window.location.href=`/my-collections/${data.collectionId}`;
       return;
     }
 

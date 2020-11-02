@@ -3,14 +3,14 @@ import Card from './Card';
 import { useSelector } from 'react-redux';
 import dateDisplay from '../utils/date-converter';
 
-const CollectionDetail = ({ id, collectionName, description, createdAt, updatedAt }) => {
+const CollectionDetail = ({ id, description, createdAt, updatedAt }) => {
   const wishes = useSelector(state => state.wishes);
   const images = useSelector(state => state.collections[0].Images);
   const [isImageLoaded, setIsImageLoaded] = useState(false); 
 
   useEffect(() => {
     if (images) setIsImageLoaded(true);
-  }, [images]);
+  }, [images, wishes]);
 
   return ( 
     <> 

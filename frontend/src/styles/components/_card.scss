@@ -84,7 +84,8 @@
 
   &.rectangle-1 {
     width: auto;
-    height: 100%;
+    // height: 100%;
+    min-height: 25rem;
     display: flex;
     flex-direction: column;
 

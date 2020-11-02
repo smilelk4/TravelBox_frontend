@@ -18,10 +18,13 @@ const Card = ({ type, collection, wish }) => {
       cardDiv.current.classList.remove('card--visible');
     }
     });
-    observer.observe(cardDiv.current);
+
+    if (cardDiv) {
+      observer.observe(cardDiv.current);
+    }
   
     return () => observer.disconnect();
-  });
+  }, [type]);
 
   if (collection) {
     const { id, collectionName, description } = collection;

@@ -7,7 +7,7 @@ const wishReducer = (state = [], action) => {
     case LOAD_WISH:
       return [action.wish];
     case LOAD_WISHES:
-      return [...action.wishes];
+      return [...action.wishes.sort((a, b) => a.id - b.id )];
     case DELETE_WISHES:
       return [];
     default:

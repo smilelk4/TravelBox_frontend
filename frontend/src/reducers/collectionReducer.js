@@ -7,7 +7,7 @@ const collectionReducer = (state = [], action) => {
     case LOAD_COLLECTION:
       return [action.collection];
     case LOAD_COLLECTIONS:
-      return [...action.collections];
+      return [...action.collections.reverse()];
     case DELETE_COLLECTIONS:
       return [];
     default:

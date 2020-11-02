@@ -19,7 +19,6 @@ $color-green-midlight-transparent2: rgba(211, 243, 222, .1);
 $color-green-light: rgba(219, 249, 240, 1);
 
 $color-bg-dark1: rgb(97, 97, 97);
-$color-bg-dark1-transparent: rgba(97, 97, 97, 0);
 $color-bg-light1: rgba(247, 249, 247, 1);
 $color-bg-light1-transparent: rgba(247, 249, 247, .8);
 $color-bg-light1-transparent2: rgba(247, 249, 247, .4);
@@ -33,7 +32,7 @@ $color-yellow: #fff27a;
 $color-orange: #FFB17A;
 // #A63446
 $color-pink-dark:#b46c6e;
-$color-pink:#EF767A;
+$color-pink:rgb(239, 118, 122);
 $color-pink-light:#ffc5c7;
 $color-pink-light-transparent:rgba(255, 197, 199, .8);
 $color-blue:rgb(176, 218, 219);
@@ -53,7 +52,10 @@ $gradient-green-transparent3: linear-gradient(125deg, $color-green-mid-transpare
 
 $gradient-light-transparent: linear-gradient(125deg, $color-bg-light1-transparent2 20%, $color-green-midlight-transparent2 90%, $color-bg-light1-transparent2);
 
-$gradient-blue1: linear-gradient(125deg, rgba(176, 218, 219, 1) 20%,rgb(176, 202, 219) 90%, $color-bg-light1-transparent2);
+$gradient-blue1: linear-gradient(rgb(176, 218, 219) 30%,rgb(151, 223, 217));
+$gradient-dark1: linear-gradient(rgb(97, 97, 97) 30%, rgb(83, 83, 83));
+
+// $gradient-blue1: linear-gradient(95deg, rgb(176, 218, 219) 50%,rgb(176, 200, 219));
 
 // $gradient-blue-transparent: linear-gradient(125deg, rgba(176, 218, 219, .4) 90%, $color-green-midlight-transparent);
 // $gradient-grey-transparent: linear-gradient(125deg, rgba(177, 177, 177, .25), 90%, rgba(176, 218, 219, .4));

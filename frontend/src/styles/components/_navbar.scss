@@ -2,6 +2,7 @@
   padding: 0 3vw;
   width: 100%;
   grid-column: 1 / -1;
+  
   // position: relative;
 
   a,
@@ -49,7 +50,7 @@
     background-color: $color-bg-light1;
     overflow: hidden;
     cursor: pointer;
-    transition: border .1s ease-in;
+    transition: border .15s ease-in;
     border: none;
 
     &:hover {
@@ -95,12 +96,15 @@
   }
   
   &--scrolled {
-    background-color: $color-bg-dark1-transparent;
+    background-color: rgba(0, 0, 0, 0);
     transition: background .2s ease-in;
     box-shadow: $shadow-nav;
     position: sticky;
     height: 6rem;
     top: 0;
     z-index: 50;
+   a {
+     color: $color-bg-dark1;
+   }
   }
 }
