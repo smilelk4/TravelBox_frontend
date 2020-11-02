@@ -85,9 +85,10 @@
     display: flex;
     justify-content: flex-end;
 
-    & > * {      
+    & > * {     
+      opacity: 0;
       animation: slideInLeft 1s .9s;
-
+      animation-fill-mode: forwards;
     }
   }
 
@@ -102,6 +103,9 @@
   0% {
     background-position: 50rem;
     opacity: 0;
+  }
+  50% {
+    opacity: .4;
   }
   100% {
     background-position: 0;
