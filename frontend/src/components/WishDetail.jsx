@@ -1,22 +1,32 @@
 import React, { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import PageSection from './PageSection';
 import dateDisplay from '../utils/date-converter';
 import DisplayDate from '../utils/date-converter';
+import { toggleStar } from '../actions/wishActions'
 
 const WishDetail = (props) => {
   const { id, description, collectionId, country, regionCity, interestLevel, goalDate, goalSaving, starred, accomplished, createdAt, updatedAt, ToDos: toDos } = props;
   const images = useSelector(state => state.wishes[0].Images);
   const [isImageLoaded, setIsImageLoaded] = useState(false); 
+  const dispatch = useDispatch();
+  const token = useSelector(state => state.token);
 
   useEffect(() => {
     if (images) setIsImageLoaded(true);
   }, [images]);
+
+
+  const handleClick = e => {
+    e.preventDefault();
+    dispatch(toggleStar(token, id));
+  }
   
   return ( 
     <>
       <div className="wish-detail">
         <div className="wish-detail__container">
+           {starred ? <span　onClick={handleClick} className='wish-detail__star'>★</span> : <span　onClick={handleClick} className='wish-detail__star'>☆</span>}
           <div className="detail-container__image-container">
             {isImageLoaded ? (
               images.map(img => <img src={img.image} alt={img.image} key={img.image}/> )):( <div>AA</div>)}
@@ -28,8 +38,8 @@ const WishDetail = (props) => {
             <PageSection label='Interest Level:' value={interestLevel}/>
             <PageSection label='Goal Date:' value={ DisplayDate(goalDate) }/>
             <PageSection label='Goal Saving:' value={goalSaving}/>
-            <PageSection label='Starred:' value={starred}/>
-            <PageSection label='Accomplished:' value={accomplished}/>
+            <PageSection label='Starred:' value={starred ? 'Yes' : 'No'}/>
+            <PageSection label='Accomplished:' value={accomplished ? 'Yes' : 'No'}/>
 
             {toDos && (
               <ul>

@@ -1,4 +1,10 @@
 .wish-detail {
+  &__star {
+    position: absolute;
+    right: 17rem;
+    top: 5.5rem;
+    cursor: pointer;
+  }
   &__info {
     position: absolute;
     bottom: 1rem;

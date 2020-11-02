@@ -128,3 +128,36 @@ export const deleteWish = (token, wishId) => {
     console.error('Deleting wish unsuccessful.');
   };
 }
+
+export const toggleStar = (token, wishId) => {
+  return async dispatch => {
+    const res = await fetch(`${baseUrl}/wishes/${wishId}`, {
+      method: 'PATCH',
+      headers: {
+        'Authorization': `Bearer ${token}`,
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      // body: JSON.stringify(data)
+    });
+
+    if (res.ok) {
+      const wish = await res.json();
+      // window.location.href=`/my-wishes/${wishId}`;
+      // window.location.reload();
+      dispatch({
+        type: LOAD_WISH,
+        wish
+      });
+      return;
+    }
+
+    const errorData = await res.json();
+    dispatch({
+      type: EDIT_WISH_FAIL,
+      errors: errorData.errors
+    });
+
+    console.error('Editing wish unsuccessful.');
+  };
+}
