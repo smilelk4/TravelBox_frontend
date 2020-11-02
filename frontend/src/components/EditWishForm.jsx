@@ -20,6 +20,7 @@ const EditWishForm = (props) => {
   const userId = useSelector(state => state.userInfo.id);
   const errorLog = useSelector(state => state.errors);
   const wish = useSelector(state => state.wishes[0]);
+  const [ image, setImage ] = useState('');
   
   useEffect(() => {
     dispatch(fetchWish(props.match.params.id));
@@ -40,20 +41,33 @@ const EditWishForm = (props) => {
 
   const handleSubmit = e => {
     e.preventDefault();
-      const formData = { 
-      userId,
-      collectionId,
-      title: wishTitle, 
-      description,
-      country,
-      regionCity,
-      goalSaving,
-      interestLevel,
-      goalDate,
-      starred: false,
-      accomplished: false
-     };
-    dispatch(editWish(formData, token, wish.id));
+    const data = new FormData();
+    data.append('userId', userId);
+    data.append('collectionId', collectionId);
+    data.append('title', wishTitle);
+    data.append('description', description);
+    data.append('country', country);
+    data.append('regionCity', regionCity);
+    data.append('goalSaving', goalSaving);
+    data.append('interestLevel', interestLevel);
+    data.append('goalDate', goalDate);
+    data.append('file', image);
+    dispatch(editWish(data, token, wish.id));
+
+    //   const formData = { 
+    //   userId,
+    //   collectionId,
+    //   title: wishTitle, 
+    //   description,
+    //   country,
+    //   regionCity,
+    //   goalSaving,
+    //   interestLevel,
+    //   goalDate,
+    //   starred: false,
+    //   accomplished: false
+    //  };
+    // dispatch(editWish(formData, token, wish.id));
   }
   
   if (wish) {
@@ -108,6 +122,11 @@ const EditWishForm = (props) => {
           size='lg-1'
           currentState={goalDate}
           updateState={setGoalDate} />
+          <input
+          type="file"
+          placeholder="Upload an image"
+          onChange={e => setImage(e.target.files[0])} 
+          />
           <Button type='editWish' bgcolor='blue' reg='true'/>
         </form>
       </>

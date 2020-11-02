@@ -83,13 +83,13 @@ export const editWish = (data, token, wishId) => {
       method: 'PUT',
       headers: {
         'Authorization': `Bearer ${token}`,
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
       },
-      body: JSON.stringify(data)
+      body: data
     });
 
     if (res.ok) {
+      debugger;
+      const data = await res.json();
       window.location.href=`/my-collections/${data.collectionId}`;
       return;
     }
