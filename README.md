@@ -34,6 +34,6 @@ Deployed on:
 * AWS Amplify (frontend)
 ## Documentation
 * [MVP](/documentation/MVP.md)
-* [Front End Routes](/documentation/frontend_routes.md)
-* [Back End Routes](/documentation/backend_routes.md)
+* [Front End Routes](/documentation/frontend-routes.md)
+* [Back End Routes](/documentation/backend-routes.md)
 * [Schema Image](/documentation/schema.png)​
