@@ -1,6 +1,5 @@
 .main {
   grid-column: 1 / -1;
-  // padding: 4rem;
   margin: 7rem 0;
 
   display: grid;
@@ -11,7 +10,6 @@
     display: flex;
     justify-content: center;
     grid-column: 1 / -1;
-    // background-color:pink;
   }
 
   &__main {
