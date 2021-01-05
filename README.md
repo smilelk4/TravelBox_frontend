@@ -3,9 +3,7 @@
 TravelBox is a platform that lets users save and organize information about their wish-listed travel destinations.
 The web app utlizes AWS's S3 service to allow users to post photos of destinations.
 
-Live link: 
-https://main.d14yvfetmt0d5k.amplifyapp.com/
-
+Check out the app: [Live Demo](https://main.d14yvfetmt0d5k.amplifyapp.com/)
 ## To Launch
 
 1. Clone the repository.
@@ -34,3 +32,8 @@ To run backend server:
 Deployed on:
 * Heroku(backend)
 * AWS Amplify (frontend)
+## Documentation
+* [MVP](/documentation/MVP.md)
+* [Front End Routes](/documentation/frontend_routes.md)
+* [Back End Routes](/documentation/backend_routes.md)
+* [Schema Image](/documentation/schema.png)​
