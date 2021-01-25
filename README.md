@@ -1,7 +1,7 @@
 # 🧭&nbsp;Travel Box 🗺️
 
 TravelBox is a platform that lets users save and organize information about their wish-listed travel destinations.
-The web app utlizes AWS's S3 service to allow users to post photos of destinations.
+The web app utilizes AWS's S3 service to allow users to post photos of destinations.
 
 Check out the app: [Live Demo](https://main.d14yvfetmt0d5k.amplifyapp.com/)
 
